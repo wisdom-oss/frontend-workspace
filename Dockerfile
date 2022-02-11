@@ -1,14 +1,15 @@
 FROM node:lts AS build
-RUN npm install -g pnpm
-RUN npm install -g meta
+COPY . /tmp/build
+WORKDIR /tmp/build
+COPY github.meta /tmp/build/.meta
+RUN ls
+RUN npm install -g pnpm meta @angular/cli
 RUN pnpm install
-COPY github.meta .meta
-RUN meta git update
-RUN npx ng build common
-RUN npx ng build example
-RUN npx ng build
+RUN meta git update && \
+    ng build common && \
+    ng build example && \
+    ng build
 
 FROM caddy:2.4.6-alpine
 COPY Caddyfile /etc/caddy/Caddyfile
-COPY --from=build dist/core /srv
-
+COPY --from=build /tmp/build/dist/core /srv
