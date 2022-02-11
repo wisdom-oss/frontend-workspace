@@ -6,7 +6,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development"
+    "watch": "ng build --watch --configuration development",
+    "docs": "compodoc -p tsconfig.json -c compodoc.json"
   },
   "private": true,
   "dependencies": {
@@ -31,6 +32,7 @@
     "@angular-devkit/build-angular": "~13.2.3",
     "@angular/cli": "~13.2.3",
     "@angular/compiler-cli": "~13.2.2",
+    "@compodoc/compodoc": "^1.1.18",
     "@types/node": "^17.0.17",
     "@types/path-browserify": "^1.0.0",
     "ng-packagr": "^13.2.1",
