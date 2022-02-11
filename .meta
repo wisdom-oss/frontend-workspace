@@ -1,4 +1,5 @@
 {
   "projects": {
+    "wisdom_modules\\core": "git@gitlab.uni-oldenburg.de:wisdom-oss/frontend/core.git"
   }
 }
