@@ -23,9 +23,11 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "~13.2.3",
     "@angular/cli": "~13.2.3",
     "@angular/compiler-cli": "~13.2.0",
     "@types/node": "^12.11.1",
+    "pretty-ts-imports": "^1.0.0",
     "typescript": "~4.5.2"
   }
 }
