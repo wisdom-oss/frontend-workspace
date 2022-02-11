@@ -1,5 +1,7 @@
 {
   "projects": {
-    "wisdom_modules\\core": "git@gitlab.uni-oldenburg.de:wisdom-oss/frontend/core.git"
+    "wisdom_modules\\core": "git@gitlab.uni-oldenburg.de:wisdom-oss/frontend/core.git",
+    "wisdom_modules\\example": "git@gitlab.uni-oldenburg.de:wisdom-oss/frontend/example.git",
+    "wisdom_modules\\common": "git@gitlab.uni-oldenburg.de:wisdom-oss/frontend/common.git"
   }
 }

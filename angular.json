@@ -109,6 +109,68 @@
           }
         }
       }
+    },
+    "example": {
+      "projectType": "library",
+      "root": "wisdom_modules/example",
+      "sourceRoot": "wisdom_modules/example/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "wisdom_modules/example/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "wisdom_modules/example/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "wisdom_modules/example/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "wisdom_modules/example/src/test.ts",
+            "tsConfig": "wisdom_modules/example/tsconfig.spec.json",
+            "karmaConfig": "wisdom_modules/example/karma.conf.js"
+          }
+        }
+      }
+    },
+    "common": {
+      "projectType": "library",
+      "root": "wisdom_modules/common",
+      "sourceRoot": "wisdom_modules/common/src",
+      "prefix": "wisdom",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "wisdom_modules/common/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "wisdom_modules/common/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "wisdom_modules/common/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "wisdom_modules/common/src/test.ts",
+            "tsConfig": "wisdom_modules/common/tsconfig.spec.json",
+            "karmaConfig": "wisdom_modules/common/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "core"
