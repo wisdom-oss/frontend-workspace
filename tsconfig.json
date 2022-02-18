@@ -13,6 +13,10 @@
       "example": [
         "dist/example/example",
         "dist/example"
+      ],
+      "water-usage-forecasts": [
+        "dist/water-usage-forecasts/water-usage-forecasts",
+        "dist/water-usage-forecasts"
       ]
     },
     "strict": true,

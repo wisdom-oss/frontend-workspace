@@ -45,3 +45,4 @@ testem.log
 Thumbs.db
 /wisdom_modules\example/
 /wisdom_modules\common/
+/wisdom_modules\water-usage-forecasts/
