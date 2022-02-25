@@ -8,6 +8,7 @@ RUN pnpm install
 RUN meta git update && \
     ng build common && \
     ng build example && \
+    ng build water-usage-forecasts && \
     ng build
 
 FROM caddy:2.4.6-alpine
