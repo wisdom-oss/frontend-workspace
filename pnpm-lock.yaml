@@ -19,6 +19,7 @@ specifiers:
   '@types/path-browserify': ^1.0.0
   bulma: ^0.9.3
   bulma-prefers-dark: ^0.1.0-beta.1
+  chart.js: ^3.7.1
   ng-packagr: ^13.2.1
   path-browserify: ^1.0.1
   pretty-ts-imports: ^1.0.0
@@ -40,6 +41,7 @@ dependencies:
   '@ngx-translate/core': 14.0.0_@angular+core@13.2.2+rxjs@7.5.4
   bulma: 0.9.3
   bulma-prefers-dark: 0.1.0-beta.1
+  chart.js: 3.7.1
   path-browserify: 1.0.1
   rxjs: 7.5.4
   tslib: 2.3.1
@@ -3878,6 +3880,10 @@ packages:
   /chardet/0.7.0:
     resolution: {integrity: sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==}
     dev: true
+
+  /chart.js/3.7.1:
+    resolution: {integrity: sha512-8knRegQLFnPQAheZV8MjxIXc5gQEfDFD897BJgv/klO/vtIyFFmgMXrNfgrXpbTr/XbTturxRgxIXx/Y+ASJBA==}
+    dev: false
 
   /cheerio-select/1.5.0:
     resolution: {integrity: sha512-qocaHPv5ypefh6YNxvnbABM07KMxExbtbfuJoIie3iZXX1ERwYmJcIiRrr9H05ucQP1k28dav8rpdDgjQd8drg==}

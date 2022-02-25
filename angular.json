@@ -38,7 +38,8 @@
               "wisdom_modules/core/src/assets"
             ],
             "styles": [
-              "wisdom_modules/core/src/styles.scss"
+              "wisdom_modules/core/src/styles.scss",
+              "node_modules/leaflet/dist/leaflet.css"
             ],
             "scripts": []
           },
