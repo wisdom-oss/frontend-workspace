@@ -63,10 +63,18 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>wisdom_modules/core/src/app/i18n/StaticLoader.ts</code>
+            <code>wisdom_modules/core/src/app/i18n/static-loader.ts</code>
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>The loader for the translations.
+Since all translations are available from the start this one is rather simple.</p>
+
+            </p>
 
 
             <p class="comment">
@@ -132,14 +140,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">wisdom_modules/core/src/app/i18n/StaticLoader.ts:22</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">wisdom_modules/core/src/app/i18n/static-loader.ts:32</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Get the translations for a specific language key.</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -150,6 +160,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -164,6 +175,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>The language key</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -197,21 +212,31 @@ import {of, Observable} from &quot;rxjs&quot;;
 import de_DELang from &quot;./langs/de_DE&quot;;
 import en_USLang from &quot;./langs/en_US&quot;;
 import {ModuleProvider} from &quot;../module-provider&quot;;
+import {langs as sideBarLangs} from &quot;../../../../../sidebar&quot;;
 
-let langs &#x3D; {
+/** The languages the loader provides. */
+let langs: any &#x3D; {
   de_DE: Object.assign({}, de_DELang, ModuleProvider.langs(&quot;de_DE&quot;)),
   en_US: Object.assign({}, en_USLang, ModuleProvider.langs(&quot;en_US&quot;))
 }
 
-/*
-I used a lot of ts ignore statements.
-This will be replaced with a better loader.
-*/
+for (let [lang, values] of Object.entries(sideBarLangs)) {
+  langs[lang as &quot;de_DE&quot; | &quot;en_US&quot;].sidebar &#x3D; {};
+  for (let [key, value] of Object.entries(values)) {
+    langs[lang as &quot;de_DE&quot; | &quot;en_US&quot;].sidebar[key] &#x3D; value;
+  }
+}
 
-// TODO: do a better loader than this, but this will come,
-//  when modules are ready
-
+/**
+ * The loader for the translations.
+ * Since all translations are available from the start this one is rather simple.
+ */
 export class StaticLoader implements TranslateLoader {
+
+  /**
+   * Get the translations for a specific language key.
+   * @param lang The language key
+   */
   getTranslation(lang: string): Observable&lt;any&gt; {
     // @ts-ignore
     return of(langs[lang]);

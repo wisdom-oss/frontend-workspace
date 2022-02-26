@@ -63,6 +63,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Service to interact with the user management of the auth server.</p>
+
+            </p>
 
 
 
@@ -113,12 +120,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">wisdom_modules/core/src/app/auth/user.service.ts:21</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">wisdom_modules/core/src/app/auth/user.service.ts:25</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -127,6 +136,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -141,6 +151,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>Service to interact with the server via http</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -176,8 +190,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="39"
-                            class="link-to-prism">wisdom_modules/core/src/app/auth/user.service.ts:39</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="47"
+                            class="link-to-prism">wisdom_modules/core/src/app/auth/user.service.ts:47</a></div>
                 </td>
             </tr>
 
@@ -305,8 +319,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="34"
-                            class="link-to-prism">wisdom_modules/core/src/app/auth/user.service.ts:34</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="42"
+                            class="link-to-prism">wisdom_modules/core/src/app/auth/user.service.ts:42</a></div>
                 </td>
             </tr>
 
@@ -345,8 +359,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">wisdom_modules/core/src/app/auth/user.service.ts:25</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">wisdom_modules/core/src/app/auth/user.service.ts:33</a></div>
                 </td>
             </tr>
 
@@ -372,15 +386,23 @@ import PutUsers409 from &quot;./response_types/users/PutUsers409&quot;;
 /** Url for the interaction. */
 const AUTH_API &#x3D; &quot;localhost:8090/auth/&quot;;
 
+/** Options passed into the get requests. */
 const getOptions: Parameters&lt;HttpClient[&quot;get&quot;]&gt;[1] &#x3D; {
   responseType: &quot;json&quot;
 }
 
+// FIXME: this is currently pretty wrong in the implementation
+
+/** Service to interact with the user management of the auth server. */
 @Injectable({
-  providedIn: &#x27;root&#x27;
+  providedIn: &quot;root&quot;
 })
 export class UserService {
 
+  /**
+   * Constructor.
+   * @param http Service to interact with the server via http
+   */
   constructor(private http: HttpClient) {}
 
   private static httpOptions(): Parameters&lt;HttpClient[&quot;get&quot;]&gt;[1] {

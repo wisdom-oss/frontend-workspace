@@ -70,6 +70,15 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Interface for the wisdom modules.</p>
+<p>Every wisdom module must provide such an object implementing this interface.
+The object must be exported under the name &quot;wisdomInterface&quot;.</p>
+
+            </p>
 
 
         <section>
@@ -150,6 +159,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>The entry component that should be displayed.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -183,6 +198,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>The path to the component displaying the module.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -216,6 +237,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>The scopes required to see the component.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -249,6 +276,14 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>The translations the modules provides and uses.</p>
+<p>The top most entry should be the namespace, the following the component and
+in the component there should be keys for the translation keys.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -257,9 +292,18 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface WisdomInterface {
+  /** The path to the component displaying the module. */
   path: string;
+  /** The scopes required to see the component. */
   scopes: string[];
+  /** The entry component that should be displayed. */
   entryComponent: any;
+  /**
+   * The translations the modules provides and uses.
+   *
+   * The top most entry should be the namespace, the following the component and
+   * in the component there should be keys for the translation keys.
+   */
   translations: Record&lt;string, Record&lt;string, Record&lt;string, Record&lt;string, string&gt;&gt;&gt;&gt;
 }
 </code></pre>

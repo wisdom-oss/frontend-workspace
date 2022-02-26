@@ -123,6 +123,8 @@ token to browser further.</p>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -131,6 +133,7 @@ token to browser further.</p>
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -145,6 +148,10 @@ token to browser further.</p>
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>The storage containing the tokens</p>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>authService</td>
@@ -157,6 +164,10 @@ token to browser further.</p>
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>The service used to interact with the auth server</p>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>router</td>
@@ -169,6 +180,10 @@ token to browser further.</p>
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>The router to route to the login if necessary</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -204,8 +219,8 @@ token to browser further.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="41"
-                            class="link-to-prism">wisdom_modules/core/src/app/auth/auth.guard.ts:41</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="47"
+                            class="link-to-prism">wisdom_modules/core/src/app/auth/auth.guard.ts:47</a></div>
                 </td>
             </tr>
 
@@ -295,10 +310,16 @@ import {AuthService} from &quot;./auth.service&quot;;
  * Also tries to refresh the token if the old one is not valid.
  */
 @Injectable({
-  providedIn: &#x27;root&#x27;
+  providedIn: &quot;root&quot;
 })
 export class AuthGuard implements CanActivate {
 
+  /**
+   * Constructor.
+   * @param authStorage The storage containing the tokens
+   * @param authService The service used to interact with the auth server
+   * @param router The router to route to the login if necessary
+   */
   constructor(
     private authStorage: AuthStorageService,
     private authService: AuthService,

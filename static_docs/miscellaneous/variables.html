@@ -76,10 +76,10 @@
                             <a href="#baseUrl" title="wisdom_modules/core/src/environments/environment.ts" ><b>baseUrl</b>&nbsp;&nbsp;&nbsp;(wisdom_modules/.../environment.ts)</a>
                         </li>
                         <li>
-                            <a href="#environment" title="wisdom_modules/core/src/environments/environment.common.ts" ><b>environment</b>&nbsp;&nbsp;&nbsp;(wisdom_modules/.../environment.common.ts)</a>
+                            <a href="#environment" title="wisdom_modules/core/src/environments/environment.prod.ts" ><b>environment</b>&nbsp;&nbsp;&nbsp;(wisdom_modules/.../environment.prod.ts)</a>
                         </li>
                         <li>
-                            <a href="#environment" title="wisdom_modules/core/src/environments/environment.prod.ts" ><b>environment</b>&nbsp;&nbsp;&nbsp;(wisdom_modules/.../environment.prod.ts)</a>
+                            <a href="#environment" title="wisdom_modules/core/src/environments/environment.common.ts" ><b>environment</b>&nbsp;&nbsp;&nbsp;(wisdom_modules/.../environment.common.ts)</a>
                         </li>
                         <li>
                             <a href="#environment" title="wisdom_modules/core/src/environments/environment.ts" ><b>environment</b>&nbsp;&nbsp;&nbsp;(wisdom_modules/.../environment.ts)</a>
@@ -94,13 +94,19 @@
                             <a href="#httpOptions" title="wisdom_modules/core/src/app/auth/auth.service.ts" ><b>httpOptions</b>&nbsp;&nbsp;&nbsp;(wisdom_modules/.../auth.service.ts)</a>
                         </li>
                         <li>
-                            <a href="#langs" title="wisdom_modules/core/src/app/i18n/StaticLoader.ts" ><b>langs</b>&nbsp;&nbsp;&nbsp;(wisdom_modules/.../StaticLoader.ts)</a>
+                            <a href="#langs" title="sidebar.ts" ><b>langs</b>&nbsp;&nbsp;&nbsp;(sidebar.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#langs" title="wisdom_modules/core/src/app/i18n/static-loader.ts" ><b>langs</b>&nbsp;&nbsp;&nbsp;(wisdom_modules/.../static-loader.ts)</a>
                         </li>
                         <li>
                             <a href="#REFRESH_TOKEN_KEY" title="wisdom_modules/core/src/app/auth/auth-storage.service.ts" ><b>REFRESH_TOKEN_KEY</b>&nbsp;&nbsp;&nbsp;(wisdom_modules/.../auth-storage.service.ts)</a>
                         </li>
                         <li>
                             <a href="#SCOPES_KEY" title="wisdom_modules/core/src/app/auth/auth-storage.service.ts" ><b>SCOPES_KEY</b>&nbsp;&nbsp;&nbsp;(wisdom_modules/.../auth-storage.service.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#sidebar" title="sidebar.ts" ><b>sidebar</b>&nbsp;&nbsp;&nbsp;(sidebar.ts)</a>
                         </li>
                         <li>
                             <a href="#TOKEN_HEADER_KEY" title="wisdom_modules/core/src/app/auth/auth.interceptor.ts" ><b>TOKEN_HEADER_KEY</b>&nbsp;&nbsp;&nbsp;(wisdom_modules/.../auth.interceptor.ts)</a>
@@ -113,6 +119,9 @@
                         </li>
                         <li>
                             <a href="#wisdomInterface" title="wisdom_modules/example/src/public-api.ts" ><b>wisdomInterface</b>&nbsp;&nbsp;&nbsp;(wisdom_modules/.../public-api.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#wisdomInterface" title="wisdom_modules/water-usage-forecasts/src/public-api.ts" ><b>wisdomInterface</b>&nbsp;&nbsp;&nbsp;(wisdom_modules/.../public-api.ts)</a>
                         </li>
                     </ul>
                 </td>
@@ -305,6 +314,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Options passed into the get requests.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -404,6 +419,12 @@ The response is a json though.</p>
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Base url for making requests.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -428,6 +449,12 @@ The response is a json though.</p>
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Environment for the dev mode.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -451,6 +478,12 @@ The response is a json though.</p>
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Url used to call the original window location, will be captured by the proxy.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -475,6 +508,12 @@ The response is a json though.</p>
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Environment for the dev mode.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -501,16 +540,22 @@ The response is a json though.</p>
                 <tr>
                     <td class="col-md-4">
                         <i>Default value : </i><code>{
-
+  // empty for now but still injected
 }</code>
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Environment values for both dev and prod mode.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
 </section>
-    <h3>wisdom_modules/core/src/app/i18n/StaticLoader.ts</h3>
+    <h3>sidebar.ts</h3>
     <section>
     <h3></h3>    <table class="table table-sm table-bordered">
         <tbody>
@@ -532,12 +577,106 @@ The response is a json though.</p>
                 <tr>
                     <td class="col-md-4">
                         <i>Default value : </i><code>{
+  de_DE: {
+    &quot;water-usage&quot;: &quot;Wasserverbrauch&quot;
+  },
+  en_US: {
+    &quot;water-usage&quot;: &quot;Water Usage&quot;
+  }
+}</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This constant is used to inject language content into the translator.</p>
+<p>The keys to use the injected will use the namespace &quot;sidebar&quot;.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sidebar"></a>
+                    <span class="name">
+                        <span ><b>sidebar</b></span>
+                        <a href="#sidebar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#SideBarEntries" target="_self" >SideBarEntries</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  [
+    &quot;Proof of Concept&quot;, &quot;rocket&quot;, [
+      [&quot;Example&quot;, &quot;sparkles&quot;, &quot;example&quot;],
+      [&quot;No Example&quot;, null, null]
+    ]
+  ],
+  [
+    &quot;sidebar.water-usage&quot;, &quot;bar-chart&quot;, [
+      [&quot;water-usage-forecasts.label.name&quot;, &quot;calendar&quot;, &quot;water-usage-forecasts&quot;]
+    ]
+  ]
+]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This constant describes how the sidebar should directly look like.</p>
+<p>For further explanation check <a href="../miscellaneous/typealiases.html#SideBarEntries">SideBarEntries</a>.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>wisdom_modules/core/src/app/i18n/static-loader.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="langs"></a>
+                    <span class="name">
+                        <span ><b>langs</b></span>
+                        <a href="#langs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
   de_DE: Object.assign({}, de_DELang, ModuleProvider.langs(&quot;de_DE&quot;)),
   en_US: Object.assign({}, en_USLang, ModuleProvider.langs(&quot;en_US&quot;))
 }</code>
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>The languages the loader provides.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -667,6 +806,67 @@ The response is a json though.</p>
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>The wisdom interface for the core module to inject this module.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>wisdom_modules/water-usage-forecasts/src/public-api.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="wisdomInterface"></a>
+                    <span class="name">
+                        <span ><b>wisdomInterface</b></span>
+                        <a href="#wisdomInterface"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/WisdomInterface.html" target="_self" >WisdomInterface</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  path: &quot;water-usage-forecasts&quot;,
+  scopes: [&quot;water-usage-forecasts&quot;],
+  entryComponent: WaterUsageForecastsComponent,
+  translations: {
+    de_DE: {
+      &quot;water-usage-forecasts&quot;: {
+        &quot;label&quot;: {
+          &quot;name&quot;: &quot;Prognose&quot;
+        }
+      }
+    },
+    en_US: {
+      &quot;water-usage-forecasts&quot;: {
+        &quot;label&quot;: {
+          &quot;name&quot;: &quot;Prognosis&quot;
+        }
+      }
+    }
+  }
+}</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Public interface for the wisdom core to inject this module.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>

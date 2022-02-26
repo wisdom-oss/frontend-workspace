@@ -66,14 +66,15 @@
 </p>
 
 
-
-
     <p class="comment">
-        <h3>Implements</h3>
+        <h3>Description</h3>
     </p>
     <p class="comment">
-                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+        <p>Component for the login page.</p>
+
     </p>
+
+
 
 
 <section>
@@ -146,9 +147,6 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#ngOnInit" >ngOnInit</a>
-                            </li>
-                            <li>
                                 <a href="#onSubmit" >onSubmit</a>
                             </li>
                         </ul>
@@ -174,12 +172,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">wisdom_modules/core/src/app/auth/login/login.component.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">wisdom_modules/core/src/app/auth/login/login.component.ts:21</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -188,6 +188,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -202,6 +203,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>Service to interact with the auth server</p>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>authStorage</td>
@@ -214,6 +219,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>Service containing the tokens</p>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>router</td>
@@ -226,6 +235,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>Router for routing the user after login</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -249,43 +262,6 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="ngOnInit"></a>
-                    <span class="name">
-                        <span ><b>ngOnInit</b></span>
-                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>ngOnInit()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">wisdom_modules/core/src/app/auth/login/login.component.ts:27</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
                     <a name="onSubmit"></a>
                     <span class="name">
                         <span ><b>onSubmit</b></span>
@@ -302,14 +278,18 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">wisdom_modules/core/src/app/auth/login/login.component.ts:29</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">wisdom_modules/core/src/app/auth/login/login.component.ts:43</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Function to call when the user submits the login.</p>
+<p>Upon successful login the user will be routed to the main page.</p>
+<p>Upon error the error message will be shown.</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -320,6 +300,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -334,6 +315,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>The values of the login form</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -381,10 +366,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">wisdom_modules/core/src/app/auth/login/login.component.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">wisdom_modules/core/src/app/auth/login/login.component.ts:21</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Has the login currently some issue.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -416,10 +407,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">wisdom_modules/core/src/app/auth/login/login.component.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">wisdom_modules/core/src/app/auth/login/login.component.ts:18</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>The password input html element.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -438,25 +435,39 @@ import {AuthStorageService} from &quot;../auth-storage.service&quot;;
 import PostOAuthToken400 from &quot;../response_types/login/PostOAuthToken400&quot;;
 import PostOAuthToken401 from &quot;../response_types/login/PostOAuthToken401&quot;;
 
+/** Component for the login page. */
 @Component({
-  selector: &#x27;app-login&#x27;,
-  templateUrl: &#x27;./login.component.html&#x27;
+  selector: &quot;app-login&quot;,
+  templateUrl: &quot;./login.component.html&quot;
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
-  @ViewChild(&quot;passwordInput&quot;)
-  passwordInput!: ElementRef&lt;HTMLInputElement&gt;;
+  /** The password input html element. */
+  @ViewChild(&quot;passwordInput&quot;) passwordInput!: ElementRef&lt;HTMLInputElement&gt;;
 
+  /** Has the login currently some issue. */
   loginHasIssue: false | string &#x3D; false;
 
+  /**
+   * Constructor.
+   * @param authService Service to interact with the auth server
+   * @param authStorage Service containing the tokens
+   * @param router Router for routing the user after login
+   */
   constructor(
     private authService: AuthService,
     private authStorage: AuthStorageService,
     private router: Router
-  ) { }
+  ) {}
 
-  ngOnInit(): void {}
-
+  /**
+   * Function to call when the user submits the login.
+   *
+   * Upon successful login the user will be routed to the main page.
+   *
+   * Upon error the error message will be shown.
+   * @param f The values of the login form
+   */
   onSubmit(f: NgForm): void {
     const valid &#x3D; f.valid;
     const {username, password} &#x3D; f.value;
@@ -600,7 +611,7 @@ export class LoginComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><section class="hero is-fullheight">  <div class="hero-body">    <div class="container">      <div class="columns">        <div class="column"></div>        <div class="column is-narrow box">          <div class="container p-3">            <p class="title has-text-centered">WISdoM OSS</p>            <form #f="ngForm" (ngSubmit)="onSubmit(f)" noValidate>              <div class="field">                <label class="label">{{"core.login.username" | translate}}</label>                <div class="control has-icons-left has-icons-right">                  <input                    class="input"                    [class.is-success]="f.value.username"                    type="text"                    name="username"                    placeholder="{{\'core.login.username\' | translate}}"                    required                    ngModel                  />                  <span class="icon is-left">                    <ion-icon name="id-card"></ion-icon>                  </span>                  <span class="icon is-right">                    <ion-icon [class.is-invisible]="!f.value.username" name="checkmark"></ion-icon>                  </span>                </div>              </div>              <div class="field">                <label class="label">{{"core.login.password" | translate}}</label>                <div class="control has-icons-left has-icons-right">                  <input                    class="input"                    [class.is-danger]="loginHasIssue"                    type="password"                    name="password"                    placeholder="{{\'core.login.password\' | translate}}"                    required                    ngModel                    #passwordInput                  />                  <span class="icon is-left">                    <ion-icon name="key"></ion-icon>                  </span>                  <span class="icon is-right">                    <ion-icon [class.is-invisible]="!loginHasIssue" name="warning"></ion-icon>                  </span>                </div>              </div>              <div class="content m-0">                <a>{{"core.login.forgotPassword" | translate}}</a>              </div>              <p                class="has-text-centered has-text-danger is-centered m-1"                [class.is-invisible]="!loginHasIssue"              >                {{loginHasIssue}}              </p>              <div class="field">                <p class="control">                  <button                    class="button is-success is-fullwidth"                    type="submit"                  >                    {{"core.login.login" | translate}}                  </button>                </p>              </div>            </form>          </div>        </div>        <div class="column"></div>      </div>    </div>  </div></section></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ExampleComponent', 'selector': ''},{'name': 'FrameComponent', 'selector': 'app-frame'},{'name': 'IonIconComponent', 'selector': 'ion-icon'},{'name': 'LoginComponent', 'selector': 'app-login'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BarChartComponent', 'selector': 'bar-chart'},{'name': 'ExampleComponent', 'selector': ''},{'name': 'FrameComponent', 'selector': 'app-frame'},{'name': 'IonIconComponent', 'selector': 'ion-icon'},{'name': 'LineChartComponent', 'selector': 'line-chart'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MapComponent', 'selector': 'map'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'WaterUsageForecastsComponent', 'selector': 'lib-water-usage-forecasts'}];
     var DIRECTIVES = [{'name': 'BulmaIsToggleableDirective', 'selector': '.is-toggleable'},{'name': 'LangSelectorDirective', 'selector': '[selectLang]'}];
     var ACTUAL_COMPONENT = {'name': 'LoginComponent'};
 </script>

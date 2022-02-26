@@ -62,6 +62,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Directive to set the currently displayed language.</p>
+
+            </p>
 
 
 
@@ -146,12 +153,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">wisdom_modules/core/src/app/i18n/lang-selector.directive.ts:7</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">wisdom_modules/core/src/app/i18n/lang-selector.directive.ts:8</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -160,6 +169,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -174,6 +184,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>Service to update the current language</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -202,9 +216,15 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">wisdom_modules/core/src/app/i18n/lang-selector.directive.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">wisdom_modules/core/src/app/i18n/lang-selector.directive.ts:17</a></div>
                             </td>
                         </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The language key that the translation service should use.</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -228,12 +248,20 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">wisdom_modules/core/src/app/i18n/lang-selector.directive.ts:15</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">wisdom_modules/core/src/app/i18n/lang-selector.directive.ts:24</a></div>
                 </td>
             </tr>
 
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Upon clicking on the element with this directive the lang of the
+translation service updates with the given language key.</p>
+</div>
+
+                </td>
+            </tr>
         </tbody>
     </table>
 </section>
@@ -269,14 +297,17 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">wisdom_modules/core/src/app/i18n/lang-selector.directive.ts:15</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">wisdom_modules/core/src/app/i18n/lang-selector.directive.ts:24</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Upon clicking on the element with this directive the lang of the
+translation service updates with the given language key.</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -296,16 +327,25 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Directive, Input, HostListener} from &quot;@angular/core&quot;;
 import {TranslateService} from &quot;@ngx-translate/core&quot;;
 
+/** Directive to set the currently displayed language. */
 @Directive({
-  selector: &#x27;[selectLang]&#x27;
+  selector: &quot;[selectLang]&quot;
 })
 export class LangSelectorDirective {
 
+  /**
+   * Constructor.
+   * @param translateService Service to update the current language
+   */
   constructor(private translateService: TranslateService) {}
 
-  @Input(&quot;selectLang&quot;)
-  lang: string | undefined;
+  /** The language key that the translation service should use. */
+  @Input(&quot;selectLang&quot;) lang: string | undefined;
 
+  /**
+   * Upon clicking on the element with this directive the lang of the
+   * translation service updates with the given language key.
+   */
   @HostListener(&quot;click&quot;)
   clickLangSelect() {
     if (!this.lang) return;

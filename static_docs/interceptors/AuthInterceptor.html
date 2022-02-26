@@ -118,6 +118,8 @@
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -126,6 +128,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -140,6 +143,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>The storage containing the tokens to inject</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -175,8 +182,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="26"
-                            class="link-to-prism">wisdom_modules/core/src/app/auth/auth.interceptor.ts:26</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="30"
+                            class="link-to-prism">wisdom_modules/core/src/app/auth/auth.interceptor.ts:30</a></div>
                 </td>
             </tr>
 
@@ -271,6 +278,10 @@ const TOKEN_HEADER_KEY &#x3D; &quot;Authorization&quot;;
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 
+  /**
+   * Constructor.
+   * @param authStorage The storage containing the tokens to inject
+   */
   constructor(private authStorage: AuthStorageService) {}
 
   /**

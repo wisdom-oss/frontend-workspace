@@ -66,6 +66,14 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Component framing the application.</p>
+<p>Every site except the login page will display this frame.</p>
+
+    </p>
 
 
 
@@ -148,12 +156,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">wisdom_modules/core/src/app/frame/frame.component.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">wisdom_modules/core/src/app/frame/frame.component.ts:18</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -162,6 +172,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -176,6 +187,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>Service to interact with the auth server</p>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>authStorage</td>
@@ -188,6 +203,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>Storage of the keys for revoking</p>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>router</td>
@@ -200,6 +219,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>Router to route the user on logout</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -239,14 +262,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">wisdom_modules/core/src/app/frame/frame.component.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">wisdom_modules/core/src/app/frame/frame.component.ts:33</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Log the user out and bring the user to the login page.</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -268,18 +293,32 @@ import {Router} from &quot;@angular/router&quot;;
 import {AuthService} from &quot;../auth/auth.service&quot;;
 import {AuthStorageService} from &quot;../auth/auth-storage.service&quot;;
 
+// TODO: add further nesting - https://bulma.io/documentation/components/menu/
+
+/**
+ * Component framing the application.
+ *
+ * Every site except the login page will display this frame.
+ */
 @Component({
-  selector: &#x27;app-frame&#x27;,
-  templateUrl: &#x27;./frame.component.html&#x27;,
+  selector: &quot;app-frame&quot;,
+  templateUrl: &quot;./frame.component.html&quot;,
 })
 export class FrameComponent {
 
+  /**
+   * Constructor.
+   * @param authService Service to interact with the auth server
+   * @param authStorage Storage of the keys for revoking
+   * @param router Router to route the user on logout
+   */
   constructor(
     private authService: AuthService,
     private authStorage: AuthStorageService,
     private router: Router
   ) { }
 
+  /** Log the user out and bring the user to the login page. */
   logout() {
     this.authService.logout(this.authStorage.accessToken!).subscribe(() &#x3D;&gt; {
       this.authStorage.clear();
@@ -295,14 +334,16 @@ export class FrameComponent {
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;nav class&#x3D;&quot;navbar is-primary&quot;&gt;
   &lt;div class&#x3D;&quot;navbar-brand&quot;&gt;
-    &lt;a class&#x3D;&quot;navbar-item&quot; href&#x3D;&quot;/&quot;&gt;
-      &lt;span class&#x3D;&quot;icon-text title&quot;&gt;
+    &lt;a class&#x3D;&quot;navbar-item&quot; routerLink&#x3D;&quot;&quot;&gt;
+      &lt;span class&#x3D;&quot;title&quot;&gt;
+        &lt;span class&#x3D;&quot;icon-text&quot;&gt;
         &lt;span class&#x3D;&quot;icon&quot;&gt;
           &lt;ion-icon name&#x3D;&quot;rainy&quot;&gt;&lt;/ion-icon&gt;
         &lt;/span&gt;
         &lt;span&gt;
           WISdoM-OSS
         &lt;/span&gt;
+      &lt;/span&gt;
       &lt;/span&gt;
     &lt;/a&gt;
   &lt;/div&gt;
@@ -367,23 +408,16 @@ export class FrameComponent {
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/nav&gt;
-&lt;div class&#x3D;&quot;columns&quot; style&#x3D;&quot;height: 100vh&quot;&gt;
-  &lt;aside class&#x3D;&quot;column is-2 box p-5&quot;&gt;
-    &lt;p class&#x3D;&quot;menu-label&quot;&gt;ein Menü&lt;/p&gt;
-    &lt;ul class&#x3D;&quot;menu-list&quot;&gt;
-      &lt;li&gt;&lt;a&gt;Dashboard&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a&gt;ein Link&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
+&lt;div class&#x3D;&quot;columns mt-0&quot; style&#x3D;&quot;height: 100vh&quot;&gt;
+  &lt;aside class&#x3D;&quot;column is-2 box p-5 menu&quot; style&#x3D;&quot;margin-top: -0.75rem&quot;&gt;
+    &lt;app-side-bar&gt;&lt;/app-side-bar&gt;
   &lt;/aside&gt;
   &lt;main class&#x3D;&quot;column&quot; style&#x3D;&quot;overflow-y: auto; padding-bottom: 100px&quot;&gt;
     &lt;div style&#x3D;&quot;margin-top: 0.75rem&quot;&gt;
       &lt;router-outlet&gt;&lt;/router-outlet&gt;
     &lt;/div&gt;
-    &lt;div class&#x3D;&quot;content&quot;&gt;
-      &lt;p&gt;Hier packen wir was cooles rein&lt;/p&gt;
-    &lt;/div&gt;
   &lt;/main&gt;
-  &lt;aside class&#x3D;&quot;column is-2 box p-5&quot;&gt;
+  &lt;aside class&#x3D;&quot;column is-2 box p-5&quot; style&#x3D;&quot;margin-top: -0.75rem&quot;&gt;
     &lt;p class&#x3D;&quot;menu-label&quot;&gt;{{&quot;core.frame.account&quot; | translate}}&lt;/p&gt;
     &lt;ul class&#x3D;&quot;menu-list&quot;&gt;
       &lt;li&gt;
@@ -469,8 +503,8 @@ export class FrameComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><nav class="navbar is-primary">  <div class="navbar-brand">    <a class="navbar-item" href="/">      <span class="icon-text title">        <span class="icon">          <ion-icon name="rainy"></ion-icon>        </span>        <span>          WISdoM-OSS        </span>      </span>    </a>  </div>  <div class="navbar-menu">    <div class="navbar-start">      <div class="navbar-item">        <div class="button">          <span class="icon">            <ion-icon name="menu"></ion-icon>          </span>        </div>      </div>    </div>    <div class="navbar-end">      <div class="navbar-item has-dropdown is-toggleable">        <div class="navbar-link">          <span class="icon">            <ion-icon name="language"></ion-icon>          </span>          <span>            {{"lang" | translate}}          </span>        </div>        <div class="navbar-dropdown">          <div class="navbar-item">            <a class="p-1" selectLang="de_DE">              <span class="icon-text">                <span class="icon">                  <img                    src="https://twemoji.maxcdn.com/2/72x72/1f1e9-1f1ea.png"/>                </span>                <span class="has-text-contrast has-text-weight-medium">                  Deutsch                </span>              </span>            </a>          </div>          <div class="navbar-item">            <a class="p-1" selectLang="en_US">              <span class="icon-text">                <span class="icon">                  <img                    src="https://twemoji.maxcdn.com/2/72x72/1f1fa-1f1f2.png"/>                </span>                <span class="has-text-contrast has-text-weight-medium">                  English                </span>              </span>            </a>          </div>        </div>      </div>      <div class="navbar-item">        <div class="buttons">          <div class="button">            <span class="icon">              <ion-icon name="person-circle"></ion-icon>            </span>          </div>        </div>      </div>    </div>  </div></nav><div class="columns" style="height: 100vh">  <aside class="column is-2 box p-5">    <p class="menu-label">ein Menü</p>    <ul class="menu-list">      <li><a>Dashboard</a></li>      <li><a>ein Link</a></li>    </ul>  </aside>  <main class="column" style="overflow-y: auto; padding-bottom: 100px">    <div style="margin-top: 0.75rem">      <router-outlet></router-outlet>    </div>    <div class="content">      <p>Hier packen wir was cooles rein</p>    </div>  </main>  <aside class="column is-2 box p-5">    <p class="menu-label">{{"core.frame.account" | translate}}</p>    <ul class="menu-list">      <li>        <a (click)="logout()">          <span class="icon-text">            <span class="icon">              <ion-icon name="log-out"></ion-icon>            </span>            <span>              {{"core.frame.logout" | translate}}            </span>          </span>        </a>      </li>    </ul>    <p class="menu-label">{{"core.frame.administration" | translate}}</p>    <ul class="menu-list">      <li>        <a>          <span class="icon-text">            <span class="icon">              <ion-icon name="person"></ion-icon>            </span>            <span>              {{"core.frame.userManagement" | translate}}            </span>          </span>        </a>      </li>      <li>        <a>          <span class="icon-text">            <span class="icon">              <ion-icon name="key"></ion-icon>            </span>            <span>              {{"core.frame.permissions" | translate}}            </span>          </span>        </a>      </li>      <li>        <a>          <span class="icon-text">            <span class="icon">              <ion-icon name="id-card"></ion-icon>            </span>            <span>              {{"core.frame.roles" | translate}}            </span>          </span>        </a>      </li>    </ul>  </aside></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ExampleComponent', 'selector': ''},{'name': 'FrameComponent', 'selector': 'app-frame'},{'name': 'IonIconComponent', 'selector': 'ion-icon'},{'name': 'LoginComponent', 'selector': 'app-login'}];
+        var COMPONENT_TEMPLATE = '<div><nav class="navbar is-primary">  <div class="navbar-brand">    <a class="navbar-item" routerLink="">      <span class="title">        <span class="icon-text">        <span class="icon">          <ion-icon name="rainy"></ion-icon>        </span>        <span>          WISdoM-OSS        </span>      </span>      </span>    </a>  </div>  <div class="navbar-menu">    <div class="navbar-start">      <div class="navbar-item">        <div class="button">          <span class="icon">            <ion-icon name="menu"></ion-icon>          </span>        </div>      </div>    </div>    <div class="navbar-end">      <div class="navbar-item has-dropdown is-toggleable">        <div class="navbar-link">          <span class="icon">            <ion-icon name="language"></ion-icon>          </span>          <span>            {{"lang" | translate}}          </span>        </div>        <div class="navbar-dropdown">          <div class="navbar-item">            <a class="p-1" selectLang="de_DE">              <span class="icon-text">                <span class="icon">                  <img                    src="https://twemoji.maxcdn.com/2/72x72/1f1e9-1f1ea.png"/>                </span>                <span class="has-text-contrast has-text-weight-medium">                  Deutsch                </span>              </span>            </a>          </div>          <div class="navbar-item">            <a class="p-1" selectLang="en_US">              <span class="icon-text">                <span class="icon">                  <img                    src="https://twemoji.maxcdn.com/2/72x72/1f1fa-1f1f2.png"/>                </span>                <span class="has-text-contrast has-text-weight-medium">                  English                </span>              </span>            </a>          </div>        </div>      </div>      <div class="navbar-item">        <div class="buttons">          <div class="button">            <span class="icon">              <ion-icon name="person-circle"></ion-icon>            </span>          </div>        </div>      </div>    </div>  </div></nav><div class="columns mt-0" style="height: 100vh">  <aside class="column is-2 box p-5 menu" style="margin-top: -0.75rem">    <app-side-bar></app-side-bar>  </aside>  <main class="column" style="overflow-y: auto; padding-bottom: 100px">    <div style="margin-top: 0.75rem">      <router-outlet></router-outlet>    </div>  </main>  <aside class="column is-2 box p-5" style="margin-top: -0.75rem">    <p class="menu-label">{{"core.frame.account" | translate}}</p>    <ul class="menu-list">      <li>        <a (click)="logout()">          <span class="icon-text">            <span class="icon">              <ion-icon name="log-out"></ion-icon>            </span>            <span>              {{"core.frame.logout" | translate}}            </span>          </span>        </a>      </li>    </ul>    <p class="menu-label">{{"core.frame.administration" | translate}}</p>    <ul class="menu-list">      <li>        <a>          <span class="icon-text">            <span class="icon">              <ion-icon name="person"></ion-icon>            </span>            <span>              {{"core.frame.userManagement" | translate}}            </span>          </span>        </a>      </li>      <li>        <a>          <span class="icon-text">            <span class="icon">              <ion-icon name="key"></ion-icon>            </span>            <span>              {{"core.frame.permissions" | translate}}            </span>          </span>        </a>      </li>      <li>        <a>          <span class="icon-text">            <span class="icon">              <ion-icon name="id-card"></ion-icon>            </span>            <span>              {{"core.frame.roles" | translate}}            </span>          </span>        </a>      </li>    </ul>  </aside></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BarChartComponent', 'selector': 'bar-chart'},{'name': 'ExampleComponent', 'selector': ''},{'name': 'FrameComponent', 'selector': 'app-frame'},{'name': 'IonIconComponent', 'selector': 'ion-icon'},{'name': 'LineChartComponent', 'selector': 'line-chart'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MapComponent', 'selector': 'map'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'WaterUsageForecastsComponent', 'selector': 'lib-water-usage-forecasts'}];
     var DIRECTIVES = [{'name': 'BulmaIsToggleableDirective', 'selector': '.is-toggleable'},{'name': 'LangSelectorDirective', 'selector': '[selectLang]'}];
     var ACTUAL_COMPONENT = {'name': 'FrameComponent'};
 </script>
