@@ -29,94 +29,90 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content module">
+               <div class="content miscellaneous-enumerations">
                    <div class="content-data">
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <ol class="breadcrumb">
-    <li>Modules</li>
-    <li >AppRoutingModule</li>
+  <li>Miscellaneous</li>
+  <li>Enumerations</li>
 </ol>
 
+<section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#RegressionMethod" title="wisdom_modules/water-usage-forecasts/src/lib/regression-method.ts" ><b>RegressionMethod</b>&nbsp;&nbsp;&nbsp;(wisdom_modules/.../regression-method.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
 
-<ul class="nav nav-tabs" role="tablist">
-    <li  class="active" >
-        <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
-    </li>
-    <li >
-        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-    </li>
-</ul>
-
-<div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info">
-
-        <p class="comment">
-            <h3>File</h3>
-        </p>
-        <p class="comment">
-            <code>wisdom_modules/core/src/app/app-routing.module.ts</code>
-        </p>
-
-
-
-
-
-        <div class="container-fluid module">
-            <div class="row">
-            </div>
-        </div>
-
-
-    </div>
-
-
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {NgModule} from &quot;@angular/core&quot;;
-import {RouterModule, Routes} from &quot;@angular/router&quot;;
-
-import {LoginComponent} from &quot;./auth/login/login.component&quot;;
-import {AuthGuard} from &quot;./auth/auth.guard&quot;;
-import {FrameComponent} from &quot;./frame/frame.component&quot;;
-import {ModuleProvider} from &quot;./module-provider&quot;;
-import {ErrorComponent} from &quot;./error/error.component&quot;;
-
-ModuleProvider.routes();
-
-const routes: Routes &#x3D; [
-  {
-    path: &quot;&quot;,
-    component: FrameComponent,
-    canActivate: [AuthGuard],
-    children: &quot;ModuleProvider.routes()&quot;
-  },
-  {path: &quot;login&quot;, component: LoginComponent},
-  {path: &quot;error/:code&quot;, component: ErrorComponent},
-  {path: &quot;**&quot;, redirectTo: &quot;error/404?message&#x3D;Not%20Found&quot;}
-];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
-</code></pre>
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <h3>wisdom_modules/water-usage-forecasts/src/lib/regression-method.ts</h3>
+    <section>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="RegressionMethod"></a>
+                        <span class="name "><b>RegressionMethod</b><a href="#RegressionMethod"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;LOGARITHMIC
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>logarithmic</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;LINEAR
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>linear</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;POLYNOMIAL
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>polynomial</code>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
 
 
 
@@ -145,8 +141,8 @@ export class AppRoutingModule { }
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
-            var COMPODOC_CURRENT_PAGE_URL = 'AppRoutingModule.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-enumerations';
+            var COMPODOC_CURRENT_PAGE_URL = 'enumerations.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

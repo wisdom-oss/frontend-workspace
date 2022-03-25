@@ -127,8 +127,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="36"
-                            class="link-to-prism">wisdom_modules/core/src/app/base-url.interceptor.ts:36</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">wisdom_modules/core/src/app/base-url.interceptor.ts:23</a></div>
                 </td>
             </tr>
 
@@ -206,30 +206,17 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
-  HttpContextToken,
   HttpEvent,
   HttpHandler,
   HttpInterceptor,
-  HttpRequest
+  HttpRequest,
+  HttpContextToken
 } from &quot;@angular/common/http&quot;;
 import {Injectable} from &quot;@angular/core&quot;;
+import {USE_BASE_URL, USE_API_URL} from &quot;common&quot;;
 import {Observable} from &quot;rxjs&quot;;
 
 import {environment} from &quot;../environments/environment&quot;;
-
-/**
- * {@link HttpContextToken} used to determine if the base url should be used.
- *
- * Defaults to &#x60;true&#x60;.
- */
-export const USE_BASE_URL &#x3D; new HttpContextToken&lt;boolean&gt;(() &#x3D;&gt; true);
-
-/**
- * {@link HttpContextToken} used to determine if the api url should be used.
- *
- * Defaults to &#x60;false&#x60;.
- */
-export const USE_API_URL &#x3D; new HttpContextToken&lt;boolean&gt;(() &#x3D;&gt; false);
 
 /** Class used to prepend the base url to requests. */
 @Injectable()

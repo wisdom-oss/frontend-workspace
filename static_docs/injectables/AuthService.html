@@ -504,12 +504,12 @@
   HttpParams
 } from &quot;@angular/common/http&quot;;
 import {Injectable} from &quot;@angular/core&quot;;
+import {USE_API_URL} from &quot;common&quot;;
 import {join} from &quot;path-browserify&quot;;
 import {Observable} from &quot;rxjs&quot;;
 
 import PostOAuthToken200 from &quot;./response_types/login/PostOAuthToken200&quot;;
 import PostRevoke200 from &quot;./response_types/login/PostRevoke200&quot;;
-import {USE_API_URL} from &quot;../base-url.interceptor&quot;;
 
 /** Url for the interaction. */
 const AUTH_URL &#x3D; &quot;auth&quot;;

@@ -41,7 +41,7 @@
 
 <ol class="breadcrumb">
   <li>Injectables</li>
-  <li >WaterUsageForecastsService</li>
+  <li >MapService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -59,7 +59,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>wisdom_modules/water-usage-forecasts/src/lib/water-usage-forecasts.service.ts</code>
+            <code>wisdom_modules/common/src/lib/map/map.service.ts</code>
         </p>
 
 
@@ -67,7 +67,9 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Service to interact with server providing the data to display.</p>
+                <p>Service to interact with the geo data api to fetch map data.</p>
+<p>Fetched map data is cached in the indexedDB and therefore only retrieved
+lazily.</p>
 
             </p>
 
@@ -87,7 +89,8 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#fetchPrognosisData" >fetchPrognosisData</a>
+                                    <span class="modifier">Async</span>
+                                <a href="#fetchLayerData" >fetchLayerData</a>
                             </li>
                         </ul>
                     </td>
@@ -112,12 +115,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/water-usage-forecasts.service.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">wisdom_modules/common/src/lib/map/map.service.ts:20</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -126,6 +131,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -140,6 +146,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>Client to request geo data</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -159,30 +169,35 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="fetchPrognosisData"></a>
+                    <a name="fetchLayerData"></a>
                     <span class="name">
-                        <span ><b>fetchPrognosisData</b></span>
-                        <a href="#fetchPrognosisData"><span class="icon ion-ios-link"></span></a>
+                        <span class="modifier">Async</span>
+                        <span ><b>fetchLayerData</b></span>
+                        <a href="#fetchLayerData"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>fetchPrognosisData(spatialUnit: "commune" | "county", district: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, forecastModel: <a href="../undefineds/RegressionMethod.html" target="_self">RegressionMethod</a>, consumerGroup?: "businesses" | "households_and_small_businesses" | "farming_forestry_fishing_industry" | "public_institutions" | "all")</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchLayerData(layerName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, layerResolution: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, force: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="20"
-                            class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/water-usage-forecasts.service.ts:20</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">wisdom_modules/common/src/lib/map/map.service.ts:36</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Asynchronously fetch the map from the geo data rest api.</p>
+<p>Will only fetch data if not already stored in the indexedDB.</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -193,23 +208,13 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Default value</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>spatialUnit</td>
-                                    <td>
-                                            <code>&quot;commune&quot; | &quot;county&quot;</code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>district</td>
+                                    <td>layerName</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
@@ -218,31 +223,50 @@
                                         No
                                     </td>
 
+                                    <td>
+                                    </td>
 
+                                    <td>
+                                        <p>The layer name to request data from</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>forecastModel</td>
+                                    <td>layerResolution</td>
                                     <td>
-                                                <code><a href="../miscellaneous/enumerations.html#RegressionMethod" target="_self" >RegressionMethod</a></code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
 
                                     <td>
                                         No
                                     </td>
 
+                                    <td>
+                                    </td>
 
+                                    <td>
+                                        <p>The resolution to request shapes from</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>consumerGroup</td>
+                                    <td>force</td>
                                     <td>
-                                            <code>&quot;businesses&quot; | &quot;households_and_small_businesses&quot; | &quot;farming_forestry_fishing_industry&quot; | &quot;public_institutions&quot; | &quot;all&quot;</code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
                                     </td>
 
                                     <td>
-                                        Yes
+                                        No
                                     </td>
 
+                                    <td>
+                                        <code>false</code>
+                                    </td>
 
+                                    <td>
+                                        <p>If true, this will ignore the cache and request everything</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -250,7 +274,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+                        <b>Returns : </b>    <code>unknown</code>
 
                     </div>
                     <div class="io-description">
@@ -268,43 +292,60 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {HttpClient, HttpContext, HttpHeaders} from &quot;@angular/common/http&quot;;
 import {Injectable} from &quot;@angular/core&quot;;
-import {USE_API_URL} from &quot;common&quot;;
-import {Observable} from &quot;rxjs&quot;;
+import {firstValueFrom} from &quot;rxjs&quot;;
 
-import {RegressionMethod} from &quot;./regression-method&quot;;
+import * as idb from &quot;idb-keyval&quot;;
 
-const API_URL &#x3D; &quot;water-usage-forecasts&quot;;
+import {USE_API_URL} from &quot;../http-context/use-api-url&quot;;
+
+const API_URL &#x3D; &quot;geodata-rest&quot;;
 
 /**
- * Service to interact with server providing the data to display.
+ * Service to interact with the geo data api to fetch map data.
+ *
+ * Fetched map data is cached in the indexedDB and therefore only retrieved
+ * lazily.
  */
 @Injectable({
-  providedIn: &quot;root&quot;
+  providedIn: &#x27;root&#x27;
 })
-export class WaterUsageForecastsService {
+export class MapService {
 
+  /**
+   * Constructor.
+   * @param http Client to request geo data
+   */
   constructor(private http: HttpClient) {}
 
-  fetchPrognosisData(
-    spatialUnit: &quot;commune&quot; | &quot;county&quot;,
-    district: string,
-    forecastModel: RegressionMethod,
-    consumerGroup?:
-      &quot;businesses&quot; |
-      &quot;households_and_small_businesses&quot; |
-      &quot;farming_forestry_fishing_industry&quot; |
-      &quot;public_institutions&quot; |
-      &quot;all&quot;
-  ): Observable&lt;any&gt; {
-    let url &#x3D; encodeURI(&#x60;${API_URL}/${spatialUnit}/${district}/${forecastModel}&#x60;);
-    if (consumerGroup) url +&#x3D; &#x60;?consumerGroup&#x3D;${consumerGroup}&#x60;;
-    return this.http.get(url, {
+  /**
+   * Asynchronously fetch the map from the geo data rest api.
+   *
+   * Will only fetch data if not already stored in the indexedDB.
+   * @param layerName The layer name to request data from
+   * @param layerResolution The resolution to request shapes from
+   * @param force If true, this will ignore the cache and request everything
+   */
+  async fetchLayerData(
+    layerName: string,
+    layerResolution: string,
+    force: boolean &#x3D; false
+  ) {
+    let dbKey &#x3D; &#x60;MAP_LAYER_DATA:${layerName}:${layerResolution}&#x60;;
+    if (!force &amp;&amp; (await idb.keys()).includes(dbKey)) {
+      return await idb.get(dbKey);
+    }
+
+    let url &#x3D; encodeURI(&#x60;${API_URL}/${layerName}/${layerResolution}&#x60;);
+    let layerData &#x3D; await firstValueFrom(this.http.get(url, {
       headers: new HttpHeaders({
         &quot;Content-Type&quot;: &quot;application/json&quot;
       }),
       responseType: &quot;json&quot;,
       context: new HttpContext().set(USE_API_URL, true)
-    });
+    }));
+
+    await idb.set(dbKey, layerData);
+    return layerData;
   }
 
 }
@@ -350,7 +391,7 @@ export class WaterUsageForecastsService {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'WaterUsageForecastsService.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'MapService.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

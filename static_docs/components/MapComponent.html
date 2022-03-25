@@ -149,12 +149,26 @@
                                 <a href="#height" >height</a>
                             </li>
                             <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#layerData" >layerData</a>
+                            </li>
+                            <li>
                                     <span class="modifier">Optional</span>
                                 <a href="#map" >map</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
                                 <a href="#mapElement" >mapElement</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#selectedLayer" >selectedLayer</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#selectedShapes" >selectedShapes</a>
                             </li>
                             <li>
                                 <a href="#tileUrl" >tileUrl</a>
@@ -174,6 +188,10 @@
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#emitSelection" >emitSelection</a>
+                            </li>
                             <li>
                                 <a href="#ngAfterViewInit" >ngAfterViewInit</a>
                             </li>
@@ -199,7 +217,16 @@
                                 <a href="#height" >height</a>
                             </li>
                             <li>
+                                <a href="#layers" >layers</a>
+                            </li>
+                            <li>
+                                <a href="#selectedColor" >selectedColor</a>
+                            </li>
+                            <li>
                                 <a href="#tileUrl" >tileUrl</a>
+                            </li>
+                            <li>
+                                <a href="#unselectedColor" >unselectedColor</a>
                             </li>
                             <li>
                                 <a href="#zoom" >zoom</a>
@@ -208,6 +235,20 @@
                     </td>
                 </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#selected" >selected</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
@@ -215,6 +256,61 @@
     </table>
 </section>
 
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(service: <a href="../injectables/MapService.html" target="_self">MapService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="110" class="link-to-prism">wisdom_modules/common/src/lib/map/map.component.ts:110</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Constructor.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>service</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/MapService.html" target="_self" >MapService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Service to interact with the server for geo data</p>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
     <section>
     <h3 id="inputs">Inputs</h3>
@@ -234,7 +330,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">wisdom_modules/common/src/lib/map/map.component.ts:42</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">wisdom_modules/common/src/lib/map/map.component.ts:52</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -261,12 +357,77 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">wisdom_modules/common/src/lib/map/map.component.ts:32</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">wisdom_modules/common/src/lib/map/map.component.ts:42</a></div>
                             </td>
                         </tr>
                 <tr>
                     <td class="col-md-4">
                         <div class="io-description"><p>Input for the height of the map.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="layers"></a>
+                        <b>layers</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Record&lt;string | string[]&gt;</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">wisdom_modules/common/src/lib/map/map.component.ts:77</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Input for the layers that should be displayed.</p>
+<p>The record expects as the key the <code>layer_name</code> and as the value an array
+of <code>layer_resolutions</code>.</p>
+<div><pre class="line-numbers"><code class="language-html">&lt;map
+  height=&quot;70vh&quot;
+  [layers]=&quot;{&#39;lower-saxony&#39;: [&#39;municipalities&#39;, &#39;districts&#39;, &#39;regions&#39;]}&quot;
+&gt;&lt;/map&gt;</code></pre></div><p>See <a href="https://wisdom04.vlba.uni-oldenburg.de/repos/service-geo-data-rest/main/api/get-layer">https://wisdom04.vlba.uni-oldenburg.de/repos/service-geo-data-rest/main/api/get-layer</a></p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectedColor"></a>
+                        <b>selectedColor</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;#d35a0c&quot;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">wisdom_modules/common/src/lib/map/map.component.ts:85</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Input for a hex code selected shapes.</p>
 </div>
                     </td>
                 </tr>
@@ -288,12 +449,44 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">wisdom_modules/common/src/lib/map/map.component.ts:37</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">wisdom_modules/common/src/lib/map/map.component.ts:47</a></div>
                             </td>
                         </tr>
                 <tr>
                     <td class="col-md-4">
                         <div class="io-description"><p>Input for the tile url of the map.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="unselectedColor"></a>
+                        <b>unselectedColor</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;#1f5aec&quot;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">wisdom_modules/common/src/lib/map/map.component.ts:83</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Input for a hex code for unselected shapes.</p>
 </div>
                     </td>
                 </tr>
@@ -315,7 +508,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">wisdom_modules/common/src/lib/map/map.component.ts:47</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">wisdom_modules/common/src/lib/map/map.component.ts:57</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -327,7 +520,36 @@
             </tbody>
         </table>
 </section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selected"></a>
+                        <b>selected</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
 
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="106" class="link-to-prism">wisdom_modules/common/src/lib/map/map.component.ts:106</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Outputs the currently selected shapes.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
 
     <section>
@@ -335,6 +557,53 @@
     <h3 id="methods">
         Methods
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="emitSelection"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>emitSelection</b></span>
+                        <a href="#emitSelection"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>emitSelection()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="252"
+                            class="link-to-prism">wisdom_modules/common/src/lib/map/map.component.ts:252</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Internally used function to emit the currently selected shapes via the
+<a href="selected">selected</a> output.</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -355,8 +624,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="67"
-                            class="link-to-prism">wisdom_modules/common/src/lib/map/map.component.ts:67</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="149"
+                            class="link-to-prism">wisdom_modules/common/src/lib/map/map.component.ts:149</a></div>
                 </td>
             </tr>
 
@@ -394,8 +663,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="57"
-                            class="link-to-prism">wisdom_modules/common/src/lib/map/map.component.ts:57</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="121"
+                            class="link-to-prism">wisdom_modules/common/src/lib/map/map.component.ts:121</a></div>
                 </td>
             </tr>
 
@@ -438,12 +707,12 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>&quot;54.2957397, 10.8919582&quot;</code>
+                        <i>Default value : </i><code>&quot;53.1434501, 8.2145521&quot;</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">wisdom_modules/common/src/lib/map/map.component.ts:44</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">wisdom_modules/common/src/lib/map/map.component.ts:54</a></div>
                         </td>
                     </tr>
 
@@ -480,13 +749,47 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">wisdom_modules/common/src/lib/map/map.component.ts:34</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">wisdom_modules/common/src/lib/map/map.component.ts:44</a></div>
                         </td>
                     </tr>
 
             <tr>
                 <td class="col-md-4">
                     <div class="io-description"><p>Height of map, defaults to 500px.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="layerData"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>layerData</b></span>
+                        <a href="#layerData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Promise&lt;Record&lt;string, Record&lt;string, literal type[]&gt;&gt;&gt;</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">wisdom_modules/common/src/lib/map/map.component.ts:80</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Layer data fetching the map data.</p>
 </div>
                 </td>
             </tr>
@@ -513,7 +816,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">wisdom_modules/common/src/lib/map/map.component.ts:52</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="88" class="link-to-prism">wisdom_modules/common/src/lib/map/map.component.ts:88</a></div>
                         </td>
                     </tr>
 
@@ -555,13 +858,87 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">wisdom_modules/common/src/lib/map/map.component.ts:29</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">wisdom_modules/common/src/lib/map/map.component.ts:39</a></div>
                         </td>
                     </tr>
 
             <tr>
                 <td class="col-md-4">
                     <div class="io-description"><p>The ref to the map html element.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedLayer"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>selectedLayer</b></span>
+                        <a href="#selectedLayer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[string, string]</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="103" class="link-to-prism">wisdom_modules/common/src/lib/map/map.component.ts:103</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>The currently selected layer in the map control.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedShapes"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>selectedShapes</b></span>
+                        <a href="#selectedShapes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Record&lt;string | &gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="97" class="link-to-prism">wisdom_modules/common/src/lib/map/map.component.ts:97</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Internally holds all elements that are currently selected.</p>
+<p>Keys: <code>&quot;layer_name.resolution.shape&quot;</code>
+Values: <code>[layer_name, resolution, shape]</code></p>
 </div>
                 </td>
             </tr>
@@ -592,7 +969,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">wisdom_modules/common/src/lib/map/map.component.ts:39</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">wisdom_modules/common/src/lib/map/map.component.ts:49</a></div>
                         </td>
                     </tr>
 
@@ -629,7 +1006,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">wisdom_modules/common/src/lib/map/map.component.ts:49</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">wisdom_modules/common/src/lib/map/map.component.ts:59</a></div>
                         </td>
                     </tr>
 
@@ -651,13 +1028,23 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
   ViewChild,
   Component,
+  EventEmitter,
   OnInit,
   AfterViewInit,
   Input,
+  Output,
   ElementRef
 } from &quot;@angular/core&quot;;
 
 import * as L from &quot;leaflet&quot;;
+
+import {MapService} from &quot;./map.service&quot;;
+
+/**
+ * GeoJSON data type used by Leaflet.
+ * @private
+ */
+type GeoJsonObject &#x3D; Parameters&lt;typeof L[&quot;geoJSON&quot;]&gt;[0];
 
 /**
  * Component for displaying maps.
@@ -691,15 +1078,69 @@ export class MapComponent implements OnInit, AfterViewInit {
   /** Input for the center coordinates of the map. */
   @Input(&quot;center&quot;) inputCenter?: string;
   /** Center of the map, defaults to longitude and latitude of Oldenburg. */
-  center &#x3D; &quot;54.2957397, 10.8919582&quot;;
+  center &#x3D; &quot;53.1434501, 8.2145521&quot;;
 
   /** Input for the map zoom level. */
   @Input(&quot;zoom&quot;) inputZoom?: string;
   /** Zoom level of the map, defaults to 7. */
   zoom &#x3D; 7;
 
+  /**
+   * Input for the layers that should be displayed.
+   *
+   * The record expects as the key the &#x60;layer_name&#x60; and as the value an array
+   * of &#x60;layer_resolutions&#x60;.
+   *
+   * @example
+   * &#x60;&#x60;&#x60;html
+   * &lt;map
+   *   height&#x3D;&quot;70vh&quot;
+   *   [layers]&#x3D;&quot;{&#x27;lower-saxony&#x27;: [&#x27;municipalities&#x27;, &#x27;districts&#x27;, &#x27;regions&#x27;]}&quot;
+   * &gt;&lt;/map&gt;
+   * &#x60;&#x60;&#x60;
+   *
+   * @see https://wisdom04.vlba.uni-oldenburg.de/repos/service-geo-data-rest/main/api/get-layer
+   */
+  @Input(&quot;layers&quot;) layers?: Record&lt;string, string[]&gt;
+
+  /** Layer data fetching the map data. */
+  private layerData?: Promise&lt;Record&lt;string, Record&lt;string, {name: string, geojson: GeoJsonObject}[]&gt;&gt;&gt;
+
+  /** Input for a hex code for unselected shapes. */
+  @Input(&quot;unselectedColor&quot;) unselectedColor &#x3D; &quot;#1f5aec&quot;;
+  /** Input for a hex code selected shapes. */
+  @Input(&quot;selectedColor&quot;) selectedColor &#x3D; &quot;#d35a0c&quot;;
+
   /** The leaflet map that is displayed here. */
   map?: L.Map;
+
+  /**
+   * Internally holds all elements that are currently selected.
+   *
+   * Keys: &#x60;&quot;layer_name.resolution.shape&quot;&#x60;
+   * Values: &#x60;[layer_name, resolution, shape]&#x60;
+   * @private
+   */
+  private selectedShapes: Record&lt;string, [string, string, string]&gt; &#x3D; {};
+
+  /**
+   * The currently selected layer in the map control.
+   * @private
+   */
+  private selectedLayer?: [string, string];
+
+  /** Outputs the currently selected shapes. */
+  @Output() selected &#x3D; new EventEmitter&lt;{
+    layerName: string,
+    resolution: string,
+    shapes: string[]
+  }&gt;();
+
+  /**
+   * Constructor.
+   * @param service Service to interact with the server for geo data
+   */
+  constructor(private service: MapService) {}
 
   /**
    * While init this sets the input values to the inner, private values.
@@ -709,6 +1150,24 @@ export class MapComponent implements OnInit, AfterViewInit {
     if (this.inputTileUrl) this.tileUrl &#x3D; this.inputTileUrl;
     if (this.inputCenter) this.center &#x3D; this.inputCenter;
     if (this.inputZoom) this.zoom &#x3D; parseInt(this.inputZoom);
+    if (this.layers) {
+      this.layerData &#x3D; new Promise(async (resolve, reject) &#x3D;&gt; {
+        let layerData: Awaited&lt;MapComponent[&quot;layerData&quot;]&gt; &#x3D; {};
+        let requests: Promise&lt;any&gt;[] &#x3D; [];
+        for (let [layerName, resolutions] of Object.entries(this.layers!)) {
+          layerData[layerName] &#x3D; {};
+          for (let resolution of resolutions) {
+            requests.push(
+              this.service.fetchLayerData(layerName, resolution)
+                .then(data &#x3D;&gt; layerData![layerName][resolution] &#x3D; data)
+            );
+          }
+        }
+        Promise.all(requests)
+          .then(() &#x3D;&gt; resolve(layerData!))
+          .catch(e &#x3D;&gt; reject(e));
+      });
+    }
   }
 
   /**
@@ -723,10 +1182,112 @@ export class MapComponent implements OnInit, AfterViewInit {
         .map(str &#x3D;&gt; parseFloat(str)) as [number, number],
       zoom: this.zoom
     });
+    map.getRenderer(map as any).options.padding &#x3D; 100;
 
     L.tileLayer(this.tileUrl).addTo(map);
 
     this.map &#x3D; map;
+
+    if (this.layerData) {
+      // control to select which base layer to use
+      let control &#x3D; L.control.layers();
+
+      this.layerData.then(layerData &#x3D;&gt; {
+        // this promise is started in the init part, but is needed here
+
+        let baseLayerDisplayed &#x3D; false;
+
+        for (let [layerName, resolutions] of Object.entries(layerData)) {
+          for (let [resolution, shapes] of Object.entries(resolutions)) {
+
+            // put the geojson in a single layer to optimize runtime of the map
+            let geoJsonLayer &#x3D; L.geoJSON(undefined, {
+              style: {color: this.unselectedColor},
+              onEachFeature: (feature, layer) &#x3D;&gt; {
+                // TODO: make automatic tooltips
+                layer.bindTooltip(feature.properties.name, {
+                  direction: &quot;center&quot;
+                });
+
+                layer.on(&quot;click&quot;, () &#x3D;&gt; {
+                  let value &#x3D; [layerName, resolution, feature.properties.name];
+                  let key &#x3D; value.join(&quot;.&quot;);
+
+                  let path &#x3D; layer as L.Path;
+
+                  // highlight the clicked on shape and add it to the selection
+                  // if already in the selection, unselect
+                  if (this.selectedShapes[key]) {
+                    path.setStyle({
+                      color: this.unselectedColor
+                    });
+                    path.bringToBack();
+                    delete this.selectedShapes[key];
+                  }
+                  else {
+                    path.setStyle({
+                      color: this.selectedColor
+                    });
+                    path.bringToFront();
+                    this.selectedShapes[key] &#x3D; value as [string, string, string];
+                  }
+
+                  // selecting a shape should update the output
+                  this.emitSelection();
+                });
+              }
+            });
+
+            for (let {name, geojson} of shapes) {
+              // assign the name as a property in the shape to allow its usage
+              // in the click handler
+              geoJsonLayer.addData(Object.assign(geojson!, {properties: {name}}));
+            }
+
+            if (!baseLayerDisplayed) {
+              // the first base layer should be the default
+              geoJsonLayer.addTo(map);
+              baseLayerDisplayed &#x3D; true;
+              this.selectedLayer &#x3D; [layerName, resolution];
+            }
+
+            // TODO: use names here than can be translated
+            control.addBaseLayer(geoJsonLayer, &#x60;${layerName}: ${resolution}&#x60;);
+
+            map.on(&quot;baselayerchange&quot;, data &#x3D;&gt; {
+              // check if the current layer is selected, this preffered over the
+              // name, since the name might change caused by translation efforts
+              let {layer} &#x3D; data as L.LayersControlEvent;
+              if (layer &#x3D;&#x3D; geoJsonLayer) {
+                this.selectedLayer &#x3D; [layerName, resolution];
+                this.emitSelection();
+              }
+            });
+          }
+        }
+      });
+
+      control.addTo(map);
+    }
+  }
+
+  /**
+   * Internally used function to emit the currently selected shapes via the
+   * {@link selected} output.
+   * @private
+   */
+  private emitSelection(): void {
+    let [layerName, resolution] &#x3D; this.selectedLayer!;
+    let shapes &#x3D; Object.values(this.selectedShapes)
+      .filter(([elLayerName, elResolution]) &#x3D;&gt; {
+        return elLayerName &#x3D;&#x3D; layerName &amp;&amp; elResolution &#x3D;&#x3D; resolution;
+      })
+      .map(([layerName, resolution, shape]) &#x3D;&gt; shape);
+    this.selected.emit({
+      layerName,
+      resolution,
+      shapes
+    });
   }
 }
 </code></pre>
@@ -771,7 +1332,7 @@ export class MapComponent implements OnInit, AfterViewInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div class="map-container" [style.height]="height">  <div #map class="map"></div></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BarChartComponent', 'selector': 'bar-chart'},{'name': 'ExampleComponent', 'selector': ''},{'name': 'FrameComponent', 'selector': 'app-frame'},{'name': 'IonIconComponent', 'selector': 'ion-icon'},{'name': 'LineChartComponent', 'selector': 'line-chart'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MapComponent', 'selector': 'map'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'WaterUsageForecastsComponent', 'selector': 'lib-water-usage-forecasts'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BarChartComponent', 'selector': 'bar-chart'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'ExampleComponent', 'selector': ''},{'name': 'FrameComponent', 'selector': 'app-frame'},{'name': 'IonIconComponent', 'selector': 'ion-icon'},{'name': 'LineChartComponent', 'selector': 'line-chart'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MapComponent', 'selector': 'map'},{'name': 'MapSelectViewComponent', 'selector': 'lib-map-select-view'},{'name': 'ResultDataViewComponent', 'selector': 'lib-result-data-view'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'WaterUsageForecastsComponent', 'selector': 'lib-water-usage-forecasts'}];
     var DIRECTIVES = [{'name': 'BulmaIsToggleableDirective', 'selector': '.is-toggleable'},{'name': 'LangSelectorDirective', 'selector': '[selectLang]'}];
     var ACTUAL_COMPONENT = {'name': 'MapComponent'};
 </script>
