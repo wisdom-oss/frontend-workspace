@@ -7,6 +7,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+    "prettify": "meta exec \"primp src -r\"",
     "docs": "compodoc -p tsconfig.json -c compodoc.json && meta exec \"compodoc -p ./tsconfig.lib.json -c ../../compodoc.json\""
   },
   "private": true,
