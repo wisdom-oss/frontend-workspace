@@ -21,6 +21,7 @@ specifiers:
   bulma: ^0.9.4
   bulma-prefers-dark: ^0.1.0-beta.1
   chart.js: ^3.8.0
+  chartjs-plugin-annotation: ^1.4.0
   idb: ^7.0.1
   leaflet: ^1.8.0
   ng-packagr: ^13.3.1
@@ -46,6 +47,7 @@ dependencies:
   bulma: 0.9.4
   bulma-prefers-dark: 0.1.0-beta.1
   chart.js: 3.8.0
+  chartjs-plugin-annotation: 1.4.0_chart.js@3.8.0
   idb: 7.0.1
   leaflet: 1.8.0
   ng2-charts: 3.0.11_qjpsap4e67zx7t6itw6yfvo5lq
@@ -4034,6 +4036,14 @@ packages:
 
   /chart.js/3.8.0:
     resolution: {integrity: sha512-cr8xhrXjLIXVLOBZPkBZVF6NDeiVIrPLHcMhnON7UufudL+CNeRrD+wpYanswlm8NpudMdrt3CHoLMQMxJhHRg==}
+    dev: false
+
+  /chartjs-plugin-annotation/1.4.0_chart.js@3.8.0:
+    resolution: {integrity: sha512-OC0eGoVvdxTtGGi8mV3Dr+G1YmMhtYYQWqGMb2uWcgcnyiBslaRKPofKwAYWPbh7ABnmQNsNDQLIKPH+XiaZLA==}
+    peerDependencies:
+      chart.js: ^3.1.0
+    dependencies:
+      chart.js: 3.8.0
     dev: false
 
   /cheerio-select/1.5.0:
