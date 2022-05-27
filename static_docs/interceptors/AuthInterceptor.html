@@ -267,7 +267,7 @@
   HttpRequest
 } from &quot;@angular/common/http&quot;;
 import {Injectable} from &quot;@angular/core&quot;;
-import {Observable} from &quot;rxjs&quot;;
+import {Observable, tap} from &quot;rxjs&quot;;
 
 import {AuthStorageService} from &quot;./auth-storage.service&quot;;
 
@@ -301,7 +301,9 @@ export class AuthInterceptor implements HttpInterceptor {
         headers: request.headers.set(TOKEN_HEADER_KEY, &quot;Bearer &quot; + token)
       });
     }
-    return next.handle(authRequest);
+    return next.handle(authRequest).pipe(tap(event &#x3D;&gt; {
+      // TODO: handle if the event is 401
+    }));
   }
 }
 </code></pre>

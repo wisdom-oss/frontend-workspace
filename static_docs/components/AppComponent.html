@@ -75,6 +75,12 @@
     </p>
 
 
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
 
 
 <section>
@@ -135,6 +141,20 @@
                     </td>
                 </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
@@ -149,7 +169,49 @@
 
 
 
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
 
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="12"
+                            class="link-to-prism">wisdom_modules/core/src/app/app.component.ts:12</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
     <section>
     
     <h3 id="inputs">
@@ -198,16 +260,21 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component} from &quot;@angular/core&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, OnInit} from &quot;@angular/core&quot;;
 
 /** Component of the app, the main entry point for angular. */
 @Component({
   selector: &quot;app-root&quot;,
   templateUrl: &quot;./app.component.html&quot;
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   /** The title of the website. */
   title &#x3D; &quot;WISdoM-OSS&quot;;
+
+  ngOnInit(): void {
+    // TODO: register chart.js plugins here
+    console.log(&quot;init app&quot;);
+  }
 }
 </code></pre>
     </div>
@@ -244,7 +311,7 @@ export class AppComponent {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><router-outlet></router-outlet></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BarChartComponent', 'selector': 'bar-chart'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'ExampleComponent', 'selector': ''},{'name': 'FrameComponent', 'selector': 'app-frame'},{'name': 'IonIconComponent', 'selector': 'ion-icon'},{'name': 'LineChartComponent', 'selector': 'line-chart'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MapComponent', 'selector': 'map'},{'name': 'MapSelectViewComponent', 'selector': 'lib-map-select-view'},{'name': 'ResultDataViewComponent', 'selector': 'lib-result-data-view'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'WaterUsageForecastsComponent', 'selector': 'lib-water-usage-forecasts'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BarChartComponent', 'selector': 'bar-chart'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'ExampleComponent', 'selector': ''},{'name': 'FrameComponent', 'selector': 'app-frame'},{'name': 'IonIconComponent', 'selector': 'ion-icon'},{'name': 'LineChartComponent', 'selector': 'line-chart'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MapComponent', 'selector': 'map'},{'name': 'MapSelectViewComponent', 'selector': 'lib-map-select-view'},{'name': 'ResultDataViewComponent', 'selector': 'lib-result-data-view'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'WaterUsageForecastsComponent', 'selector': 'lib-water-usage-forecasts'}];
     var DIRECTIVES = [{'name': 'BulmaIsToggleableDirective', 'selector': '.is-toggleable'},{'name': 'LangSelectorDirective', 'selector': '[selectLang]'}];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
 </script>

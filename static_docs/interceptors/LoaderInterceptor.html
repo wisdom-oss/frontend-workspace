@@ -29,7 +29,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content class">
+               <div class="content interceptor">
                    <div class="content-data">
 
 
@@ -40,12 +40,9 @@
 
 
 
-
-
-
 <ol class="breadcrumb">
-  <li>Classes</li>
-  <li >ModuleProvider</li>
+  <li>Interceptors</li>
+  <li >LoaderInterceptor</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -63,18 +60,8 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>wisdom_modules/core/src/app/module-provider.ts</code>
+            <code>wisdom_modules/core/src/app/frame/loader/loader.interceptor.ts</code>
         </p>
-
-
-            <p class="comment">
-                <h3>Description</h3>
-            </p>
-            <p class="comment">
-                <p>Class to provide data from the reexported wisdom modules.</p>
-<p>Reads its data from the workspace&#39;s &quot;module.ts&quot;.</p>
-
-            </p>
 
 
 
@@ -93,12 +80,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Static</span>
-                                <a href="#langs" >langs</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Static</span>
-                                <a href="#routes" >routes</a>
+                                <a href="#intercept" >intercept</a>
                             </li>
                         </ul>
                     </td>
@@ -118,26 +100,48 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                                <span class="modifier">Private</span>
-                        <code>constructor()</code>
+<code>constructor(service: <a href="../injectables/LoaderService.html" target="_self">LoaderService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">wisdom_modules/core/src/app/module-provider.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">wisdom_modules/core/src/app/frame/loader/loader.interceptor.ts:15</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>This class is a pure utility class and doesn&#39;t need constructing.</p>
-</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>service</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LoaderService.html" target="_self" >LoaderService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
                     </td>
                 </tr>
             </tbody>
         </table>
 </section>
-
 
             <section>
     
@@ -148,34 +152,30 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="langs"></a>
+                    <a name="intercept"></a>
                     <span class="name">
-                        <span class="modifier">Static</span>
-                        <span ><b>langs</b></span>
-                        <a href="#langs"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>intercept</b></span>
+                        <a href="#intercept"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>langs(lang: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>intercept(request: HttpRequest<>, next: <a href="https://angular.io/api/common/http/HttpHandler" target="_blank">HttpHandler</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="40"
-                            class="link-to-prism">wisdom_modules/core/src/app/module-provider.ts:40</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="19"
+                            class="link-to-prism">wisdom_modules/core/src/app/frame/loader/loader.interceptor.ts:19</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Get the translations from the wisdom modules given a language key.</p>
-</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -186,14 +186,13 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
-                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>lang</td>
+                                    <td>request</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            <code>HttpRequest&lt;&gt;</code>
                                     </td>
 
                                     <td>
@@ -201,10 +200,18 @@
                                     </td>
 
 
+                                </tr>
+                                <tr>
+                                    <td>next</td>
                                     <td>
-                                        <p>The language key for the translations</p>
-
+                                                <code><a href="https://angular.io/api/common/http/HttpHandler" target="_blank" >HttpHandler</a></code>
                                     </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
                                 </tr>
                             </tbody>
                         </table>
@@ -212,7 +219,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>{}</code>
+                        <b>Returns : </b>    <code>Observable&lt;HttpEvent&lt;&gt;&gt;</code>
 
                     </div>
                     <div class="io-description">
@@ -222,111 +229,59 @@
             </tr>
         </tbody>
     </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="routes"></a>
-                    <span class="name">
-                        <span class="modifier">Static</span>
-                        <span ><b>routes</b></span>
-                        <a href="#routes"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>routes()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="24"
-                            class="link-to-prism">wisdom_modules/core/src/app/module-provider.ts:24</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Get the routes the wisdom modules want to be available at.</p>
-</div>
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://angular.io/api/router/Routes" target="_blank" >Routes</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
 </section>
-
-
-
-
 
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Routes} from &quot;@angular/router&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Injectable} from &#x27;@angular/core&#x27;;
+import {
+  HttpErrorResponse,
+  HttpEvent,
+  HttpHandler,
+  HttpInterceptor,
+  HttpRequest, HttpResponse,
+  HttpResponseBase
+} from &#x27;@angular/common/http&#x27;;
+import {Observable, tap} from &#x27;rxjs&#x27;;
+import {LoaderService} from &quot;./loader.service&quot;;
+import {USE_LOADER} from &quot;common&quot;;
 
-import {AuthGuard} from &quot;./auth/auth.guard&quot;;
+@Injectable()
+export class LoaderInterceptor implements HttpInterceptor {
 
-import * as modules from &quot;../../../../modules&quot;;
-import {LoaderGuard} from &quot;./frame/loader/loader.guard&quot;;
+  constructor(private service: LoaderService) {}
 
-/**
- * Class to provide data from the reexported wisdom modules.
- *
- * Reads its data from the workspace&#x27;s &quot;module.ts&quot;.
- */
-export class ModuleProvider {
-
-  /**
-   * This class is a pure utility class and doesn&#x27;t need constructing.
-   * @private
-   */
-  private constructor() {}
-
-  /**
-   * Get the routes the wisdom modules want to be available at.
-   */
-  static routes(): Routes {
-    let routes: Routes &#x3D; [];
-    for (let module of Object.values(modules)) {
-      routes.push({
-        path: module.wisdomInterface.path,
-        component: module.wisdomInterface.entryComponent,
-        canActivate: [AuthGuard, LoaderGuard]
-      });
-    }
-    return routes;
+  intercept(request: HttpRequest&lt;unknown&gt;, next: HttpHandler): Observable&lt;HttpEvent&lt;unknown&gt;&gt; {
+    let context &#x3D; request.context.get(USE_LOADER);
+    if (!context) return next.handle(request);
+    let observable &#x3D; next.handle(request);
+    let promise &#x3D; new Promise(resolve &#x3D;&gt; {
+      observable &#x3D; observable.pipe(tap({
+        next(value) {
+          if (value instanceof HttpResponse) {
+            return resolve(value);
+          }
+        },
+        error(err) {
+          if (err instanceof HttpErrorResponse) {
+            return resolve(err);
+          }
+        }
+      }))
+    });
+    if (typeof context &#x3D;&#x3D; &quot;string&quot;) this.service.addLoader(promise, context);
+    else this.service.addLoader(promise);
+    return observable;
   }
-
-  /**
-   * Get the translations from the wisdom modules given a language key.
-   * @param lang The language key for the translations
-   */
-  static langs(lang: string) {
-    let collectedLang &#x3D; {};
-    for (let module of Object.values(modules)) {
-      let moduleLang &#x3D; module.wisdomInterface.translations[lang];
-      if (moduleLang) {
-        Object.assign(collectedLang, moduleLang);
-      }
-    }
-    return collectedLang;
-  }
-
 }
 </code></pre>
     </div>
 </div>
+
+
+
 
 
 
@@ -360,8 +315,8 @@ export class ModuleProvider {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
-            var COMPODOC_CURRENT_PAGE_URL = 'ModuleProvider.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interceptor';
+            var COMPODOC_CURRENT_PAGE_URL = 'LoaderInterceptor.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
