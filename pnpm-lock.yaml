@@ -21,10 +21,10 @@ specifiers:
   bulma: ^0.9.4
   bulma-prefers-dark: ^0.1.0-beta.1
   chart.js: ^3.8.0
-  chartjs-plugin-annotation: ^1.4.0
   idb: ^7.0.1
   leaflet: ^1.8.0
   ng-packagr: ^13.3.1
+  ng2-charts: ^3.0.11
   path-browserify: ^1.0.1
   pretty-ts-imports: ^1.0.0
   pug-cli: ^1.0.0-alpha6
@@ -46,9 +46,9 @@ dependencies:
   bulma: 0.9.4
   bulma-prefers-dark: 0.1.0-beta.1
   chart.js: 3.8.0
-  chartjs-plugin-annotation: 1.4.0_chart.js@3.8.0
   idb: 7.0.1
   leaflet: 1.8.0
+  ng2-charts: 3.0.11_qjpsap4e67zx7t6itw6yfvo5lq
   path-browserify: 1.0.1
   rxjs: 7.5.5
   tslib: 2.4.0
@@ -4036,14 +4036,6 @@ packages:
     resolution: {integrity: sha512-cr8xhrXjLIXVLOBZPkBZVF6NDeiVIrPLHcMhnON7UufudL+CNeRrD+wpYanswlm8NpudMdrt3CHoLMQMxJhHRg==}
     dev: false
 
-  /chartjs-plugin-annotation/1.4.0_chart.js@3.8.0:
-    resolution: {integrity: sha512-OC0eGoVvdxTtGGi8mV3Dr+G1YmMhtYYQWqGMb2uWcgcnyiBslaRKPofKwAYWPbh7ABnmQNsNDQLIKPH+XiaZLA==}
-    peerDependencies:
-      chart.js: ^3.1.0
-    dependencies:
-      chart.js: 3.8.0
-    dev: false
-
   /cheerio-select/1.5.0:
     resolution: {integrity: sha512-qocaHPv5ypefh6YNxvnbABM07KMxExbtbfuJoIie3iZXX1ERwYmJcIiRrr9H05ucQP1k28dav8rpdDgjQd8drg==}
     dependencies:
@@ -6343,6 +6335,10 @@ packages:
       p-locate: 4.1.0
     dev: true
 
+  /lodash-es/4.17.21:
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
+    dev: false
+
   /lodash.debounce/4.0.8:
     resolution: {integrity: sha1-gteb/zCmfEAF/9XiUVMArZyk168=}
     dev: true
@@ -6783,6 +6779,22 @@ packages:
       - bluebird
       - supports-color
     dev: true
+
+  /ng2-charts/3.0.11_qjpsap4e67zx7t6itw6yfvo5lq:
+    resolution: {integrity: sha512-HHy188JIGt48tbww8MhT9PYGcFNCMeQCzVbQoezmunKxQcjg3dBatLov+qoLXbSQvhRYbYVowthTtY7/7ZsiSg==}
+    peerDependencies:
+      '@angular/common': '>=11.0.0'
+      '@angular/core': '>=11.0.0'
+      chart.js: ^3.4.0
+      rxjs: ^6.5.3 || ^7.4.0
+    dependencies:
+      '@angular/common': 13.3.10_bvbfwhbtp5srygefyfqjunnsiq
+      '@angular/core': 13.3.10_rxjs@7.5.5+zone.js@0.11.5
+      chart.js: 3.8.0
+      lodash-es: 4.17.21
+      rxjs: 7.5.5
+      tslib: 2.4.0
+    dev: false
 
   /nice-napi/1.0.2:
     resolution: {integrity: sha512-px/KnJAJZf5RuBGcfD+Sp2pAKq0ytz8j+1NehvgIGFkvtvFrDM3T8E4x/JJODXK9WZow8RRGrbA9QQ3hs+pDhA==}
