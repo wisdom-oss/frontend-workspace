@@ -23,6 +23,7 @@ specifiers:
   bulma-prefers-dark: ^0.1.0-beta.1
   chart.js: ^3.8.0
   chartjs-plugin-annotation: ^1.4.0
+  dayjs: ^1.11.3
   idb: ^7.0.2
   leaflet: ^1.8.0
   leaflet.markercluster: ^1.5.3
@@ -50,6 +51,7 @@ dependencies:
   bulma-prefers-dark: 0.1.0-beta.1
   chart.js: 3.8.0
   chartjs-plugin-annotation: 1.4.0_chart.js@3.8.0
+  dayjs: 1.11.3
   idb: 7.0.2
   leaflet: 1.8.0
   leaflet.markercluster: 1.5.3_leaflet@1.8.0
@@ -4849,6 +4851,10 @@ packages:
   /dash-ast/2.0.1:
     resolution: {integrity: sha512-5TXltWJGc+RdnabUGzhRae1TRq6m4gr+3K2wQX0is5/F2yS6MJXJvLyI3ErAnsAXuJoGqvfVD5icRgim07DrxQ==}
     dev: true
+
+  /dayjs/1.11.3:
+    resolution: {integrity: sha512-xxwlswWOlGhzgQ4TKzASQkUhqERI3egRNqgV4ScR8wlANA/A9tZ7miXa44vTTKEq5l7vWoL5G57bG3zA+Kow0A==}
+    dev: false
 
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
