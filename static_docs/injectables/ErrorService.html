@@ -63,6 +63,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Error service to collect errors from the <a href="../interceptors/ErrorInterceptor.html">ErrorInterceptor</a>.</p>
+
+            </p>
 
 
 
@@ -119,12 +126,17 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">wisdom_modules/core/src/app/frame/error/error.service.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">wisdom_modules/core/src/app/frame/error/error.service.ts:13</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor.</p>
+<p>This also creates an event handler on the <a href="NavigationStart">NavigationStart</a> event in
+order to reset the error presence.
+(Set <a href="errorPresent">errorPresent</a> to <code>false</code>.)</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -133,6 +145,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -147,6 +160,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>Router to subscribe to events</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -182,14 +199,18 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">wisdom_modules/core/src/app/frame/error/error.service.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">wisdom_modules/core/src/app/frame/error/error.service.ts:35</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Emit an error.
+This is used by the <a href="../interceptors/ErrorInterceptor.html">ErrorInterceptor</a> to pass errors to this
+service.</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -200,6 +221,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -214,6 +236,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Error to pass</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -255,10 +281,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">wisdom_modules/core/src/app/frame/error/error.service.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">wisdom_modules/core/src/app/frame/error/error.service.ts:13</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Event emitter whether an event is currently present.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -273,19 +305,35 @@ import {ActivatedRoute, Router, NavigationStart} from &quot;@angular/router&quot
 
 import {Error} from &quot;./error&quot;;
 
+/** Error service to collect errors from the {@link ErrorInterceptor}. */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
 export class ErrorService {
 
+  /** Event emitter whether an event is currently present. */
   errorPresent &#x3D; new EventEmitter&lt;false | Error&gt;();
 
+  /**
+   * Constructor.
+   *
+   * This also creates an event handler on the {@link NavigationStart} event in
+   * order to reset the error presence.
+   * (Set {@link errorPresent} to &#x60;false&#x60;.)
+   * @param router Router to subscribe to events
+   */
   constructor(private router: Router) {
     this.router.events.subscribe(event &#x3D;&gt; {
       if (event instanceof NavigationStart) this.errorPresent.emit(false);
     })
   }
 
+  /**
+   * Emit an error.
+   * This is used by the {@link ErrorInterceptor} to pass errors to this
+   * service.
+   * @param error Error to pass
+   */
   throwError(error: Error) {
     this.errorPresent.emit(error);
   }

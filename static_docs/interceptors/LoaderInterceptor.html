@@ -64,6 +64,15 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Interceptor for the loading, this allows detecting load change.</p>
+<p>This will report to the <a href="../injectables/LoaderService.html">LoaderService</a> when the <a href="../miscellaneous/variables.html#USE_LOADER">USE_LOADER</a>
+context is set.</p>
+
+            </p>
 
 
             <section>
@@ -105,12 +114,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">wisdom_modules/core/src/app/frame/loader/loader.interceptor.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">wisdom_modules/core/src/app/frame/loader/loader.interceptor.ts:23</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -119,6 +130,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -133,6 +145,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>Loader service to report to</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -168,14 +184,18 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="21"
-                            class="link-to-prism">wisdom_modules/core/src/app/frame/loader/loader.interceptor.ts:21</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">wisdom_modules/core/src/app/frame/loader/loader.interceptor.ts:39</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Check whether <a href="../miscellaneous/variables.html#USE_LOADER">USE_LOADER</a> is set.
+If so, report to the service.</p>
+<p>When the request returns this also notifies the service.</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -186,6 +206,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -200,6 +221,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Request to check</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>next</td>
@@ -212,6 +237,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Next interceptor</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -250,11 +279,29 @@ import {tap, Observable} from &quot;rxjs&quot;;
 
 import {LoaderService} from &quot;./loader.service&quot;;
 
+/**
+ * Interceptor for the loading, this allows detecting load change.
+ *
+ * This will report to the {@link LoaderService} when the {@link USE_LOADER}
+ * context is set.
+ */
 @Injectable()
 export class LoaderInterceptor implements HttpInterceptor {
 
+  /**
+   * Constructor.
+   * @param service Loader service to report to
+   */
   constructor(private service: LoaderService) {}
 
+  /**
+   * Check whether {@link USE_LOADER} is set.
+   * If so, report to the service.
+   *
+   * When the request returns this also notifies the service.
+   * @param request Request to check
+   * @param next Next interceptor
+   */
   intercept(request: HttpRequest&lt;unknown&gt;, next: HttpHandler): Observable&lt;HttpEvent&lt;unknown&gt;&gt; {
     let context &#x3D; request.context.get(USE_LOADER);
     if (!context) return next.handle(request);

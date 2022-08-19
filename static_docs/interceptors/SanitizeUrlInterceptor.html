@@ -64,6 +64,15 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Interceptor to fix up weird urls.</p>
+<p>Currently, this checks for too many slashes (<code>/</code>) and reduces them to the
+correct amount.</p>
+
+            </p>
 
 
             <section>
@@ -120,14 +129,19 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="13"
-                            class="link-to-prism">wisdom_modules/core/src/app/sanitize-url.interceptor.ts:13</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">wisdom_modules/core/src/app/sanitize-url.interceptor.ts:28</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Intercepting a request and fix it up if too many slashes (<code>/</code>) were
+injected somewhere.</p>
+<p>This interceptor is usually the last before the request will be sent to the
+public.</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -138,6 +152,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -152,6 +167,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Request to check and sanitize</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>next</td>
@@ -164,6 +183,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>The next interceptor</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -196,9 +219,24 @@
 import {Injectable} from &quot;@angular/core&quot;;
 import {Observable} from &quot;rxjs&quot;;
 
+/**
+ * Interceptor to fix up weird urls.
+ *
+ * Currently, this checks for too many slashes (&#x60;/&#x60;) and reduces them to the
+ * correct amount.
+ */
 @Injectable()
 export class SanitizeUrlInterceptor implements HttpInterceptor {
 
+  /**
+   * Intercepting a request and fix it up if too many slashes (&#x60;/&#x60;) were
+   * injected somewhere.
+   *
+   * This interceptor is usually the last before the request will be sent to the
+   * public.
+   * @param request Request to check and sanitize
+   * @param next The next interceptor
+   */
   intercept(request: HttpRequest&lt;unknown&gt;, next: HttpHandler): Observable&lt;HttpEvent&lt;unknown&gt;&gt; {
     let {url} &#x3D; request;
     let [protocol, pathWithParams] &#x3D; url.split(&quot;://&quot;);

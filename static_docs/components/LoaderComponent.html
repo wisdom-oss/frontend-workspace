@@ -69,6 +69,15 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Component covering the main container with a loading screen while we wait for
+services to respond.</p>
+<p>This will display an animation and possibly some loading texts.</p>
+
+    </p>
 
 
     <p class="comment">
@@ -178,12 +187,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">wisdom_modules/core/src/app/frame/loader/loader.component.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">wisdom_modules/core/src/app/frame/loader/loader.component.ts:16</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -192,6 +203,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -206,6 +218,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>Service to handle communication efforts</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -245,14 +261,17 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">wisdom_modules/core/src/app/frame/loader/loader.component.ts:17</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">wisdom_modules/core/src/app/frame/loader/loader.component.ts:33</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>On init this should subscribe to the service in order to update the loading
+screen.</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -292,10 +311,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">wisdom_modules/core/src/app/frame/loader/loader.component.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">wisdom_modules/core/src/app/frame/loader/loader.component.ts:27</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>The texts to display while loading.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -317,10 +342,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">wisdom_modules/core/src/app/frame/loader/loader.component.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">wisdom_modules/core/src/app/frame/loader/loader.component.ts:25</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Whether the loader should be active.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -334,6 +365,12 @@
 
 import {LoaderService} from &quot;./loader.service&quot;;
 
+/**
+ * Component covering the main container with a loading screen while we wait for
+ * services to respond.
+ *
+ * This will display an animation and possibly some loading texts.
+ */
 @Component({
   selector: &#x27;app-loader&#x27;,
   templateUrl: &#x27;./loader.component.html&#x27;,
@@ -341,16 +378,25 @@ import {LoaderService} from &quot;./loader.service&quot;;
 })
 export class LoaderComponent implements OnInit {
 
+  /**
+   * Constructor.
+   * @param service Service to handle communication efforts
+   */
   constructor(private service: LoaderService) {}
 
+  /** Whether the loader should be active. */
   isLoading &#x3D; false;
+  /** The texts to display while loading. */
   displayTexts: string[] &#x3D; [];
 
+  /**
+   * On init this should subscribe to the service in order to update the loading
+   * screen.
+   */
   ngOnInit(): void {
     this.service.loading.subscribe(value &#x3D;&gt; this.isLoading &#x3D; value);
     this.service.displayTexts.subscribe(values &#x3D;&gt; this.displayTexts &#x3D; values);
   }
-
 }
 </code></pre>
     </div>
