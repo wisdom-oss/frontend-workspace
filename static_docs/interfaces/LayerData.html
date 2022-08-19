@@ -48,7 +48,7 @@
   <li>Interfaces</li>
   <li
   >
-  ForecastResponse</li>
+  LayerData</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -66,7 +66,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>wisdom_modules/water-usage-forecasts/src/lib/services/water-usage-forecasts.service.ts</code>
+            <code>wisdom_modules/common/src/lib/map/layer-data.ts</code>
         </p>
 
 
@@ -85,15 +85,15 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                        <a href="#accumulations" 
+                                        <a href="#box" 
 >
-                                            accumulations
+                                            box
                                         </a>
                                 </li>
                                 <li>
-                                        <a href="#partials" 
+                                        <a href="#shapes" 
 >
-                                            partials
+                                            shapes
                                         </a>
                                 </li>
                             </ul>
@@ -111,9 +111,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="accumulations"></a>
-                                        <span class="name "><b>accumulations</b>
-                                            <a href="#accumulations">
+                                        <a name="box"></a>
+                                        <span class="name "><b>box</b>
+                                            <a href="#box">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -121,7 +121,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>accumulations:     <code>literal type</code>
+                                        <code>box:     <code>[, , , ]</code>
 </code>
                                     </td>
                                 </tr>
@@ -129,7 +129,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>    <code>literal type</code>
+                                            <i>Type : </i>    <code>[, , , ]</code>
 
                                         </td>
                                     </tr>
@@ -144,9 +144,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="partials"></a>
-                                        <span class="name "><b>partials</b>
-                                            <a href="#partials">
+                                        <a name="shapes"></a>
+                                        <span class="name "><b>shapes</b>
+                                            <a href="#shapes">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -154,7 +154,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>partials:     <code>literal type[]</code>
+                                        <code>shapes:         <code><a href="../interfaces/ShapeData.html" target="_self" >ShapeData[]</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -162,7 +162,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>    <code>literal type[]</code>
+                                            <i>Type : </i>        <code><a href="../interfaces/ShapeData.html" target="_self" >ShapeData[]</a></code>
 
                                         </td>
                                     </tr>
@@ -178,95 +178,27 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {HttpClient, HttpContext, HttpHeaders} from &quot;@angular/common/http&quot;;
-import {Injectable} from &quot;@angular/core&quot;;
-import {Router} from &quot;@angular/router&quot;;
-import {USE_API_URL, USE_LOADER} from &quot;common&quot;;
-import {Observable} from &quot;rxjs&quot;;
-
-const API_URL &#x3D; &quot;water-usage-forecasts&quot;;
-
-export enum ForecastType {
-  LOGARITHMIC &#x3D; &quot;logarithmic&quot;,
-  LINEAR &#x3D; &quot;linear&quot;,
-  POLYNOMIAL &#x3D; &quot;polynomial&quot;
-}
-
-export interface ForecastResponse {
-  accumulations: {
-    consumerGroup: ForecastEntry,
-    municipal: ForecastEntry
-  },
-  partials: {
-    consumerGroup: {
-      key: string,
-      name: string
-    },
-    municipal: ForecastResponse[&quot;partials&quot;][0][&quot;consumerGroup&quot;],
-    referenceUsages: {
-      equation: string,
-      float: number,
-      model: &quot;logarithmic&quot; | &quot;linear&quot; | &quot;polynomial&quot;,
-      usages: {
-        amounts: number[],
-        end: number,
-        start: number
-      }
-    },
-    forecast: ForecastResponse[&quot;partials&quot;][0][&quot;referenceUsages&quot;]
-  }[]
-}
-
-export interface ForecastEntry {
-  forecast: Record&lt;string, ForecastUsage&gt;,
-  reference: Record&lt;string, ForecastUsage&gt;
-}
-
-export interface ForecastUsage {
-  displayName: string,
-  endYear: number,
-  startYear: number,
-  usages: number[]
-}
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import * as L from &quot;leaflet&quot;;
 
 /**
- * Service to interact with server providing the data to display.
+ * GeoJSON data type used by Leaflet.
+ * @private
  */
-@Injectable({
-  providedIn: &quot;root&quot;
-})
-export class WaterUsageForecastsService {
+export type GeoJsonObject &#x3D; Parameters&lt;typeof L[&quot;geoJSON&quot;]&gt;[0];
+/** Type to represent layer data received from the geo data server. */
+export interface ShapeData {
+  name: string,
+  key: string,
+  nutsKey: string,
+  geoJson: GeoJsonObject
+};
 
-  constructor(
-    private http: HttpClient,
-    private router: Router
-  ) {}
+export interface LayerData {
+  box: [[number, number], [number, number], [number, number], [number, number]],
+  shapes: ShapeData[]
+};
 
-  fetchForecastData(
-    key: string | string[],
-    forecastModel: ForecastType,
-    consumerGroup?:
-      &quot;businesses&quot; |
-      &quot;households_and_small_businesses&quot; |
-      &quot;farming_forestry_fishing_industry&quot; |
-      &quot;public_institutions&quot; |
-      &quot;all&quot;
-  ): Observable&lt;ForecastResponse&gt; {
-    let url &#x3D; this.router.parseUrl(&#x60;${API_URL}/${forecastModel}&#x60;);
-    if (consumerGroup) url.queryParams[&quot;consumerGroup&quot;] &#x3D; consumerGroup;
-    url.queryParams[&quot;key&quot;] &#x3D; key;
-    return this.http.get(url.toString(), {
-      headers: new HttpHeaders({
-        &quot;Content-Type&quot;: &quot;application/json&quot;
-      }),
-      responseType: &quot;json&quot;,
-      context: new HttpContext()
-        .set(USE_API_URL, true)
-        .set(USE_LOADER, &quot;water-usage-forecasts.display.loading&quot;)
-    }) as Observable&lt;ForecastResponse&gt;;
-  }
-
-}
+export default LayerData;
 </code></pre>
     </div>
 </div>
@@ -304,7 +236,7 @@ export class WaterUsageForecastsService {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
-            var COMPODOC_CURRENT_PAGE_URL = 'ForecastResponse.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'LayerData.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

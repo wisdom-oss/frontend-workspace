@@ -187,14 +187,14 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import {
-  HttpRequest,
-  HttpHandler,
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
   HttpEvent,
-  HttpInterceptor
-} from &#x27;@angular/common/http&#x27;;
-import { Observable } from &#x27;rxjs&#x27;;
+  HttpHandler,
+  HttpInterceptor,
+  HttpRequest
+} from &quot;@angular/common/http&quot;;
+import {Injectable} from &quot;@angular/core&quot;;
+import {Observable} from &quot;rxjs&quot;;
 
 @Injectable()
 export class SanitizeUrlInterceptor implements HttpInterceptor {
@@ -216,6 +216,7 @@ export class SanitizeUrlInterceptor implements HttpInterceptor {
 </code></pre>
     </div>
 </div>
+
 
 
 

@@ -105,7 +105,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">wisdom_modules/core/src/app/frame/loader/loader.interceptor.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">wisdom_modules/core/src/app/frame/loader/loader.interceptor.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -168,8 +168,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">wisdom_modules/core/src/app/frame/loader/loader.interceptor.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="21"
+                            class="link-to-prism">wisdom_modules/core/src/app/frame/loader/loader.interceptor.ts:21</a></div>
                 </td>
             </tr>
 
@@ -235,18 +235,20 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Injectable} from &#x27;@angular/core&#x27;;
-import {
-  HttpErrorResponse,
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  HttpResponseBase,
   HttpEvent,
   HttpHandler,
   HttpInterceptor,
-  HttpRequest, HttpResponse,
-  HttpResponseBase
-} from &#x27;@angular/common/http&#x27;;
-import {Observable, tap} from &#x27;rxjs&#x27;;
-import {LoaderService} from &quot;./loader.service&quot;;
+  HttpRequest,
+  HttpErrorResponse,
+  HttpResponse
+} from &quot;@angular/common/http&quot;;
+import {Injectable} from &quot;@angular/core&quot;;
 import {USE_LOADER} from &quot;common&quot;;
+import {tap, Observable} from &quot;rxjs&quot;;
+
+import {LoaderService} from &quot;./loader.service&quot;;
 
 @Injectable()
 export class LoaderInterceptor implements HttpInterceptor {
@@ -256,6 +258,7 @@ export class LoaderInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest&lt;unknown&gt;, next: HttpHandler): Observable&lt;HttpEvent&lt;unknown&gt;&gt; {
     let context &#x3D; request.context.get(USE_LOADER);
     if (!context) return next.handle(request);
+
     let observable &#x3D; next.handle(request);
     let promise &#x3D; new Promise(resolve &#x3D;&gt; {
       observable &#x3D; observable.pipe(tap({
@@ -279,6 +282,7 @@ export class LoaderInterceptor implements HttpInterceptor {
 </code></pre>
     </div>
 </div>
+
 
 
 

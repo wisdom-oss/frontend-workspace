@@ -194,14 +194,17 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">wisdom_modules/core/src/app/app.component.ts:12</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">wisdom_modules/core/src/app/app.component.ts:20</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>On init this sets the Default image path for Leaflet.</p>
+<p>This also registers the <a href="AnnotationPlugin">AnnotationPlugin</a> for chart.js.</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -241,7 +244,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">wisdom_modules/core/src/app/app.component.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">wisdom_modules/core/src/app/app.component.ts:13</a></div>
                         </td>
                     </tr>
 
@@ -261,6 +264,9 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, OnInit} from &quot;@angular/core&quot;;
+import {Chart} from &quot;chart.js&quot;;
+import AnnotationPlugin from &quot;chartjs-plugin-annotation&quot;;
+import {Icon} from &quot;leaflet&quot;;
 
 /** Component of the app, the main entry point for angular. */
 @Component({
@@ -271,9 +277,14 @@ export class AppComponent implements OnInit {
   /** The title of the website. */
   title &#x3D; &quot;WISdoM-OSS&quot;;
 
+  /**
+   * On init this sets the Default image path for Leaflet.
+   *
+   * This also registers the {@link AnnotationPlugin} for chart.js.
+   */
   ngOnInit(): void {
-    // TODO: register chart.js plugins here
-    console.log(&quot;init app&quot;);
+    Icon.Default.imagePath &#x3D; &quot;assets/leaflet/images/&quot;;
+    Chart.register(AnnotationPlugin);
   }
 }
 </code></pre>
@@ -311,11 +322,12 @@ export class AppComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><router-outlet></router-outlet></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BarChartComponent', 'selector': 'bar-chart'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'ExampleComponent', 'selector': ''},{'name': 'FrameComponent', 'selector': 'app-frame'},{'name': 'IonIconComponent', 'selector': 'ion-icon'},{'name': 'LineChartComponent', 'selector': 'line-chart'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MapComponent', 'selector': 'map'},{'name': 'MapSelectViewComponent', 'selector': 'lib-map-select-view'},{'name': 'ResultDataViewComponent', 'selector': 'lib-result-data-view'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'WaterUsageForecastsComponent', 'selector': 'lib-water-usage-forecasts'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BreadcrumbsComponent', 'selector': 'breadcrumbs'},{'name': 'ConsumerDetailComponent', 'selector': 'lib-consumer-detail'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'ExampleComponent', 'selector': ''},{'name': 'FrameComponent', 'selector': 'app-frame'},{'name': 'IonIconComponent', 'selector': 'ion-icon'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MapComponent', 'selector': 'map'},{'name': 'MapSelectViewComponent', 'selector': 'lib-map-select-view'},{'name': 'ResultDataViewComponent', 'selector': 'lib-result-data-view'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'WaterRightDetailComponent', 'selector': 'lib-water-right-detail'}];
     var DIRECTIVES = [{'name': 'BulmaIsToggleableDirective', 'selector': '.is-toggleable'},{'name': 'LangSelectorDirective', 'selector': '[selectLang]'}];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
 </script>
 <script src="../js/tree.js"></script>
+
 
 
 

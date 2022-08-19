@@ -29,7 +29,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content directive">
+               <div class="content interceptor">
                    <div class="content-data">
 
 
@@ -38,9 +38,11 @@
 
 
 
+
+
 <ol class="breadcrumb">
-  <li>Directives</li>
-  <li >LangSelectorDirective</li>
+  <li>Interceptors</li>
+  <li >ErrorInterceptor</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -58,34 +60,11 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>wisdom_modules/core/src/app/i18n/lang-selector.directive.ts</code>
+            <code>wisdom_modules/core/src/app/frame/error/error.interceptor.ts</code>
         </p>
 
 
-            <p class="comment">
-                <h3>Description</h3>
-            </p>
-            <p class="comment">
-                <p>Directive to set the currently displayed language.</p>
 
-            </p>
-
-
-
-
-        <section>
-            <h3>Metadata</h3>
-            <table class="table table-sm table-hover metadata">
-                <tbody>
-
-                    <tr>
-                        <td class="col-md-3">Selector</td>
-                        <td class="col-md-9"><code>[selectLang]</code></td>
-                    </tr>
-
-                </tbody>
-            </table>
-        </section>
 
             <section>
     <h3 id="index">Index</h3>
@@ -101,22 +80,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#clickLangSelect" >clickLangSelect</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Inputs</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#selectLang" >selectLang</a>
+                                <a href="#intercept" >intercept</a>
                             </li>
                         </ul>
                     </td>
@@ -124,20 +88,7 @@
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>HostListeners</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#click" >click</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
+
 
         </tbody>
     </table>
@@ -149,19 +100,17 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(translateService: TranslateService)</code>
+<code>constructor(service: <a href="../injectables/ErrorService.html" target="_self">ErrorService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">wisdom_modules/core/src/app/i18n/lang-selector.directive.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">wisdom_modules/core/src/app/frame/error/error.interceptor.ts:14</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Constructor.</p>
-</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -170,25 +119,20 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
-                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>translateService</td>
+                                                        <td>service</td>
                                                   
                                                         <td>
-                                                                    <code>TranslateService</code>
+                                                                        <code><a href="../injectables/ErrorService.html" target="_self" >ErrorService</a></code>
                                                         </td>
                                                   
                                                     <td>
                                                             No
                                                     </td>
                                                     
-                                                        <td>
-                                                                <p>Service to update the current language</p>
-
-                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -200,73 +144,6 @@
 </section>
 
             <section>
-    <h3 id="inputs">Inputs</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="selectLang"></a>
-                        <b>selectLang</b>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>    <code>string | undefined</code>
-
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">wisdom_modules/core/src/app/i18n/lang-selector.directive.ts:17</a></div>
-                            </td>
-                        </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>The language key that the translation service should use.</p>
-</div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-</section>
-
-
-            <section>
-    <h3>HostListeners</h3>    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="click"></a>
-                    <span class="name">
-                        <b>
-                            click
-                        </b>
-                        <a href="#click"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="24"
-                            class="link-to-prism">wisdom_modules/core/src/app/i18n/lang-selector.directive.ts:24</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Upon clicking on the element with this directive the lang of the
-translation service updates with the given language key.</p>
-</div>
-
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>
-            <section>
     
     <h3 id="methods">
         Methods
@@ -275,44 +152,78 @@ translation service updates with the given language key.</p>
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="clickLangSelect"></a>
+                    <a name="intercept"></a>
                     <span class="name">
-                        <span ><b>clickLangSelect</b></span>
-                        <a href="#clickLangSelect"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>intercept</b></span>
+                        <a href="#intercept"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>clickLangSelect()</code>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <b>Decorators : </b>
-                    <br />
-                    <code>@HostListener(&#x27;click&#x27;)<br /></code>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="24"
-                            class="link-to-prism">wisdom_modules/core/src/app/i18n/lang-selector.directive.ts:24</a></div>
+<code>intercept(request: HttpRequest<>, next: <a href="https://angular.io/api/common/http/HttpHandler" target="_blank">HttpHandler</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Upon clicking on the element with this directive the lang of the
-translation service updates with the given language key.</p>
-</div>
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">wisdom_modules/core/src/app/frame/error/error.interceptor.ts:18</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>request</td>
+                                    <td>
+                                            <code>HttpRequest&lt;&gt;</code>
+                                    </td>
 
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>next</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/common/http/HttpHandler" target="_blank" >HttpHandler</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;HttpEvent&lt;&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -320,47 +231,51 @@ translation service updates with the given language key.</p>
     </table>
 </section>
 
-
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Directive, Input, HostListener} from &quot;@angular/core&quot;;
-import {TranslateService} from &quot;@ngx-translate/core&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  HttpEvent,
+  HttpHandler,
+  HttpInterceptor,
+  HttpRequest
+} from &quot;@angular/common/http&quot;;
+import {Injectable} from &quot;@angular/core&quot;;
+import {USE_ERROR_CURTAIN} from &quot;common&quot;;
+import {catchError, throwError, Observable} from &quot;rxjs&quot;;
 
-/** Directive to set the currently displayed language. */
-@Directive({
-  selector: &quot;[selectLang]&quot;
-})
-export class LangSelectorDirective {
+import {ErrorService} from &quot;./error.service&quot;;
 
-  /**
-   * Constructor.
-   * @param translateService Service to update the current language
-   */
-  constructor(private translateService: TranslateService) {}
+@Injectable()
+export class ErrorInterceptor implements HttpInterceptor {
 
-  /** The language key that the translation service should use. */
-  @Input(&quot;selectLang&quot;) lang: string | undefined;
+  constructor(private service: ErrorService) {}
 
-  /**
-   * Upon clicking on the element with this directive the lang of the
-   * translation service updates with the given language key.
-   */
-  @HostListener(&quot;click&quot;)
-  clickLangSelect() {
-    if (!this.lang) return;
-    this.translateService.use(this.lang);
-    globalThis.localStorage.setItem(&quot;lang&quot;, this.lang);
+  intercept(request: HttpRequest&lt;unknown&gt;, next: HttpHandler): Observable&lt;HttpEvent&lt;unknown&gt;&gt; {
+    let context &#x3D; request.context.get(USE_ERROR_CURTAIN);
+    if (!context) return next.handle(request);
+
+    return next.handle(request).pipe(
+      catchError(requestError &#x3D;&gt; {
+        if (!requestError.ok) {
+          console.log(requestError);
+          this.service.throwError({
+            httpCode: requestError.error.httpCode ?? requestError.status,
+            httpError: requestError.error.httpError ?? requestError.statusText,
+            error: requestError.error.error,
+            errorName: requestError.error.errorName ?? requestError.name,
+            errorDescription: requestError.error.errorDescription ?? requestError.message
+          });
+        }
+        return throwError(() &#x3D;&gt; new Error(requestError));
+      })
+    )
   }
-
 }
 </code></pre>
     </div>
-
 </div>
-
-
 
 
 
@@ -398,8 +313,8 @@ export class LangSelectorDirective {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'directive';
-            var COMPODOC_CURRENT_PAGE_URL = 'LangSelectorDirective.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interceptor';
+            var COMPODOC_CURRENT_PAGE_URL = 'ErrorInterceptor.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

@@ -80,10 +80,7 @@ import {LoginComponent} from &quot;./auth/login/login.component&quot;;
 import {AuthGuard} from &quot;./auth/auth.guard&quot;;
 import {FrameComponent} from &quot;./frame/frame.component&quot;;
 import {ModuleProvider} from &quot;./module-provider&quot;;
-import {ErrorComponent} from &quot;./error/error.component&quot;;
 import {LoaderGuard} from &quot;./frame/loader/loader.guard&quot;;
-
-ModuleProvider.routes();
 
 const routes: Routes &#x3D; [
   {
@@ -93,8 +90,7 @@ const routes: Routes &#x3D; [
     children: &quot;ModuleProvider.routes()&quot;
   },
   {path: &quot;login&quot;, component: LoginComponent, canActivate: [LoaderGuard]},
-  {path: &quot;error/:code&quot;, component: ErrorComponent},
-  {path: &quot;**&quot;, redirectTo: &quot;error/404?message&#x3D;Not%20Found&quot;}
+  {path: &quot;**&quot;, redirectTo: &quot;&quot;}
 ];
 
 @NgModule({
@@ -105,6 +101,7 @@ export class AppRoutingModule { }
 </code></pre>
     </div>
 </div>
+
 
 
 

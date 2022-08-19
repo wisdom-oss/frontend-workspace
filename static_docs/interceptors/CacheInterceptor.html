@@ -64,6 +64,16 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Interceptor to handle cache-control behaviour via
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag">ETag</a> and
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Last-Modified">Last-Modified</a>
+headers.</p>
+
+            </p>
 
 
             <section>
@@ -139,14 +149,18 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">wisdom_modules/core/src/app/cache.interceptor.ts:17</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">wisdom_modules/core/src/app/cache.interceptor.ts:35</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Intercept requests to insert caching headers, if the context
+<a href="../miscellaneous/variables.html#USE_CACHE">USE_CACHE</a> is set.
+Will append <code>If-None-Match</code> and <code>Last-Modified-Since</code> if possible.</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -157,6 +171,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -171,6 +186,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Any http request</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>next</td>
@@ -183,6 +202,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>The next interceptor or another request handler</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -231,10 +254,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">wisdom_modules/core/src/app/cache.interceptor.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">wisdom_modules/core/src/app/cache.interceptor.ts:23</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Map holding all ETags received from the server.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -263,10 +292,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">wisdom_modules/core/src/app/cache.interceptor.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">wisdom_modules/core/src/app/cache.interceptor.ts:25</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Map holding all timestamps sent by the server.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -276,38 +311,63 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import {
-  HttpRequest,
-  HttpHandler,
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
   HttpEvent,
-  HttpInterceptor, HttpHeaders, HttpResponse
-} from &#x27;@angular/common/http&#x27;;
-import {Observable, tap} from &#x27;rxjs&#x27;;
+  HttpHandler,
+  HttpHeaders,
+  HttpInterceptor,
+  HttpRequest,
+  HttpResponse
+} from &quot;@angular/common/http&quot;;
+import {Injectable} from &quot;@angular/core&quot;;
 import {USE_CACHE} from &quot;common&quot;;
+import {tap, Observable} from &quot;rxjs&quot;;
 
+/**
+ * Interceptor to handle cache-control behaviour via
+ * [ETag](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag) and
+ * [Last-Modified](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Last-Modified)
+ * headers.
+ */
 @Injectable()
 export class CacheInterceptor implements HttpInterceptor {
 
+  /** Map holding all ETags received from the server. */
   private eTagMap: Map&lt;string, string&gt; &#x3D; new Map();
+  /** Map holding all timestamps sent by the server. */
   private lastModifiedMap: Map&lt;string, string&gt; &#x3D; new Map();
 
-  intercept(request: HttpRequest&lt;unknown&gt;, next: HttpHandler): Observable&lt;HttpEvent&lt;unknown&gt;&gt; {
+  /**
+   * Intercept requests to insert caching headers, if the context
+   * {@link USE_CACHE} is set.
+   * Will append &#x60;If-None-Match&#x60; and &#x60;Last-Modified-Since&#x60; if possible.
+   *
+   * @param request Any http request
+   * @param next The next interceptor or another request handler
+   */
+  intercept(
+    request: HttpRequest&lt;unknown&gt;,
+    next: HttpHandler
+  ): Observable&lt;HttpEvent&lt;unknown&gt;&gt; {
+    // do not insert any cache headers if USE_CACHE is false
     if (!request.context.get(USE_CACHE)) return next.handle(request);
+
     let key &#x3D; request.urlWithParams;
-    let cacheHeaders &#x3D; new HttpHeaders();
-    if (this.eTagMap.has(key)) {
-      request.headers.set(&quot;If-None-Match&quot;, this.eTagMap.get(key)!);
-    }
-    if (this.lastModifiedMap.has(key)) {
-      request.headers.set(&quot;If-Modified_Since&quot;, this.lastModifiedMap.get(key)!);
-    }
+
+    let eTag &#x3D; this.eTagMap.get(key);
+    if (eTag) request.headers.set(&quot;If-None-Match&quot;, eTag);
+
+    let lastModified &#x3D; this.lastModifiedMap.get(key);
+    if (lastModified) request.headers.set(&quot;If-Modified-Since&quot;, lastModified);
+
     return next.handle(request.clone({
       headers: request.headers
     })).pipe(tap(event &#x3D;&gt; {
       if (!(event instanceof HttpResponse)) return;
+
       let eTag &#x3D; event.headers.get(&quot;ETag&quot;);
       if (eTag) this.eTagMap.set(key, eTag);
+
       let lastModified &#x3D; event.headers.get(&quot;Last-Modified&quot;);
       if (lastModified) this.lastModifiedMap.set(key, lastModified);
     }));
@@ -316,6 +376,7 @@ export class CacheInterceptor implements HttpInterceptor {
 </code></pre>
     </div>
 </div>
+
 
 
 

@@ -29,7 +29,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content class">
+               <div class="content injectable">
                    <div class="content-data">
 
 
@@ -39,13 +39,9 @@
 
 
 
-
-
-
-
 <ol class="breadcrumb">
-  <li>Classes</li>
-  <li >ModuleProvider</li>
+  <li>Injectables</li>
+  <li >BreadcrumbsService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -63,18 +59,9 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>wisdom_modules/core/src/app/module-provider.ts</code>
+            <code>wisdom_modules/common/src/lib/breadcrumbs/breadcrumbs.service.ts</code>
         </p>
 
-
-            <p class="comment">
-                <h3>Description</h3>
-            </p>
-            <p class="comment">
-                <p>Class to provide data from the reexported wisdom modules.</p>
-<p>Reads its data from the workspace&#39;s &quot;module.ts&quot;.</p>
-
-            </p>
 
 
 
@@ -83,6 +70,24 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#fragments" >fragments</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#subject" >subject</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -93,12 +98,10 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Static</span>
-                                <a href="#langs" >langs</a>
+                                <a href="#observe" >observe</a>
                             </li>
                             <li>
-                                    <span class="modifier">Static</span>
-                                <a href="#routes" >routes</a>
+                                <a href="#set" >set</a>
                             </li>
                         </ul>
                     </td>
@@ -112,32 +115,6 @@
     </table>
 </section>
 
-            <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                                <span class="modifier">Private</span>
-                        <code>constructor()</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">wisdom_modules/core/src/app/module-provider.ts:13</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>This class is a pure utility class and doesn&#39;t need constructing.</p>
-</div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-</section>
-
 
             <section>
     
@@ -148,34 +125,67 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="langs"></a>
+                    <a name="observe"></a>
                     <span class="name">
-                        <span class="modifier">Static</span>
-                        <span ><b>langs</b></span>
-                        <a href="#langs"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>observe</b></span>
+                        <a href="#observe"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>langs(lang: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>observe()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="40"
-                            class="link-to-prism">wisdom_modules/core/src/app/module-provider.ts:40</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="26"
+                            class="link-to-prism">wisdom_modules/common/src/lib/breadcrumbs/breadcrumbs.service.ts:26</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Get the translations from the wisdom modules given a language key.</p>
-</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/Breadcrumb.html" target="_self" >Observable&lt;Breadcrumb[]&gt;</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="set"></a>
+                    <span class="name">
+                        <span ><b>set</b></span>
+                        <a href="#set"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>set(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, value: <a href="../interfaces/Breadcrumb.html" target="_self">Breadcrumb</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">wisdom_modules/common/src/lib/breadcrumbs/breadcrumbs.service.ts:20</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -186,14 +196,13 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
-                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>lang</td>
+                                    <td>index</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
                                     </td>
 
                                     <td>
@@ -201,10 +210,18 @@
                                     </td>
 
 
+                                </tr>
+                                <tr>
+                                    <td>value</td>
                                     <td>
-                                        <p>The language key for the translations</p>
-
+                                                <code><a href="../interfaces/Breadcrumb.html" target="_self" >Breadcrumb</a></code>
                                     </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
                                 </tr>
                             </tbody>
                         </table>
@@ -212,7 +229,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>{}</code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                     </div>
                     <div class="io-description">
@@ -222,111 +239,118 @@
             </tr>
         </tbody>
     </table>
+</section>
+            <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="routes"></a>
+                    <a name="fragments"></a>
                     <span class="name">
-                        <span class="modifier">Static</span>
-                        <span ><b>routes</b></span>
-                        <a href="#routes"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>fragments</b></span>
+                        <a href="#fragments"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Breadcrumb.html" target="_self" >Breadcrumb[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">wisdom_modules/common/src/lib/breadcrumbs/breadcrumbs.service.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
             <tr>
                 <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>routes()</code>
+                    <a name="subject"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>subject</b></span>
+                        <a href="#subject"><span class="icon ion-ios-link"></span></a>
+                    </span>
                 </td>
             </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Breadcrumb.html" target="_self" >BehaviorSubject&lt;Breadcrumb[]&gt;</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new BehaviorSubject&lt;Breadcrumb[]&gt;([])</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">wisdom_modules/common/src/lib/breadcrumbs/breadcrumbs.service.ts:17</a></div>
+                        </td>
+                    </tr>
 
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="24"
-                            class="link-to-prism">wisdom_modules/core/src/app/module-provider.ts:24</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Get the routes the wisdom modules want to be available at.</p>
-</div>
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://angular.io/api/router/Routes" target="_blank" >Routes</a></code>
-
-                    </div>
-                </td>
-            </tr>
         </tbody>
     </table>
 </section>
-
-
-
-
 
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Routes} from &quot;@angular/router&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import {ActivatedRouteSnapshot, Params, UrlTree} from &quot;@angular/router&quot;;
+import {BehaviorSubject, Observable, Subject} from &quot;rxjs&quot;;
 
-import {AuthGuard} from &quot;./auth/auth.guard&quot;;
-import {LoaderGuard} from &quot;./frame/loader/loader.guard&quot;;
+export interface Breadcrumb {
+  icon?: string,
+  text: string | string[],
+  link: string,
+  query?: Params
+}
 
-import * as modules from &quot;../../../../modules&quot;;
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
+export class BreadcrumbsService {
+  fragments: Breadcrumb[] &#x3D; [];
+  private subject: BehaviorSubject&lt;Breadcrumb[]&gt;
+    &#x3D; new BehaviorSubject&lt;Breadcrumb[]&gt;([]);
 
-/**
- * Class to provide data from the reexported wisdom modules.
- *
- * Reads its data from the workspace&#x27;s &quot;module.ts&quot;.
- */
-export class ModuleProvider {
-
-  /**
-   * This class is a pure utility class and doesn&#x27;t need constructing.
-   * @private
-   */
-  private constructor() {}
-
-  /**
-   * Get the routes the wisdom modules want to be available at.
-   */
-  static routes(): Routes {
-    let routes: Routes &#x3D; [];
-    for (let module of Object.values(modules)) {
-      let insertRoute &#x3D; module.wisdomInterface.route;
-      if (!insertRoute.canActivate) insertRoute.canActivate &#x3D; [];
-      // TODO: add ScopeGuard here
-      insertRoute.canActivate.push(AuthGuard, LoaderGuard);
-      routes.push(insertRoute);
-    }
-    return routes;
+  set(index: number, value: Breadcrumb) {
+    this.fragments.length &#x3D; index + 1;
+    this.fragments[index] &#x3D; value;
+    this.subject.next(this.fragments);
   }
 
-  /**
-   * Get the translations from the wisdom modules given a language key.
-   * @param lang The language key for the translations
-   */
-  static langs(lang: string) {
-    let collectedLang &#x3D; {};
-    for (let module of Object.values(modules)) {
-      let moduleLang &#x3D; module.wisdomInterface.translations[lang];
-      if (moduleLang) {
-        Object.assign(collectedLang, moduleLang);
-      }
-    }
-    return collectedLang;
+  observe(): Observable&lt;Breadcrumb[]&gt; {
+    return this.subject.asObservable();
   }
-
 }
 </code></pre>
     </div>
+
 </div>
+
+
+
+
 
 
 
@@ -361,8 +385,8 @@ export class ModuleProvider {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
-            var COMPODOC_CURRENT_PAGE_URL = 'ModuleProvider.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'BreadcrumbsService.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

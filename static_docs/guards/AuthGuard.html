@@ -298,7 +298,7 @@ import {
   RouterStateSnapshot,
   UrlTree
 } from &quot;@angular/router&quot;;
-import {Observable} from &quot;rxjs&quot;;
+import {throwError, Observable} from &quot;rxjs&quot;;
 
 import {AuthStorageService} from &quot;./auth-storage.service&quot;;
 import {AuthService} from &quot;./auth.service&quot;;
@@ -343,6 +343,9 @@ export class AuthGuard implements CanActivate {
     // ignore login path per se
     if (route.url[0]?.path &#x3D;&#x3D;&#x3D; &quot;login&quot;) return true;
     let loginUrlTree &#x3D; this.router.parseUrl(&quot;/login&quot;);
+    if (!state.url.includes(&quot;login&quot;)) {
+      loginUrlTree.queryParams &#x3D; {returnUrl: state.url};
+    }
 
     // if no token is available the use can&#x27;t be logged in
     let token &#x3D; this.authStorage.accessToken;
@@ -358,17 +361,6 @@ export class AuthGuard implements CanActivate {
         },
 
         error: errResponse &#x3D;&gt; {
-          // token is invalid
-          if (errResponse.status !&#x3D;&#x3D; 401) {
-            console.log(errResponse);
-            let errUrl &#x3D; this.router.parseUrl(&#x60;error/${errResponse.status}&#x60;);
-            errUrl.queryParams &#x3D; {message: errResponse.statusText};
-            // TODO: handle non 401 errors better than this component
-            subscriber.next(errUrl);
-            subscriber.complete();
-            return;
-          }
-
           /**
            * Small function to avoid code depletes.
            * Clears the auth storage and sends the user to the login page.
@@ -397,6 +389,7 @@ export class AuthGuard implements CanActivate {
                 // token is no valid, send the user to the login page
                 if (refreshErrResponse.status &#x3D;&#x3D;&#x3D; 400) return returnToLogin();
                 // TODO: handle non-400 status codes gracefully
+                else return returnToLogin();
               }
             });
             return;
@@ -412,6 +405,7 @@ export class AuthGuard implements CanActivate {
 </code></pre>
         </div>
 </div>
+
 
 
 
