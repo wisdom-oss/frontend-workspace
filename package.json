@@ -1,0 +1,53 @@
+{
+  "name": "workspace",
+  "description": "Workspace for the angular frontend.",
+  "version": "0.1.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "prettify": "meta exec \"primp src -r\"",
+    "docs": "compodoc -p tsconfig.json -c compodoc.json && meta exec \"compodoc -p ./tsconfig.lib.json -c ../../compodoc.json\""
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~14.1.2",
+    "@angular/common": "~14.1.2",
+    "@angular/compiler": "~14.1.2",
+    "@angular/core": "~14.1.2",
+    "@angular/forms": "~14.1.2",
+    "@angular/platform-browser": "~14.1.2",
+    "@angular/platform-browser-dynamic": "~14.1.2",
+    "@angular/router": "~14.1.2",
+    "@ngx-translate/core": "^14.0.0",
+    "bulma": "^0.9.4",
+    "bulma-prefers-dark": "^0.1.0-beta.1",
+    "chart.js": "^3.8.0",
+    "chartjs-plugin-annotation": "^1.4.0",
+    "dayjs": "^1.11.3",
+    "idb": "^7.0.2",
+    "leaflet": "^1.8.0",
+    "leaflet.markercluster": "^1.5.3",
+    "ng2-charts": "^3.0.11",
+    "path-browserify": "^1.0.1",
+    "rxjs": "~7.5.5",
+    "tslib": "^2.4.0",
+    "zone.js": "~0.11.6"
+  },
+  "devDependencies": {
+    "@angular-builders/custom-webpack": "^14.0.0",
+    "@angular-devkit/build-angular": "~14.1.2",
+    "@angular/cli": "~14.1.2",
+    "@angular/compiler-cli": "~14.1.2",
+    "@compodoc/compodoc": "^1.1.19",
+    "@types/leaflet": "^1.7.11",
+    "@types/leaflet.markercluster": "^1.5.0",
+    "@types/node": "^18.0.0",
+    "@types/path-browserify": "^1.0.0",
+    "ng-packagr": "^14.0.2",
+    "pretty-ts-imports": "^1.1.0",
+    "pug-cli": "^1.0.0-alpha6",
+    "typescript": "<4.7.0"
+  }
+}
