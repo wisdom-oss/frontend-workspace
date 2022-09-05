@@ -1,8 +1,0 @@
-{
-  "projects": {
-    "./wisdom_modules/core": "https://github.com/wisdom-oss/frontend-core.git",
-    "./wisdom_modules/common": "https://github.com/wisdom-oss/frontend-common.git",
-    "./wisdom_modules/example": "https://github.com/wisdom-oss/frontend-example.git",
-    "./wisdom_modules/water-usage-forecasts": "https://github.com/wisdom-oss/frontend-water-usage-forecasts.git"
-  }
-}
