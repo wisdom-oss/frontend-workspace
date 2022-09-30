@@ -23,8 +23,8 @@ specifiers:
   bulma-prefers-dark: ^0.1.0-beta.1
   chart.js: ^3.8.0
   chartjs-plugin-annotation: ^1.4.0
-  dayjs: ^1.11.3
-  idb: ^7.0.2
+  dayjs: ^1.11.5
+  idb: ^7.1.0
   leaflet: ^1.8.0
   leaflet.markercluster: ^1.5.3
   ng-packagr: ^14.0.2
@@ -51,8 +51,8 @@ dependencies:
   bulma-prefers-dark: 0.1.0-beta.1
   chart.js: 3.8.0
   chartjs-plugin-annotation: 1.4.0_chart.js@3.8.0
-  dayjs: 1.11.3
-  idb: 7.0.2
+  dayjs: 1.11.5
+  idb: 7.1.0
   leaflet: 1.8.0
   leaflet.markercluster: 1.5.3_leaflet@1.8.0
   ng2-charts: 3.0.11_72y2x63oel7ytfijo4xo2vhypa
@@ -4889,8 +4889,8 @@ packages:
     resolution: {integrity: sha512-5TXltWJGc+RdnabUGzhRae1TRq6m4gr+3K2wQX0is5/F2yS6MJXJvLyI3ErAnsAXuJoGqvfVD5icRgim07DrxQ==}
     dev: true
 
-  /dayjs/1.11.3:
-    resolution: {integrity: sha512-xxwlswWOlGhzgQ4TKzASQkUhqERI3egRNqgV4ScR8wlANA/A9tZ7miXa44vTTKEq5l7vWoL5G57bG3zA+Kow0A==}
+  /dayjs/1.11.5:
+    resolution: {integrity: sha512-CAdX5Q3YW3Gclyo5Vpqkgpj8fSdLQcRuzfX6mC6Phy0nfJ0eGYOeS7m4mt2plDWLAtA4TqTakvbboHvUxfe4iA==}
     dev: false
 
   /debug/2.6.9:
@@ -6422,8 +6422,8 @@ packages:
       postcss: 8.4.16
     dev: true
 
-  /idb/7.0.2:
-    resolution: {integrity: sha512-jjKrT1EnyZewQ/gCBb/eyiYrhGzws2FeY92Yx8qT9S9GeQAmo4JFVIiWRIfKW/6Ob9A+UDAOW9j9jn58fy2HIg==}
+  /idb/7.1.0:
+    resolution: {integrity: sha512-Wsk07aAxDsntgYJY4h0knZJuTxM73eQ4reRAO+Z1liOh8eMCJ/MoDS8fCui1vGT9mnjtl1sOu3I2i/W1swPYZg==}
     dev: false
 
   /ieee754/1.2.1:
