@@ -17,7 +17,7 @@ specifiers:
   '@ngx-translate/core': ^14.0.0
   '@types/leaflet': ^1.7.11
   '@types/leaflet.markercluster': ^1.5.0
-  '@types/node': ^18.0.0
+  '@types/node': ^18.7.23
   '@types/path-browserify': ^1.0.0
   bulma: ^0.9.4
   bulma-prefers-dark: ^0.1.0-beta.1
@@ -62,16 +62,16 @@ dependencies:
   zone.js: 0.11.8
 
 devDependencies:
-  '@angular-builders/custom-webpack': 14.0.1_hxmrtjwe7m6beoo23rdxapb4ga
+  '@angular-builders/custom-webpack': 14.0.1_o57wrvhegw3jzvqdqeqmkoy4y4
   '@angular-devkit/build-angular': 14.2.4_thq2ye4ag4liwp6f7c3z7cbdhu
   '@angular/cli': 14.2.4
   '@angular/compiler-cli': 14.2.4_u3va567zrosrv7apu6arejbbue
   '@compodoc/compodoc': 1.1.19
   '@types/leaflet': 1.7.11
   '@types/leaflet.markercluster': 1.5.0
-  '@types/node': 18.0.0
+  '@types/node': 18.7.23
   '@types/path-browserify': 1.0.0
-  ng-packagr: 14.0.2_jgfvsithyg3by7ngn2v636u46e
+  ng-packagr: 14.0.2_qxzs2wxohxxvsxgqjfxy6ntzmi
   pretty-ts-imports: 1.1.0
   pug-cli: 1.0.0-alpha6
   typescript: 4.6.4
@@ -94,7 +94,7 @@ packages:
       '@jridgewell/trace-mapping': 0.3.13
     dev: true
 
-  /@angular-builders/custom-webpack/14.0.1_hxmrtjwe7m6beoo23rdxapb4ga:
+  /@angular-builders/custom-webpack/14.0.1_o57wrvhegw3jzvqdqeqmkoy4y4:
     resolution: {integrity: sha512-QDsSFo80I8oLBzvr7qIxcdEfvDMEeJmwYRrJ/hG8O+XVdYsUkkj4nEvBI5fKKBOfcRgx1R/XrEDtJEeolEQeig==}
     engines: {node: ^14.15.0 || >=16.10.0}
     peerDependencies:
@@ -105,7 +105,7 @@ packages:
       '@angular-devkit/core': 14.2.4
       '@angular/compiler-cli': 14.2.4_u3va567zrosrv7apu6arejbbue
       lodash: 4.17.21
-      ts-node: 10.5.0_rjuyynf27ytyykmpwukujvhobe
+      ts-node: 10.5.0_ebjotrjqrtqtwtuep7bgvnmx3y
       tsconfig-paths: 3.12.0
       webpack-merge: 5.8.0
     transitivePeerDependencies:
@@ -205,7 +205,7 @@ packages:
       loader-utils: 3.2.0
       mini-css-extract-plugin: 2.6.1_webpack@5.74.0
       minimatch: 5.1.0
-      ng-packagr: 14.0.2_jgfvsithyg3by7ngn2v636u46e
+      ng-packagr: 14.0.2_qxzs2wxohxxvsxgqjfxy6ntzmi
       open: 8.4.0
       ora: 5.4.1
       parse5-html-rewriting-stream: 6.0.1
@@ -3309,26 +3309,26 @@ packages:
     resolution: {integrity: sha512-ALYone6pm6QmwZoAgeyNksccT9Q4AWZQ6PvfwR37GT6r6FWUPguq6sUmNGSMV2Wr761oQoBxwGGa6DR5o1DC9g==}
     dependencies:
       '@types/connect': 3.4.35
-      '@types/node': 18.0.0
+      '@types/node': 18.7.23
     dev: true
 
   /@types/bonjour/3.5.10:
     resolution: {integrity: sha512-p7ienRMiS41Nu2/igbJxxLDWrSZ0WxM8UQgCeO9KhoVF7cOVFkrKsiDr1EsJIla8vV3oEEjGcz11jc5yimhzZw==}
     dependencies:
-      '@types/node': 18.0.0
+      '@types/node': 18.7.23
     dev: true
 
   /@types/connect-history-api-fallback/1.3.5:
     resolution: {integrity: sha512-h8QJa8xSb1WD4fpKBDcATDNGXghFj6/3GRWG6dhmRcu0RX1Ubasur2Uvx5aeEwlf0MwblEC2bMzzMQntxnw/Cw==}
     dependencies:
       '@types/express-serve-static-core': 4.17.28
-      '@types/node': 18.0.0
+      '@types/node': 18.7.23
     dev: true
 
   /@types/connect/3.4.35:
     resolution: {integrity: sha512-cdeYyv4KWoEgpBISTxWvqYsVy444DOqehiF3fM3ne10AmJ62RSyNkUnxMJXHQWRQQX2eR94m5y1IZyDwBjV9FQ==}
     dependencies:
-      '@types/node': 18.0.0
+      '@types/node': 18.7.23
     dev: true
 
   /@types/eslint-scope/3.7.3:
@@ -3356,7 +3356,7 @@ packages:
   /@types/express-serve-static-core/4.17.28:
     resolution: {integrity: sha512-P1BJAEAW3E2DJUlkgq4tOL3RyMunoWXqbSCygWo5ZIWTjUgN1YnaXWW4VWl/oc8vs/XoYibEGBKP0uZyF4AHig==}
     dependencies:
-      '@types/node': 18.0.0
+      '@types/node': 18.7.23
       '@types/qs': 6.9.7
       '@types/range-parser': 1.2.4
     dev: true
@@ -3377,7 +3377,7 @@ packages:
   /@types/http-proxy/1.17.8:
     resolution: {integrity: sha512-5kPLG5BKpWYkw/LVOGWpiq3nEVqxiN32rTgI53Sk12/xHFQ2rG3ehI9IO+O3W2QoKeyB92dJkoka8SUm6BX1pA==}
     dependencies:
-      '@types/node': 18.0.0
+      '@types/node': 18.7.23
     dev: true
 
   /@types/json-schema/7.0.9:
@@ -3404,8 +3404,8 @@ packages:
     resolution: {integrity: sha512-YATxVxgRqNH6nHEIsvg6k2Boc1JHI9ZbH5iWFFv/MTkchz3b1ieGDa5T0a9RznNdI0KhVbdbWSN+KWWrQZRxTw==}
     dev: true
 
-  /@types/node/18.0.0:
-    resolution: {integrity: sha512-cHlGmko4gWLVI27cGJntjs/Sj8th9aYwplmZFwmmgYQQvL5NUsgVJG7OddLvNfLqYS31KFN0s3qlaD9qCaxACA==}
+  /@types/node/18.7.23:
+    resolution: {integrity: sha512-DWNcCHolDq0ZKGizjx2DZjR/PqsYwAcYUJmfMWqtVU2MBMG5Mo+xFZrhGId5r/O5HOuMPyQEcM6KUBp5lBZZBg==}
     dev: true
 
   /@types/parse-json/4.0.0:
@@ -3427,7 +3427,7 @@ packages:
   /@types/resolve/1.17.1:
     resolution: {integrity: sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw==}
     dependencies:
-      '@types/node': 18.0.0
+      '@types/node': 18.7.23
     dev: true
 
   /@types/retry/0.12.1:
@@ -3444,19 +3444,19 @@ packages:
     resolution: {integrity: sha512-nCkHGI4w7ZgAdNkrEu0bv+4xNV/XDqW+DydknebMOQwkpDGx8G+HTlj7R7ABI8i8nKxVw0wtKPi1D+lPOkh4YQ==}
     dependencies:
       '@types/mime': 1.3.2
-      '@types/node': 18.0.0
+      '@types/node': 18.7.23
     dev: true
 
   /@types/sockjs/0.3.33:
     resolution: {integrity: sha512-f0KEEe05NvUnat+boPTZ0dgaLZ4SfSouXUgv5noUiefG2ajgKjmETo9ZJyuqsl7dfl2aHlLJUiki6B4ZYldiiw==}
     dependencies:
-      '@types/node': 18.0.0
+      '@types/node': 18.7.23
     dev: true
 
   /@types/ws/8.5.3:
     resolution: {integrity: sha512-6YOoWjruKj1uLf3INHH7D3qTXwFfEsg1kf3c0uDdSBJwfa/llkwIjrAGV7j7mVgGNbzTQ3HiHKKDXl6bJPD97w==}
     dependencies:
-      '@types/node': 18.0.0
+      '@types/node': 18.7.23
     dev: true
 
   /@webassemblyjs/ast/1.11.1:
@@ -6705,7 +6705,7 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 18.0.0
+      '@types/node': 18.7.23
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: true
@@ -7334,7 +7334,7 @@ packages:
     resolution: {integrity: sha1-yobR/ogoFpsBICCOPchCS524NCw=}
     dev: true
 
-  /ng-packagr/14.0.2_jgfvsithyg3by7ngn2v636u46e:
+  /ng-packagr/14.0.2_qxzs2wxohxxvsxgqjfxy6ntzmi:
     resolution: {integrity: sha512-Yoiy/cvpYvPTVdAZFPsU2Xg1YdY9w7wVTamKNtz78l1sXA6inQuTGlsvNy+yOJTH7TLZmEjU2WHkmJHgxU10Pg==}
     engines: {node: ^14.15.0 || >=16.10.0}
     hasBin: true
@@ -7364,7 +7364,7 @@ packages:
       postcss-preset-env: 7.7.2_postcss@8.4.14
       postcss-url: 10.1.3_postcss@8.4.14
       rollup: 2.75.7
-      rollup-plugin-sourcemaps: 0.6.3_a2mxaddtvvfekqixk6zbkhwet4
+      rollup-plugin-sourcemaps: 0.6.3_g4t4ms3w3lieafhkzfssrl7umu
       rxjs: 7.5.7
       sass: 1.49.9
       stylus: 0.58.1
@@ -9101,7 +9101,7 @@ packages:
       glob: 7.2.0
     dev: true
 
-  /rollup-plugin-sourcemaps/0.6.3_a2mxaddtvvfekqixk6zbkhwet4:
+  /rollup-plugin-sourcemaps/0.6.3_g4t4ms3w3lieafhkzfssrl7umu:
     resolution: {integrity: sha512-paFu+nT1xvuO1tPFYXGe+XnQvg4Hjqv/eIhG8i5EspfYYPBKL57X7iVbfv55aNVASg3dzWvES9dmWsL2KhfByw==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
@@ -9112,7 +9112,7 @@ packages:
         optional: true
     dependencies:
       '@rollup/pluginutils': 3.1.0_rollup@2.75.7
-      '@types/node': 18.0.0
+      '@types/node': 18.7.23
       rollup: 2.75.7
       source-map-resolve: 0.6.0
     dev: true
@@ -9862,7 +9862,7 @@ packages:
       code-block-writer: 11.0.0
     dev: true
 
-  /ts-node/10.5.0_rjuyynf27ytyykmpwukujvhobe:
+  /ts-node/10.5.0_ebjotrjqrtqtwtuep7bgvnmx3y:
     resolution: {integrity: sha512-6kEJKwVxAJ35W4akuiysfKwKmjkbYxwQMTBaAxo9KKAx/Yd26mPUyhGz3ji+EsJoAgrLqVsYHNuuYwQe22lbtw==}
     hasBin: true
     peerDependencies:
@@ -9881,7 +9881,7 @@ packages:
       '@tsconfig/node12': 1.0.9
       '@tsconfig/node14': 1.0.1
       '@tsconfig/node16': 1.0.2
-      '@types/node': 18.0.0
+      '@types/node': 18.7.23
       acorn: 8.8.0
       acorn-walk: 8.2.0
       arg: 4.1.3

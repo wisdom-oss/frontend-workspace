@@ -43,7 +43,7 @@
     "@compodoc/compodoc": "^1.1.19",
     "@types/leaflet": "^1.7.11",
     "@types/leaflet.markercluster": "^1.5.0",
-    "@types/node": "^18.0.0",
+    "@types/node": "^18.7.23",
     "@types/path-browserify": "^1.0.0",
     "ng-packagr": "^14.0.2",
     "pretty-ts-imports": "^1.1.0",
