@@ -25,6 +25,7 @@
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "allowedCommonJsDependencies": [
+              "@xbim/viewer",
               "leaflet.markercluster",
               "path-browserify"
             ],
