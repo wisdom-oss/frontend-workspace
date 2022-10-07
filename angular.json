@@ -25,7 +25,7 @@
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "customWebpackConfig": {
-              "path": "./wisdom_modules/core/webpack.config.js"
+              "path": "./webpack.config.js"
             },
             "outputPath": "dist/core",
             "index": "wisdom_modules/core/src/index.html",
