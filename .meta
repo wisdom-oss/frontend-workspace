@@ -3,6 +3,7 @@
     "./wisdom_modules/core": "git@gitlab.uni-oldenburg.de:wisdom-oss/frontend/core.git",
     "./wisdom_modules/common": "git@gitlab.uni-oldenburg.de:wisdom-oss/frontend/common.git",
     "./wisdom_modules/example": "git@gitlab.uni-oldenburg.de:wisdom-oss/frontend/example.git",
+    "./wisdom_modules/pump-models": "git@gitlab.uni-oldenburg.de:wisdom-oss/frontend/pump-models.git",
     "./wisdom_modules/water-usage-forecasts": "git@gitlab.uni-oldenburg.de:wisdom-oss/frontend/water-usage-forecasts.git"
   }
 }
