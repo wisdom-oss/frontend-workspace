@@ -28,7 +28,7 @@ export const sidebar: SideBarEntries = [
     "Proof of Concept", "rocket", [
       ["Example", "sparkles", "example"],
       ["No Example", null, null],
-      ["Pump Models", null, "pump-models"]
+      ["pump-models.label.name", "cube", "pump-models"]
     ]
   ],
   [
