@@ -23,6 +23,7 @@ specifiers:
   '@xbim/viewer': 2.0.1-pre202207200746
   bulma: ^0.9.4
   bulma-prefers-dark: ^0.1.0-beta.1
+  bulma-switch: ^2.0.4
   chart.js: ~3.8.2
   chartjs-plugin-annotation: ^2.0.1
   dayjs: ^1.11.5
@@ -53,6 +54,7 @@ dependencies:
   '@xbim/viewer': 2.0.1-pre202207200746
   bulma: 0.9.4
   bulma-prefers-dark: 0.1.0-beta.1
+  bulma-switch: 2.0.4
   chart.js: 3.8.2
   chartjs-plugin-annotation: 2.0.1_chart.js@3.8.2
   dayjs: 1.11.5
@@ -4277,6 +4279,10 @@ packages:
 
   /bulma-prefers-dark/0.1.0-beta.1:
     resolution: {integrity: sha512-ti4sKxIIrTAvGtsYc9Rk66SUZSH/j63EU1hApQijQVlKFF0qBLGSb8E16HhI83KJaIeYP4aAHQv2tj0ara831A==}
+    dev: false
+
+  /bulma-switch/2.0.4:
+    resolution: {integrity: sha512-kMu4H0Pr0VjvfsnT6viRDCgptUq0Rvy7y7PX6q+IHg1xUynsjszPjhAdal5ysAlCG5HNO+5YXxeiu92qYGQolw==}
     dev: false
 
   /bulma/0.9.4:
