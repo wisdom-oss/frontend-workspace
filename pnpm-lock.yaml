@@ -24,8 +24,8 @@ specifiers:
   bulma: ^0.9.4
   bulma-prefers-dark: ^0.1.0-beta.1
   bulma-switch: ^2.0.4
-  chart.js: ~3.8.2
-  chartjs-plugin-annotation: ^2.0.1
+  chart.js: ~3.9.1
+  chartjs-plugin-annotation: <2.0.0
   dayjs: ^1.11.5
   geojson: ^0.5.0
   idb: ^7.1.0
@@ -55,14 +55,14 @@ dependencies:
   bulma: 0.9.4
   bulma-prefers-dark: 0.1.0-beta.1
   bulma-switch: 2.0.4
-  chart.js: 3.8.2
-  chartjs-plugin-annotation: 2.0.1_chart.js@3.8.2
+  chart.js: 3.9.1
+  chartjs-plugin-annotation: 1.4.0_chart.js@3.9.1
   dayjs: 1.11.5
   geojson: 0.5.0
   idb: 7.1.0
   leaflet: 1.8.0
   leaflet.markercluster: 1.5.3_leaflet@1.8.0
-  ng2-charts: 4.0.1_mqnkttvzuvyw2wsochroshjble
+  ng2-charts: 4.0.1_7jb6lovfnhxnapiycmjeaf6q74
   path-browserify: 1.0.1
   rxjs: 7.5.7
   tslib: 2.4.0
@@ -4427,16 +4427,16 @@ packages:
     resolution: {integrity: sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==}
     dev: true
 
-  /chart.js/3.8.2:
-    resolution: {integrity: sha512-7rqSlHWMUKFyBDOJvmFGW2lxULtcwaPLegDjX/Nu5j6QybY+GCiQkEY+6cqHw62S5tcwXMD8Y+H5OBGoR7d+ZQ==}
+  /chart.js/3.9.1:
+    resolution: {integrity: sha512-Ro2JbLmvg83gXF5F4sniaQ+lTbSv18E+TIf2cOeiH1Iqd2PGFOtem+DUufMZsCJwFE7ywPOpfXFBwRTGq7dh6w==}
     dev: false
 
-  /chartjs-plugin-annotation/2.0.1_chart.js@3.8.2:
-    resolution: {integrity: sha512-I+bbmiGuxW68DuhFuCS+oSJN4bzX9d3Z+xJ34+4YhrC68+fncRZgNARgJYqlkCD9s+JQohCkZ0iK/GNr+3Ug2A==}
+  /chartjs-plugin-annotation/1.4.0_chart.js@3.9.1:
+    resolution: {integrity: sha512-OC0eGoVvdxTtGGi8mV3Dr+G1YmMhtYYQWqGMb2uWcgcnyiBslaRKPofKwAYWPbh7ABnmQNsNDQLIKPH+XiaZLA==}
     peerDependencies:
-      chart.js: ^3.7.0
+      chart.js: ^3.1.0
     dependencies:
-      chart.js: 3.8.2
+      chart.js: 3.9.1
     dev: false
 
   /cheerio-select/2.1.0:
@@ -7425,7 +7425,7 @@ packages:
       - supports-color
     dev: true
 
-  /ng2-charts/4.0.1_mqnkttvzuvyw2wsochroshjble:
+  /ng2-charts/4.0.1_7jb6lovfnhxnapiycmjeaf6q74:
     resolution: {integrity: sha512-QYXVZHP/RIRhAw36xeXPL6JZz73fXuHePTyGwBiOfIRGCG7EDYLApnSgEn+Mx+QFKYT1VN9Fsj5b04rrd2nrEw==}
     peerDependencies:
       '@angular/cdk': '>=14.0.0'
@@ -7437,7 +7437,7 @@ packages:
       '@angular/cdk': 14.2.3_7c6wr4ejsrkjqdsshlsc37hsae
       '@angular/common': 14.2.4_aneyabyii3l2nbepdg3zrprqxa
       '@angular/core': 14.2.4_rxjs@7.5.7+zone.js@0.11.8
-      chart.js: 3.8.2
+      chart.js: 3.9.1
       lodash-es: 4.17.21
       rxjs: 7.5.7
       tslib: 2.4.0
