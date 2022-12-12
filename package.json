@@ -52,6 +52,6 @@
     "ng-packagr": "^14.2.1",
     "pretty-ts-imports": "^1.1.0",
     "pug-cli": "^1.0.0-alpha6",
-    "typescript": "<4.7.0"
+    "typescript": "<4.9.0"
   }
 }
