@@ -3,12 +3,13 @@ module.exports = {
     proxy: {
       "/api/*": {
         target: "https://wisdom-demo.uol.de",
-        changeOrigin: true
+        changeOrigin: true,
       },
       "/files/*": {
         target: "https://wisdom-demo.uol.de",
-        changeOrigin: true
+        changeOrigin: true,
+        logLevel: "error",
       }
-    }
+    },
   }
 }

@@ -14,6 +14,7 @@ specifiers:
   '@angular/platform-browser-dynamic': ~15.0.3
   '@angular/router': ~15.0.3
   '@compodoc/compodoc': ^1.1.19
+  '@creativebulma/bulma-tooltip': ^1.2.0
   '@ngx-translate/core': ^14.0.0
   '@types/geojson': ^7946.0.10
   '@types/leaflet': ~1.8.0
@@ -51,6 +52,7 @@ dependencies:
   '@angular/platform-browser': 15.0.3_k2ova7ehoq6i2mboehwofp54tu
   '@angular/platform-browser-dynamic': 15.0.3_e43ynu3v5xhozyvsfqnq64afgi
   '@angular/router': 15.0.3_ktp5vwuknaiwhusl64w62n43ay
+  '@creativebulma/bulma-tooltip': 1.2.0
   '@ngx-translate/core': 14.0.0_y3a2mjsiv4ptftwvkwjfjo4edm
   '@xbim/viewer': 2.0.1-pre202207200746
   angular-auth-oidc-client: 15.0.3_kvo5c2og7shuktkvnodlccdemu
@@ -2802,6 +2804,10 @@ packages:
       dot: 1.1.3
       fs-extra: 9.1.0
     dev: true
+
+  /@creativebulma/bulma-tooltip/1.2.0:
+    resolution: {integrity: sha512-ooImbeXEBxf77cttbzA7X5rC5aAWm9UsXIGViFOnsqB+6M944GkB28S5R4UWRqjFd2iW4zGEkEifAU+q43pt2w==}
+    dev: false
 
   /@cspotcode/source-map-support/0.8.1:
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
