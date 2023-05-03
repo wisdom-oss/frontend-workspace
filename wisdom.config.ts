@@ -3,6 +3,8 @@ import {
 } from "./wisdom_modules/core/src/app/frame/side-bar/side-bar-entries";
 import {AuthConfig} from "./wisdom_modules/core/src/app/auth/types/AuthConfig";
 
+import env from "./env";
+
 /**
  * This constant is used to inject language content into the translator.
  *
@@ -38,6 +40,6 @@ export const sidebar: SideBarEntries = [
 ];
 
 export const authConfig: AuthConfig = {
-  authority: "https://auth.wisdom-demo.uol.de/application/o/wisdom-dashboard/.well-known/openid-configuration",
-  clientId: "ac2abe613a726b289b24ac7e8f19a8cda35ac29d"
+  authority: env.OIDC_AUTHORITY,
+  clientId: env.OIDC_CLIENT_ID
 };

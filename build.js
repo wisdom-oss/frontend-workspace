@@ -12,10 +12,10 @@ const exec = promisify(require("child_process").exec);
  */
 (async() => {
   console.info("ENV");
-  let env_content = `export default (() => Object.assign(process.env, ${JSON.stringify({
+  let env_content = `export default ${JSON.stringify({
     OIDC_AUTHORITY: process.env.OIDC_AUTHORITY,
     OIDC_CLIENT_ID: process.env.OIDC_CLIENT_ID
-  }, null, 2)}))()`;
+  }, null, 2)}`;
   await fs.writeFile("./env.ts", env_content, "utf-8");
 
   let entries = await fs.readdir("./wisdom_modules");
