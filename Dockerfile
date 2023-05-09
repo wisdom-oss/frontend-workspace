@@ -1,4 +1,6 @@
 FROM node:lts AS build
+ARG OIDC_AUTHORITY
+ARG OIDC_CLIENT_ID
 COPY . /tmp/build
 WORKDIR /tmp/build
 COPY github.meta /tmp/build/.meta
