@@ -40,7 +40,12 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "wisdom_modules/core/src/favicon.ico",
-              "wisdom_modules/core/src/assets"
+              "wisdom_modules/core/src/assets",
+              {
+                "glob": "*.wasm",
+                "input": "node_modules/web-ifc/",
+                "output": "/"
+              }
             ],
             "styles": [
               "wisdom_modules/core/src/styles.scss",
@@ -114,7 +119,12 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "wisdom_modules/core/src/favicon.ico",
-              "wisdom_modules/core/src/assets"
+              "wisdom_modules/core/src/assets",
+              {
+                "glob": "*.wasm",
+                "input": "node_modules/web-ifc/",
+                "output": "/"
+              }
             ],
             "styles": [
               "wisdom_modules/core/src/styles.scss"

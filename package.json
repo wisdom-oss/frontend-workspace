@@ -38,7 +38,10 @@
     "path-browserify": "^1.0.1",
     "rxjs": "~7.5.7",
     "tslib": "^2.4.0",
-    "zone.js": "~0.11.8"
+    "zone.js": "~0.11.8",
+    "three": "~0.135.0",
+    "web-ifc": "^0.0.39",
+    "web-ifc-viewer": "1.0.216"
   },
   "devDependencies": {
     "@angular-builders/custom-webpack": "~15.0.0-beta.0",
@@ -51,6 +54,7 @@
     "@types/leaflet.markercluster": "~1.5.1",
     "@types/node": "^18.7.23",
     "@types/path-browserify": "^1.0.0",
+    "@types/three": "~0.135.0",
     "ng-packagr": "^15.0.3",
     "pretty-ts-imports": "^1.1.0",
     "pug-cli": "^1.0.0-alpha6",
