@@ -85,6 +85,9 @@ dependencies:
   web-ifc:
     specifier: ^0.0.39
     version: 0.0.39
+  web-ifc-three:
+    specifier: ^0.0.125
+    version: 0.0.125(three@0.135.0)
   web-ifc-viewer:
     specifier: 1.0.216
     version: 1.0.216(three@0.135.0)
