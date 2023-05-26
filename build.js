@@ -4,6 +4,9 @@ const fs = require("fs/promises");
 const {promisify} = require("util");
 const exec = promisify(require("child_process").exec);
 
+// reads in .env file for processing
+require('dotenv').config();
+
 const envVars = ["OIDC_AUTHORITY", "OIDC_CLIENT_ID"];
 
 /**

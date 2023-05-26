@@ -3,12 +3,16 @@
 # meta handled
 /wisdom_modules
 
+# environment variables
+.env
+
 # Compiled output
 /dist
 /tmp
 /out-tsc
 /bazel-out
 env.ts
+
 
 # Node
 /node_modules
