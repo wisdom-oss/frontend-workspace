@@ -76,20 +76,24 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {NgModule} from &quot;@angular/core&quot;;
 import {RouterModule, Routes} from &quot;@angular/router&quot;;
 
-import {LoginComponent} from &quot;./auth/login/login.component&quot;;
 import {AuthGuard} from &quot;./auth/auth.guard&quot;;
 import {FrameComponent} from &quot;./frame/frame.component&quot;;
 import {ModuleProvider} from &quot;./module-provider&quot;;
 import {LoaderGuard} from &quot;./frame/loader/loader.guard&quot;;
+import {CallbackComponent} from &quot;./auth/callback/callback.component&quot;;
+import {AutoLoginPartialRoutesGuard} from &quot;angular-auth-oidc-client&quot;;
 
 const routes: Routes &#x3D; [
   {
     path: &quot;&quot;,
     component: FrameComponent,
-    canActivate: [AuthGuard, LoaderGuard],
+    canActivate: [AutoLoginPartialRoutesGuard, LoaderGuard],
     children: &quot;ModuleProvider.routes()&quot;
   },
-  {path: &quot;login&quot;, component: LoginComponent, canActivate: [LoaderGuard]},
+
+  // does nothing but setting up auth
+  {path: &quot;callback&quot;, component: CallbackComponent},
+
   {path: &quot;**&quot;, redirectTo: &quot;&quot;}
 ];
 

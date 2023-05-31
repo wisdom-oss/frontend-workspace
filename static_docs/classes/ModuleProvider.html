@@ -124,7 +124,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">wisdom_modules/core/src/app/module-provider.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">wisdom_modules/core/src/app/module-provider.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -166,8 +166,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="40"
-                            class="link-to-prism">wisdom_modules/core/src/app/module-provider.ts:40</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">wisdom_modules/core/src/app/module-provider.ts:41</a></div>
                 </td>
             </tr>
 
@@ -244,8 +244,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="24"
-                            class="link-to-prism">wisdom_modules/core/src/app/module-provider.ts:24</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">wisdom_modules/core/src/app/module-provider.ts:25</a></div>
                 </td>
             </tr>
 
@@ -278,7 +278,8 @@
 import {AuthGuard} from &quot;./auth/auth.guard&quot;;
 import {LoaderGuard} from &quot;./frame/loader/loader.guard&quot;;
 
-import * as modules from &quot;../../../../modules&quot;;
+import * as modules from &quot;../../../../wisdom.modules&quot;;
+import {AutoLoginPartialRoutesGuard} from &quot;angular-auth-oidc-client&quot;;
 
 /**
  * Class to provide data from the reexported wisdom modules.
@@ -302,7 +303,7 @@ export class ModuleProvider {
       let insertRoute &#x3D; module.wisdomInterface.route;
       if (!insertRoute.canActivate) insertRoute.canActivate &#x3D; [];
       // TODO: add ScopeGuard here
-      insertRoute.canActivate.push(AuthGuard, LoaderGuard);
+      insertRoute.canActivate.push(AutoLoginPartialRoutesGuard, LoaderGuard);
       routes.push(insertRoute);
     }
     return routes;

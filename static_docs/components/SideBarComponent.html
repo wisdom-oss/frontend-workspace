@@ -194,7 +194,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component} from &quot;@angular/core&quot;;
 
-import {sidebar} from &quot;../../../../../../sidebar&quot;;
+import {sidebar} from &quot;../../../../../../wisdom.config&quot;;
 
 /** The component displaying the sidebar. */
 @Component({
@@ -213,7 +213,7 @@ export class SideBarComponent {
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;ng-container *ngFor&#x3D;&quot;let label of sideBar&quot;&gt;
   &lt;div class&#x3D;&quot;menu-label&quot;&gt;
-    &lt;span class&#x3D;&quot;icon-text&quot;&gt;
+    &lt;span class&#x3D;&quot;icon-text is-flex-wrap-nowrap&quot;&gt;
       &lt;span *ngIf&#x3D;&quot;label[1]&quot; class&#x3D;&quot;icon&quot;&gt;
         &lt;ion-icon [attr.name]&#x3D;label[1]&gt;&lt;/ion-icon&gt;
       &lt;/span&gt;
@@ -224,7 +224,7 @@ export class SideBarComponent {
   &lt;ul class&#x3D;&quot;menu-list&quot;&gt;
     &lt;li *ngFor&#x3D;&quot;let entry of label[2]&quot;&gt;
       &lt;a *ngIf&#x3D;&quot;entry[2]&quot; [routerLink]&#x3D;&quot;entry[2]&quot;&gt;
-        &lt;span class&#x3D;&quot;icon-text&quot;&gt;
+        &lt;span class&#x3D;&quot;icon-text is-flex-wrap-nowrap&quot;&gt;
           &lt;span *ngIf&#x3D;&quot;entry[1]&quot; class&#x3D;&quot;icon&quot;&gt;
             &lt;ion-icon [attr.name]&#x3D;entry[1]&gt;&lt;/ion-icon&gt;
           &lt;/span&gt;
@@ -232,7 +232,7 @@ export class SideBarComponent {
         &lt;/span&gt;
       &lt;/a&gt;
       &lt;a *ngIf&#x3D;&quot;!entry[2]&quot;&gt;
-        &lt;span class&#x3D;&quot;icon-text&quot;&gt;
+        &lt;span class&#x3D;&quot;icon-text is-flex-wrap-nowrap&quot;&gt;
           &lt;span *ngIf&#x3D;&quot;entry[1]&quot; class&#x3D;&quot;icon&quot;&gt;
             &lt;ion-icon [attr.name]&#x3D;entry[1]&gt;&lt;/ion-icon&gt;
           &lt;/span&gt;
@@ -275,8 +275,8 @@ export class SideBarComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ng-container *ngFor="let label of sideBar">  <div class="menu-label">    <span class="icon-text">      <span *ngIf="label[1]" class="icon">        <ion-icon [attr.name]=label[1]></ion-icon>      </span>      <span>{{label[0] | translate}}</span>    </span>  </div>  <ul class="menu-list">    <li *ngFor="let entry of label[2]">      <a *ngIf="entry[2]" [routerLink]="entry[2]">        <span class="icon-text">          <span *ngIf="entry[1]" class="icon">            <ion-icon [attr.name]=entry[1]></ion-icon>          </span>          <span>{{entry[0] | translate}}</span>        </span>      </a>      <a *ngIf="!entry[2]">        <span class="icon-text">          <span *ngIf="entry[1]" class="icon">            <ion-icon [attr.name]=entry[1]></ion-icon>          </span>          <span>{{entry[0] | translate}}</span>        </span>      </a>      <ul *ngIf="entry[3]">      </ul>    </li>  </ul></ng-container></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BimComponent', 'selector': 'bim'},{'name': 'BreadcrumbsComponent', 'selector': 'breadcrumbs'},{'name': 'ConsumerDetailComponent', 'selector': 'lib-consumer-detail'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'ExampleComponent', 'selector': ''},{'name': 'FrameComponent', 'selector': 'app-frame'},{'name': 'IonIconComponent', 'selector': 'ion-icon'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MapComponent', 'selector': 'map'},{'name': 'MapSelectViewComponent', 'selector': 'lib-map-select-view'},{'name': 'PumpModelComponent', 'selector': ''},{'name': 'ResultDataViewComponent', 'selector': 'lib-result-data-view'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'WaterRightDetailComponent', 'selector': 'lib-water-right-detail'}];
+        var COMPONENT_TEMPLATE = '<div><ng-container *ngFor="let label of sideBar">  <div class="menu-label">    <span class="icon-text is-flex-wrap-nowrap">      <span *ngIf="label[1]" class="icon">        <ion-icon [attr.name]=label[1]></ion-icon>      </span>      <span>{{label[0] | translate}}</span>    </span>  </div>  <ul class="menu-list">    <li *ngFor="let entry of label[2]">      <a *ngIf="entry[2]" [routerLink]="entry[2]">        <span class="icon-text is-flex-wrap-nowrap">          <span *ngIf="entry[1]" class="icon">            <ion-icon [attr.name]=entry[1]></ion-icon>          </span>          <span>{{entry[0] | translate}}</span>        </span>      </a>      <a *ngIf="!entry[2]">        <span class="icon-text is-flex-wrap-nowrap">          <span *ngIf="entry[1]" class="icon">            <ion-icon [attr.name]=entry[1]></ion-icon>          </span>          <span>{{entry[0] | translate}}</span>        </span>      </a>      <ul *ngIf="entry[3]">      </ul>    </li>  </ul></ng-container></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BreadcrumbsComponent', 'selector': 'breadcrumbs'},{'name': 'CallbackComponent', 'selector': 'app-callback'},{'name': 'ConsumerDetailComponent', 'selector': 'lib-consumer-detail'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'ExampleComponent', 'selector': ''},{'name': 'FrameComponent', 'selector': 'app-frame'},{'name': 'IfcComponent', 'selector': 'ifc'},{'name': 'IonIconComponent', 'selector': 'ion-icon'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'MapComponent', 'selector': 'map'},{'name': 'MapSelectViewComponent', 'selector': 'lib-map-select-view'},{'name': 'ProphetForecastResultDataComponent', 'selector': 'lib-prophet-forecast-result-data'},{'name': 'PumpModelComponent', 'selector': ''},{'name': 'ResultDataComponent', 'selector': '[lib-result-data]'},{'name': 'ResultDataViewComponent', 'selector': 'lib-result-data-view'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'UserPopoutComponent', 'selector': 'app-user-popout'},{'name': 'WaterRightDetailComponent', 'selector': 'lib-water-right-detail'},{'name': 'WaterUsageForecastsResultDataComponent', 'selector': 'lib-water-usage-forecasts-result-data'}];
     var DIRECTIVES = [{'name': 'BulmaIsToggleableDirective', 'selector': '.is-toggleable'},{'name': 'LangSelectorDirective', 'selector': '[selectLang]'}];
     var ACTUAL_COMPONENT = {'name': 'SideBarComponent'};
 </script>

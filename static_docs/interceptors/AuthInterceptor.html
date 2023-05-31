@@ -68,7 +68,10 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Interceptor to inject the authorization token into every request.</p>
+                <p>Interceptor to inject the authorization token into requests.</p>
+<p>Only requests with <a href="../miscellaneous/variables.html#SEND_AUTH">SEND_AUTH</a> to <code>true</code> or <a href="../miscellaneous/variables.html#USE_API_URL">USE_API_URL</a> to
+<code>true</code> while <a href="../miscellaneous/variables.html#SEND_AUTH">SEND_AUTH</a> is <code>undefined</code> will get the authorization
+header including the token.</p>
 
             </p>
 
@@ -77,6 +80,21 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#oidc" >oidc</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -107,12 +125,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(authStorage: <a href="../injectables/AuthStorageService.html" target="_self">AuthStorageService</a>)</code>
+<code>constructor(oidc: OidcSecurityService)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">wisdom_modules/core/src/app/auth/auth.interceptor.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">wisdom_modules/core/src/app/auth/auth.interceptor.ts:25</a></div>
                             </td>
                         </tr>
 
@@ -128,25 +146,20 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
-                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>authStorage</td>
+                                                        <td>oidc</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/AuthStorageService.html" target="_self" >AuthStorageService</a></code>
+                                                                    <code>OidcSecurityService</code>
                                                         </td>
                                                   
                                                     <td>
                                                             No
                                                     </td>
                                                     
-                                                        <td>
-                                                                <p>The storage containing the tokens to inject</p>
-
-                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -182,8 +195,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="30"
-                            class="link-to-prism">wisdom_modules/core/src/app/auth/auth.interceptor.ts:30</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">wisdom_modules/core/src/app/auth/auth.interceptor.ts:37</a></div>
                 </td>
             </tr>
 
@@ -255,6 +268,39 @@
         </tbody>
     </table>
 </section>
+            <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="oidc"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>oidc</b></span>
+                        <a href="#oidc"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>OidcSecurityService</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">wisdom_modules/core/src/app/auth/auth.interceptor.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
 
     </div>
 
@@ -266,23 +312,30 @@
   HttpInterceptor,
   HttpRequest
 } from &quot;@angular/common/http&quot;;
-import {Injectable} from &quot;@angular/core&quot;;
-import {tap, Observable} from &quot;rxjs&quot;;
+import {Injectable, isDevMode, OnInit} from &quot;@angular/core&quot;;
+import {tap, Observable, startWith, first, switchMap} from &quot;rxjs&quot;;
 
-import {AuthStorageService} from &quot;./auth-storage.service&quot;;
+import {SEND_AUTH, USE_API_URL} from &quot;common&quot;;
+import {authConfig} from &quot;../../../../../wisdom.config&quot;;
+import {OidcSecurityService} from &quot;angular-auth-oidc-client&quot;;
 
 /** Key for the token. */
 const TOKEN_HEADER_KEY &#x3D; &quot;Authorization&quot;;
 
-/** Interceptor to inject the authorization token into every request. */
+/**
+ * Interceptor to inject the authorization token into requests.
+ *
+ * Only requests with {@link SEND_AUTH} to &#x60;true&#x60; or {@link USE_API_URL} to
+ * &#x60;true&#x60; while {@link SEND_AUTH} is &#x60;undefined&#x60; will get the authorization
+ * header including the token.
+ */
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 
   /**
    * Constructor.
-   * @param authStorage The storage containing the tokens to inject
    */
-  constructor(private authStorage: AuthStorageService) {}
+  constructor(public oidc: OidcSecurityService) {}
 
   /**
    * Injects the token as Bearer authentication into a HttpRequest
@@ -293,16 +346,26 @@ export class AuthInterceptor implements HttpInterceptor {
     request: HttpRequest&lt;unknown&gt;,
     next: HttpHandler
   ): Observable&lt;HttpEvent&lt;unknown&gt;&gt; {
-    let authRequest &#x3D; request;
-    const token &#x3D; this.authStorage.accessToken;
-    if (token) {
-      authRequest &#x3D; request.clone({
-        // this updates the header without removing every other header
-        headers: request.headers.set(TOKEN_HEADER_KEY, &quot;Bearer &quot; + token)
-      });
+    let requestUpdate: Parameters&lt;typeof request.clone&gt;[0] &#x3D; {};
+
+    switch (request.context.get(SEND_AUTH)) {
+      case true: break; // allow
+      case false: return next.handle(request); // deny, pass to next handler
+      case undefined: // check for use api context
+        if (request.context.get(USE_API_URL)) break;
+        return next.handle(request);
     }
-    return next.handle(authRequest).pipe(tap(event &#x3D;&gt; {
-      // TODO: handle if the event is 401
+
+    return this.oidc.getAccessToken().pipe(first()).pipe(switchMap(token &#x3D;&gt; {
+      if (token) {
+        request &#x3D; request.clone({
+          // this updates the header without removing every other header
+          headers: request.headers.set(TOKEN_HEADER_KEY, &quot;Bearer &quot; + token)
+        })
+      }
+      return next.handle(request).pipe(tap(event &#x3D;&gt; {
+        // TODO: handle if the event is 401
+      }));
     }));
   }
 }

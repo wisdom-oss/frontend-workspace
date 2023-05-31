@@ -239,6 +239,7 @@ export class SanitizeUrlInterceptor implements HttpInterceptor {
    */
   intercept(request: HttpRequest&lt;unknown&gt;, next: HttpHandler): Observable&lt;HttpEvent&lt;unknown&gt;&gt; {
     let {url} &#x3D; request;
+    if (!url.includes(&quot;://&quot;)) return next.handle(request);
     let [protocol, pathWithParams] &#x3D; url.split(&quot;://&quot;);
     let [path, ...query] &#x3D; pathWithParams.split(&quot;?&quot;);
     path &#x3D; path.replace(/\/+/g, &quot;/&quot;);

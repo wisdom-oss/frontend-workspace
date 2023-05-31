@@ -29,7 +29,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content class">
+               <div class="content injectable">
                    <div class="content-data">
 
 
@@ -39,13 +39,9 @@
 
 
 
-
-
-
-
 <ol class="breadcrumb">
-  <li>Classes</li>
-  <li >StaticLoader</li>
+  <li>Injectables</li>
+  <li >LoaderInjector</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -63,7 +59,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>wisdom_modules/core/src/app/i18n/static-loader.ts</code>
+            <code>wisdom_modules/common/src/lib/loader/loader.injector.ts</code>
         </p>
 
 
@@ -71,24 +67,33 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>The loader for the translations.
-Since all translations are available from the start this one is rather simple.</p>
+                <p>Injector for the <code>LoaderService</code> from the core module.</p>
+<p>The service in the core injects this injector and listens to emitted loaders.
+This allows centralized logic in the core while also allowing other
+components to inject custom loaders.</p>
 
             </p>
 
-
-            <p class="comment">
-                <h3>Implements</h3>
-            </p>
-            <p class="comment">
-                        <code>TranslateLoader</code>
-            </p>
 
 
             <section>
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#loaders" >loaders</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -99,7 +104,7 @@ Since all translations are available from the start this one is rather simple.</
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#getTranslation" >getTranslation</a>
+                                <a href="#addLoader" >addLoader</a>
                             </li>
                         </ul>
                     </td>
@@ -114,7 +119,6 @@ Since all translations are available from the start this one is rather simple.</
 </section>
 
 
-
             <section>
     
     <h3 id="methods">
@@ -124,31 +128,33 @@ Since all translations are available from the start this one is rather simple.</
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getTranslation"></a>
+                    <a name="addLoader"></a>
                     <span class="name">
-                        <span ><b>getTranslation</b></span>
-                        <a href="#getTranslation"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>addLoader</b></span>
+                        <a href="#addLoader"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getTranslation(lang: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>addLoader(toResolve: Promise<any>, displayText?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="36"
-                            class="link-to-prism">wisdom_modules/core/src/app/i18n/static-loader.ts:36</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">wisdom_modules/common/src/lib/loader/loader.injector.ts:25</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Get the translations for a specific language key.</p>
+                    <div class="io-description"><p>Add a custom loader to the loader service.
+This will insert the promise resolution into the frame&#39;s loader curtain.
+                   translation key</p>
 </div>
 
                     <div class="io-description">
@@ -165,9 +171,9 @@ Since all translations are available from the start this one is rather simple.</
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>lang</td>
+                                    <td>toResolve</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            <code>Promise&lt;any&gt;</code>
                                     </td>
 
                                     <td>
@@ -176,7 +182,24 @@ Since all translations are available from the start this one is rather simple.</
 
 
                                     <td>
-                                        <p>The language key</p>
+                                        <p>A promise that when resolved clears the loader</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>displayText</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>Text to display under the loader, may contain a
+translation key</p>
 
                                     </td>
                                 </tr>
@@ -186,7 +209,7 @@ Since all translations are available from the start this one is rather simple.</
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                     </div>
                     <div class="io-description">
@@ -197,58 +220,90 @@ Since all translations are available from the start this one is rather simple.</
         </tbody>
     </table>
 </section>
+            <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loaders"></a>
+                    <span class="name">
+                        <span ><b>loaders</b></span>
+                        <a href="#loaders"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter&lt;&gt;</code>
 
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new EventEmitter()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">wisdom_modules/common/src/lib/loader/loader.injector.ts:16</a></div>
+                        </td>
+                    </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Event emitter for the loaders, do not touch this.</p>
+</div>
+                </td>
+            </tr>
 
-
+        </tbody>
+    </table>
+</section>
 
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {TranslateLoader} from &quot;@ngx-translate/core&quot;;
-import {
-  de_DELang as de_DELangCommon,
-  en_USLang as en_USLangCommon
-} from &quot;common&quot;;
-import {of, Observable} from &quot;rxjs&quot;;
-
-import de_DELang from &quot;./langs/de_DE&quot;;
-import en_USLang from &quot;./langs/en_US&quot;;
-import {ModuleProvider} from &quot;../module-provider&quot;;
-import {langs as sideBarLangs} from &quot;../../../../../wisdom.config&quot;;
-
-/** The languages the loader provides. */
-let langs: any &#x3D; {
-  de_DE: Object.assign({}, de_DELang, de_DELangCommon, ModuleProvider.langs(&quot;de_DE&quot;)),
-  en_US: Object.assign({}, en_USLang, en_USLangCommon, ModuleProvider.langs(&quot;en_US&quot;))
-}
-
-for (let [lang, values] of Object.entries(sideBarLangs)) {
-  langs[lang as &quot;de_DE&quot; | &quot;en_US&quot;].sidebar &#x3D; {};
-  for (let [key, value] of Object.entries(values)) {
-    langs[lang as &quot;de_DE&quot; | &quot;en_US&quot;].sidebar[key] &#x3D; value;
-  }
-}
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {EventEmitter, Injectable} from &#x27;@angular/core&#x27;;
 
 /**
- * The loader for the translations.
- * Since all translations are available from the start this one is rather simple.
+ * Injector for the &#x60;LoaderService&#x60; from the core module.
+ *
+ * The service in the core injects this injector and listens to emitted loaders.
+ * This allows centralized logic in the core while also allowing other
+ * components to inject custom loaders.
  */
-export class StaticLoader implements TranslateLoader {
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
+export class LoaderInjector {
+
+  /** Event emitter for the loaders, do not touch this. */
+  loaders: EventEmitter&lt;[Promise&lt;any&gt;, string?]&gt; &#x3D; new EventEmitter();
 
   /**
-   * Get the translations for a specific language key.
-   * @param lang The language key
+   * Add a custom loader to the loader service.
+   * This will insert the promise resolution into the frame&#x27;s loader curtain.
+   * @param toResolve A promise that when resolved clears the loader
+   * @param displayText Text to display under the loader, may contain a
+   *                    translation key
    */
-  getTranslation(lang: string): Observable&lt;any&gt; {
-    // @ts-ignore
-    return of(langs[lang]);
+  addLoader(toResolve: Promise&lt;any&gt;, displayText?: string) {
+    this.loaders.emit([toResolve, displayText]);
   }
 }
 </code></pre>
     </div>
+
 </div>
+
+
+
+
 
 
 
@@ -283,8 +338,8 @@ export class StaticLoader implements TranslateLoader {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
-            var COMPODOC_CURRENT_PAGE_URL = 'StaticLoader.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'LoaderInjector.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

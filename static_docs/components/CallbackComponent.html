@@ -39,7 +39,7 @@
   <li>Components</li>
   <li
   >
-  LoaderComponent</li>
+  CallbackComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -53,9 +53,6 @@
             <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
         </li>
         <li >
-            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li >
             <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
@@ -65,19 +62,10 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>wisdom_modules/core/src/app/frame/loader/loader.component.ts</code>
+    <code>wisdom_modules/core/src/app/auth/callback/callback.component.ts</code>
 </p>
 
 
-    <p class="comment">
-        <h3>Description</h3>
-    </p>
-    <p class="comment">
-        <p>Component covering the main container with a loading screen while we wait for
-services to respond.</p>
-<p>This will display an animation and possibly some loading texts.</p>
-
-    </p>
 
 
     <p class="comment">
@@ -105,19 +93,15 @@ services to respond.</p>
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-loader</code></td>
+                <td class="col-md-9"><code>app-callback</code></td>
             </tr>
 
-            <tr>
-                <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./loader.component.scss</code></td>
-            </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./loader.component.html</code></td>
+                <td class="col-md-9"><code>./callback.component.html</code></td>
             </tr>
 
 
@@ -144,10 +128,8 @@ services to respond.</p>
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#displayTexts" >displayTexts</a>
-                            </li>
-                            <li>
-                                <a href="#isLoading" >isLoading</a>
+                                    <span class="modifier">Public</span>
+                                <a href="#oidcSecurityService" >oidcSecurityService</a>
                             </li>
                         </ul>
                     </td>
@@ -182,19 +164,17 @@ services to respond.</p>
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(service: <a href="../injectables/LoaderService.html" target="_self">LoaderService</a>)</code>
+<code>constructor(oidcSecurityService: OidcSecurityService)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">wisdom_modules/core/src/app/frame/loader/loader.component.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">wisdom_modules/core/src/app/auth/callback/callback.component.ts:8</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Constructor.</p>
-</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -203,25 +183,20 @@ services to respond.</p>
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
-                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>service</td>
+                                                        <td>oidcSecurityService</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/LoaderService.html" target="_self" >LoaderService</a></code>
+                                                                    <code>OidcSecurityService</code>
                                                         </td>
                                                   
                                                     <td>
                                                             No
                                                     </td>
                                                     
-                                                        <td>
-                                                                <p>Service to handle communication efforts</p>
-
-                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -261,17 +236,14 @@ services to respond.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="33"
-                            class="link-to-prism">wisdom_modules/core/src/app/frame/loader/loader.component.ts:33</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="12"
+                            class="link-to-prism">wisdom_modules/core/src/app/auth/callback/callback.component.ts:12</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>On init this should subscribe to the service in order to update the loading
-screen.</p>
-</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -291,67 +263,26 @@ screen.</p>
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="displayTexts"></a>
+                    <a name="oidcSecurityService"></a>
                     <span class="name">
-                        <span ><b>displayTexts</b></span>
-                        <a href="#displayTexts"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier">Public</span>
+                        <span ><b>oidcSecurityService</b></span>
+                        <a href="#oidcSecurityService"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>    <code>string[]</code>
+                        <i>Type : </i>    <code>OidcSecurityService</code>
 
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>[]</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">wisdom_modules/core/src/app/frame/loader/loader.component.ts:27</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">wisdom_modules/core/src/app/auth/callback/callback.component.ts:10</a></div>
                         </td>
                     </tr>
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>The texts to display while loading.</p>
-</div>
-                </td>
-            </tr>
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="isLoading"></a>
-                    <span class="name">
-                        <span ><b>isLoading</b></span>
-                        <a href="#isLoading"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>false</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">wisdom_modules/core/src/app/frame/loader/loader.component.ts:25</a></div>
-                        </td>
-                    </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Whether the loader should be active.</p>
-</div>
-                </td>
-            </tr>
 
         </tbody>
     </table>
@@ -361,155 +292,48 @@ screen.</p>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, OnInit, AfterViewInit} from &quot;@angular/core&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, OnInit} from &#x27;@angular/core&#x27;;
+import {OidcSecurityService} from &quot;angular-auth-oidc-client&quot;;
 
-import {LoaderService} from &quot;./loader.service&quot;;
-
-/**
- * Component covering the main container with a loading screen while we wait for
- * services to respond.
- *
- * This will display an animation and possibly some loading texts.
- */
 @Component({
-  selector: &#x27;app-loader&#x27;,
-  templateUrl: &#x27;./loader.component.html&#x27;,
-  styleUrls: [&#x27;./loader.component.scss&#x27;]
+  selector: &#x27;app-callback&#x27;,
+  templateUrl: &#x27;./callback.component.html&#x27;
 })
-export class LoaderComponent implements OnInit {
+export class CallbackComponent implements OnInit {
 
-  /**
-   * Constructor.
-   * @param service Service to handle communication efforts
-   */
-  constructor(private service: LoaderService) {}
+  constructor(public oidcSecurityService: OidcSecurityService) {}
 
-  /** Whether the loader should be active. */
-  isLoading &#x3D; false;
-  /** The texts to display while loading. */
-  displayTexts: string[] &#x3D; [];
-
-  /**
-   * On init this should subscribe to the service in order to update the loading
-   * screen.
-   */
   ngOnInit(): void {
-    this.service.loading.subscribe(value &#x3D;&gt; this.isLoading &#x3D; value);
-    this.service.displayTexts.subscribe(
-      // this dedupes loader texts
-      values &#x3D;&gt; this.displayTexts &#x3D; [...new Set(values)]
-    );
+    this.oidcSecurityService.checkAuth().subscribe();
   }
+
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;main-container&quot;&gt;
-  &lt;div
-    class&#x3D;&quot;
-      has-background-primary
-      has-text-white
-      is-flex
-      is-flex-direction-column
-      is-justify-content-center
-      loader-container
-    &quot;
-    [style.height.%]&#x3D;&quot;isLoading ? 100 : 0&quot;
-  &gt;
-    &lt;div
-      class&#x3D;&quot;has-text-centered&quot;
-      [style.display]&#x3D;&quot;isLoading ? null : &#x27;none&#x27;&quot;
-    &gt;
-      &lt;p style&#x3D;&quot;font-size: 12rem; margin-bottom: -5rem; margin-top: -5rem; opacity: 0.93&quot;&gt;
-        &lt;ion-icon name&#x3D;&quot;cloud&quot;&gt;&lt;/ion-icon&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;section class&#x3D;&quot;hero is-primary is-primary-dark is-fullheight&quot;&gt;
+  &lt;div class&#x3D;&quot;hero-body is-justify-content-center&quot;&gt;
+    &lt;div class&#x3D;&quot;has-text-centered&quot;&gt;
+      &lt;p class&#x3D;&quot;title&quot; style&#x3D;&quot;font-size: 7rem&quot;&gt;
+        WISdoM-OSS
       &lt;/p&gt;
-      &lt;p&gt;
-        &lt;span style&#x3D;&quot;font-size: 3rem&quot; class&#x3D;&quot;item&quot;&gt;
-          &lt;ion-icon name&#x3D;&quot;water&quot;&gt;&lt;/ion-icon&gt;
-        &lt;/span&gt;
-              &lt;span style&#x3D;&quot;font-size: 3rem&quot; class&#x3D;&quot;item&quot;&gt;
-          &lt;ion-icon name&#x3D;&quot;water&quot;&gt;&lt;/ion-icon&gt;
-        &lt;/span&gt;
-              &lt;span style&#x3D;&quot;font-size: 3rem&quot; class&#x3D;&quot;item&quot;&gt;
-          &lt;ion-icon name&#x3D;&quot;water&quot;&gt;&lt;/ion-icon&gt;
-        &lt;/span&gt;
+      &lt;p class&#x3D;&quot;icon-text is-size-3&quot;&gt;
+        &lt;span class&#x3D;&quot;icon&quot;&gt;&lt;ion-icon name&#x3D;&quot;sparkles&quot;&gt;&lt;/ion-icon&gt;&lt;/span&gt;
+        &lt;span&gt;{{&quot;core.callback.willRedirect&quot; | translate}}&lt;/span&gt;
+        &lt;span class&#x3D;&quot;icon&quot;&gt;&lt;ion-icon name&#x3D;&quot;color-wand&quot;&gt;&lt;/ion-icon&gt;&lt;/span&gt;
       &lt;/p&gt;
-      &lt;p *ngIf&#x3D;&quot;displayTexts.length&quot;&gt;&lt;/p&gt;
-      &lt;p class&#x3D;&quot;title has-text-white&quot; *ngFor&#x3D;&quot;let text of displayTexts&quot;&gt;{{text | translate}}&lt;/p&gt;
+      &lt;hr&gt;
+      &lt;p&gt;{{&quot;core.callback.notWorking&quot; | translate}}&lt;/p&gt;
+      &lt;a href&#x3D;&quot;./&quot; class&#x3D;&quot;button is-fullwidth&quot;&gt;
+        {{&quot;core.callback.backToHome&quot; | translate}}
+      &lt;/a&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-  &lt;div [ngClass]&#x3D;&quot;isLoading ? &#x27;is-hidden&#x27; : &#x27;&#x27;&quot; class&#x3D;&quot;pb-3&quot;&gt;
-    &lt;ng-content&gt;&lt;/ng-content&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+&lt;/section&gt;
 </code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-styleData">
-                <p class="comment">
-                    <code>./loader.component.scss</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss">.item {
-  position: relative;
-  top: 0;
-  -webkit-animation: bounce 1s infinite ease-in-out;
-  animation: bounce 1s infinite ease-in-out;
-}
-
-.item:nth-child(1) {
-  -webkit-animation-delay: -1.4s;
-  animation-delay: 0s - 1s;
-}
-.item:nth-child(2) {
-  -webkit-animation-delay: -0.7s;
-  animation-delay: 0.3s - 1s;
-}
-.item:nth-child(3) {
-  -webkit-animation-delay: -0s;
-  animation-delay: 0.6s - 1;
-}
-
-
-@-webkit-keyframes bounce {
-  0%, 100% {
-    top: -15px;
-    opacity: 0.8;
-  }
-  50% {
-    top: 15px;
-    opacity: 1;
-  }
-}
-
-@keyframes bounce {
-  0%, 100% {
-    top: -10px;
-    opacity: 0.8;
-  }
-  50% {
-    top: 10px;
-    opacity: 1;
-  }
-}
-
-.loader-container {
-  transition: height 0.8s ease;
-  z-index: 15;
-}
-
-.main-container {
-  height: calc(100vh - 56px);
-  display: grid;
-  overflow-y: scroll;
-}
-
-.main-container &gt; div {
-  grid-column: 1;
-  grid-row: 1;
-}
-</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="c-tree">
         <div id="tree-container"></div>
@@ -536,10 +360,10 @@ export class LoaderComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="main-container">  <div    class="      has-background-primary      has-text-white      is-flex      is-flex-direction-column      is-justify-content-center      loader-container    "    [style.height.%]="isLoading ? 100 : 0"  >    <div      class="has-text-centered"      [style.display]="isLoading ? null : \'none\'"    >      <p style="font-size: 12rem; margin-bottom: -5rem; margin-top: -5rem; opacity: 0.93">        <ion-icon name="cloud"></ion-icon>      </p>      <p>        <span style="font-size: 3rem" class="item">          <ion-icon name="water"></ion-icon>        </span>              <span style="font-size: 3rem" class="item">          <ion-icon name="water"></ion-icon>        </span>              <span style="font-size: 3rem" class="item">          <ion-icon name="water"></ion-icon>        </span>      </p>      <p *ngIf="displayTexts.length"></p>      <p class="title has-text-white" *ngFor="let text of displayTexts">{{text | translate}}</p>    </div>  </div>  <div [ngClass]="isLoading ? \'is-hidden\' : \'\'" class="pb-3">    <ng-content></ng-content>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><section class="hero is-primary is-primary-dark is-fullheight">  <div class="hero-body is-justify-content-center">    <div class="has-text-centered">      <p class="title" style="font-size: 7rem">        WISdoM-OSS      </p>      <p class="icon-text is-size-3">        <span class="icon"><ion-icon name="sparkles"></ion-icon></span>        <span>{{"core.callback.willRedirect" | translate}}</span>        <span class="icon"><ion-icon name="color-wand"></ion-icon></span>      </p>      <hr>      <p>{{"core.callback.notWorking" | translate}}</p>      <a href="./" class="button is-fullwidth">        {{"core.callback.backToHome" | translate}}      </a>    </div>  </div></section></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BreadcrumbsComponent', 'selector': 'breadcrumbs'},{'name': 'CallbackComponent', 'selector': 'app-callback'},{'name': 'ConsumerDetailComponent', 'selector': 'lib-consumer-detail'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'ExampleComponent', 'selector': ''},{'name': 'FrameComponent', 'selector': 'app-frame'},{'name': 'IfcComponent', 'selector': 'ifc'},{'name': 'IonIconComponent', 'selector': 'ion-icon'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'MapComponent', 'selector': 'map'},{'name': 'MapSelectViewComponent', 'selector': 'lib-map-select-view'},{'name': 'ProphetForecastResultDataComponent', 'selector': 'lib-prophet-forecast-result-data'},{'name': 'PumpModelComponent', 'selector': ''},{'name': 'ResultDataComponent', 'selector': '[lib-result-data]'},{'name': 'ResultDataViewComponent', 'selector': 'lib-result-data-view'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'UserPopoutComponent', 'selector': 'app-user-popout'},{'name': 'WaterRightDetailComponent', 'selector': 'lib-water-right-detail'},{'name': 'WaterUsageForecastsResultDataComponent', 'selector': 'lib-water-usage-forecasts-result-data'}];
     var DIRECTIVES = [{'name': 'BulmaIsToggleableDirective', 'selector': '.is-toggleable'},{'name': 'LangSelectorDirective', 'selector': '[selectLang]'}];
-    var ACTUAL_COMPONENT = {'name': 'LoaderComponent'};
+    var ACTUAL_COMPONENT = {'name': 'CallbackComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -585,7 +409,7 @@ export class LoaderComponent implements OnInit {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'LoaderComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'CallbackComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
