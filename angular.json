@@ -39,8 +39,12 @@
             "tsConfig": "wisdom_modules/core/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "wisdom_modules/core/src/favicon.ico",
               "wisdom_modules/core/src/assets",
+              {
+                "glob": "*",
+                "input": "wisdom_modules/core/src/favicon/",
+                "output": "/"
+              },
               {
                 "glob": "*.wasm",
                 "input": "node_modules/web-ifc/",
@@ -123,8 +127,12 @@
             "karmaConfig": "wisdom_modules/core/karma.conf.js",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "wisdom_modules/core/src/favicon.ico",
               "wisdom_modules/core/src/assets",
+              {
+                "glob": "*",
+                "input": "wisdom_modules/core/src/favicon/",
+                "output": "/"
+              },
               {
                 "glob": "*.wasm",
                 "input": "node_modules/web-ifc/",
