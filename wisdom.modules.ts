@@ -8,3 +8,4 @@
 export * as example from "example";
 export * as waterUsageForecasts from "water-usage-forecasts";
 export * as pumpModels from "pump-models";
+export * as waterpotability from "water-potability";
