@@ -39,9 +39,10 @@
     "rxjs": "~7.8.1",
     "three": "~0.135.0",
     "tslib": "^2.5.3",
-    "web-ifc": "0.0.41",
+    "web-ifc": "0.0.39",
     "web-ifc-three": "0.0.125",
-    "web-ifc-viewer": "1.0.216"
+    "web-ifc-viewer": "1.0.216",
+    "zone.js": "~0.13.0"
   },
   "devDependencies": {
     "@angular-builders/custom-webpack": "16.0.0",

@@ -87,14 +87,17 @@ dependencies:
     specifier: ^2.5.3
     version: 2.5.3
   web-ifc:
-    specifier: 0.0.41
-    version: 0.0.41
+    specifier: 0.0.39
+    version: 0.0.39
   web-ifc-three:
     specifier: 0.0.125
     version: 0.0.125(three@0.135.0)
   web-ifc-viewer:
     specifier: 1.0.216
     version: 1.0.216(three@0.135.0)
+  zone.js:
+    specifier: ~0.13.0
+    version: 0.13.1
 
 devDependencies:
   '@angular-builders/custom-webpack':
@@ -8535,10 +8538,6 @@ packages:
 
   /web-ifc@0.0.39:
     resolution: {integrity: sha512-sg+DyxDiyXBqlXXbz+uSqw8IGX+mVvHmn2+hg6UXDvAcrzJJw8EI2H4ZzlxWxCqqdpGVeK0wCpdeQm43UCDbrA==}
-    dev: false
-
-  /web-ifc@0.0.41:
-    resolution: {integrity: sha512-rSucJcwWDw6jrfxPu77jVcpCU6otMd3qWYsH+6L3nr5jJVr4S1O5rAZfkKNlpBM5m0mDvSHU3DzXm9SXfGqBkw==}
     dev: false
 
   /webpack-dev-middleware@5.3.3(webpack@5.86.0):
