@@ -58,7 +58,6 @@
     "@types/three": "~0.152.1",
     "ng-packagr": "^16.1.0",
     "pretty-ts-imports": "^1.1.0",
-    "pug-cli": "^1.0.0-alpha6",
     "typescript": "5.1.3"
   }
 }
