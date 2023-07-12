@@ -13,7 +13,6 @@
 /bazel-out
 env.ts
 
-
 # Node
 /node_modules
 npm-debug.log
