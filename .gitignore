@@ -13,6 +13,9 @@
 /bazel-out
 env.ts
 
+# ignore env variables
+.env
+
 # Node
 /node_modules
 npm-debug.log
