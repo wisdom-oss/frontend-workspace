@@ -39,7 +39,7 @@
   <li>Components</li>
   <li
   >
-  ConsumerDetailComponent</li>
+  UserPopoutComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -62,7 +62,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>wisdom_modules/water-usage-forecasts/src/lib/views/detail-view/consumer-detail/consumer-detail.component.ts</code>
+    <code>wisdom_modules/core/src/app/frame/user-popout/user-popout.component.ts</code>
 </p>
 
 
@@ -73,7 +73,6 @@
     </p>
     <p class="comment">
                     <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
-                    <code><a href="https://angular.io/api/core/AfterViewInit" target="_blank" >AfterViewInit</a></code>
     </p>
 
 
@@ -94,7 +93,7 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>lib-consumer-detail</code></td>
+                <td class="col-md-9"><code>app-user-popout</code></td>
             </tr>
 
 
@@ -102,7 +101,7 @@
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./consumer-detail.component.html</code></td>
+                <td class="col-md-9"><code>./user-popout.component.html</code></td>
             </tr>
 
 
@@ -129,31 +128,28 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Optional</span>
-                                <a href="#chartData" >chartData</a>
+                                    <span class="modifier">Public</span>
+                                <a href="#authentik" >authentik</a>
                             </li>
                             <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#coordinates" >coordinates</a>
+                                <a href="#avatar" >avatar</a>
                             </li>
                             <li>
-                                <a href="#historyData" >historyData</a>
+                                    <span class="modifier">Public</span>
+                                <a href="#elementRef" >elementRef</a>
                             </li>
                             <li>
-                                <a href="#id" >id</a>
-                            </li>
-                            <li>
-                                <a href="#mapComponent" >mapComponent</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Optional</span>
-                                <a href="#marker" >marker</a>
+                                <a href="#isAdmin" >isAdmin</a>
                             </li>
                             <li>
                                 <a href="#name" >name</a>
                             </li>
                             <li>
-                                <a href="#recordedAt" >recordedAt</a>
+                                    <span class="modifier">Public</span>
+                                <a href="#oidcSecurityService" >oidcSecurityService</a>
+                            </li>
+                            <li>
+                                <a href="#username" >username</a>
                             </li>
                         </ul>
                     </td>
@@ -168,13 +164,13 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#handleConsumerData" >handleConsumerData</a>
-                            </li>
-                            <li>
-                                <a href="#ngAfterViewInit" >ngAfterViewInit</a>
+                                <a href="#logout" >logout</a>
                             </li>
                             <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#toggle" >toggle</a>
                             </li>
                         </ul>
                     </td>
@@ -194,12 +190,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, cService: <a href="../injectables/ConsumersService.html" target="_self">ConsumersService</a>, hService: <a href="../injectables/WaterUsageHistoryService.html" target="_self">WaterUsageHistoryService</a>, breadcrumbs: <a href="../injectables/BreadcrumbsService.html" target="_self">BreadcrumbsService</a>)</code>
+<code>constructor(elementRef: <a href="https://angular.io/api/core/ElementRef" target="_blank">ElementRef</a>, oidcSecurityService: OidcSecurityService, authentik: <a href="../injectables/AuthentikService.html" target="_self">AuthentikService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/detail-view/consumer-detail/consumer-detail.component.ts:32</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">wisdom_modules/core/src/app/frame/user-popout/user-popout.component.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -217,10 +213,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>route</td>
+                                                        <td>elementRef</td>
                                                   
                                                         <td>
-                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                                        <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -229,10 +225,10 @@
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>cService</td>
+                                                        <td>oidcSecurityService</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/ConsumersService.html" target="_self" >ConsumersService</a></code>
+                                                                    <code>OidcSecurityService</code>
                                                         </td>
                                                   
                                                     <td>
@@ -241,22 +237,10 @@
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>hService</td>
+                                                        <td>authentik</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/WaterUsageHistoryService.html" target="_self" >WaterUsageHistoryService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>breadcrumbs</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/BreadcrumbsService.html" target="_self" >BreadcrumbsService</a></code>
+                                                                        <code><a href="../injectables/AuthentikService.html" target="_self" >AuthentikService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -286,93 +270,24 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="handleConsumerData"></a>
+                    <a name="logout"></a>
                     <span class="name">
-                        <span ><b>handleConsumerData</b></span>
-                        <a href="#handleConsumerData"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>logout</b></span>
+                        <a href="#logout"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>handleConsumerData(data: <a href="../undefineds/ConsumerLocationsResponse.html" target="_self">ConsumerLocationsResponse</a>)</code>
+<code>logout()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="58"
-                            class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/detail-view/consumer-detail/consumer-detail.component.ts:58</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>data</td>
-                                    <td>
-                                                <code><a href="../miscellaneous/typealiases.html#ConsumerLocationsResponse" target="_self" >ConsumerLocationsResponse</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="ngAfterViewInit"></a>
-                    <span class="name">
-                        <span ><b>ngAfterViewInit</b></span>
-                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>ngAfterViewInit()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="75"
-                            class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/detail-view/consumer-detail/consumer-detail.component.ts:75</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="34"
+                            class="link-to-prism">wisdom_modules/core/src/app/frame/user-popout/user-popout.component.ts:34</a></div>
                 </td>
             </tr>
 
@@ -408,8 +323,45 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="41"
-                            class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/detail-view/consumer-detail/consumer-detail.component.ts:41</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">wisdom_modules/core/src/app/frame/user-popout/user-popout.component.ts:23</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggle"></a>
+                    <span class="name">
+                        <span ><b>toggle</b></span>
+                        <a href="#toggle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggle()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="38"
+                            class="link-to-prism">wisdom_modules/core/src/app/frame/user-popout/user-popout.component.ts:38</a></div>
                 </td>
             </tr>
 
@@ -435,23 +387,23 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="chartData"></a>
+                    <a name="authentik"></a>
                     <span class="name">
-                            <span class="modifier">Optional</span>
-                        <span ><b>chartData</b></span>
-                        <a href="#chartData"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier">Public</span>
+                        <span ><b>authentik</b></span>
+                        <a href="#authentik"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>    <code>ChartData&lt;bar&gt;</code>
+                        <i>Type : </i>        <code><a href="../injectables/AuthentikService.html" target="_self" >AuthentikService</a></code>
 
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/detail-view/consumer-detail/consumer-detail.component.ts:29</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">wisdom_modules/core/src/app/frame/user-popout/user-popout.component.ts:20</a></div>
                         </td>
                     </tr>
 
@@ -462,73 +414,10 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="coordinates"></a>
+                    <a name="avatar"></a>
                     <span class="name">
-                            <span class="modifier">Private</span>
-                        <span ><b>coordinates</b></span>
-                        <a href="#coordinates"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>    <code>BehaviorSubject&lt;&gt;</code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>new BehaviorSubject([NaN, NaN])</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/detail-view/consumer-detail/consumer-detail.component.ts:27</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="historyData"></a>
-                    <span class="name">
-                        <span ><b>historyData</b></span>
-                        <a href="#historyData"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#HistoryResponse" target="_self" >HistoryResponse</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>[]</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/detail-view/consumer-detail/consumer-detail.component.ts:25</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="id"></a>
-                    <span class="name">
-                        <span ><b>id</b></span>
-                        <a href="#id"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>avatar</b></span>
+                        <a href="#avatar"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -545,7 +434,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/detail-view/consumer-detail/consumer-detail.component.ts:24</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">wisdom_modules/core/src/app/frame/user-popout/user-popout.component.ts:14</a></div>
                         </td>
                     </tr>
 
@@ -556,31 +445,23 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="mapComponent"></a>
+                    <a name="elementRef"></a>
                     <span class="name">
-                        <span ><b>mapComponent</b></span>
-                        <a href="#mapComponent"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier">Public</span>
+                        <span ><b>elementRef</b></span>
+                        <a href="#elementRef"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../components/MapComponent.html" target="_self" >MapComponent</a></code>
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
 
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <b>Decorators : </b>
-                        <br />
-                        <code>
-                            @ViewChild(&#x27;map&#x27;)<br />
-                        </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/detail-view/consumer-detail/consumer-detail.component.ts:32</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">wisdom_modules/core/src/app/frame/user-popout/user-popout.component.ts:18</a></div>
                         </td>
                     </tr>
 
@@ -591,23 +472,27 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="marker"></a>
+                    <a name="isAdmin"></a>
                     <span class="name">
-                            <span class="modifier">Optional</span>
-                        <span ><b>marker</b></span>
-                        <a href="#marker"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>isAdmin</b></span>
+                        <a href="#isAdmin"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../interfaces/Marker.html" target="_self" >Marker</a></code>
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/detail-view/consumer-detail/consumer-detail.component.ts:26</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">wisdom_modules/core/src/app/frame/user-popout/user-popout.component.ts:15</a></div>
                         </td>
                     </tr>
 
@@ -633,12 +518,12 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>&quot;&quot;</code>
+                        <i>Default value : </i><code>&quot;Name&quot;</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/detail-view/consumer-detail/consumer-detail.component.ts:23</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">wisdom_modules/core/src/app/frame/user-popout/user-popout.component.ts:12</a></div>
                         </td>
                     </tr>
 
@@ -649,10 +534,37 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="recordedAt"></a>
+                    <a name="oidcSecurityService"></a>
                     <span class="name">
-                        <span ><b>recordedAt</b></span>
-                        <a href="#recordedAt"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier">Public</span>
+                        <span ><b>oidcSecurityService</b></span>
+                        <a href="#oidcSecurityService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>OidcSecurityService</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">wisdom_modules/core/src/app/frame/user-popout/user-popout.component.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="username"></a>
+                    <span class="name">
+                        <span ><b>username</b></span>
+                        <a href="#username"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -664,12 +576,12 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>&quot;&quot;</code>
+                        <i>Default value : </i><code>&quot;@username&quot;</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/detail-view/consumer-detail/consumer-detail.component.ts:30</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">wisdom_modules/core/src/app/frame/user-popout/user-popout.component.ts:13</a></div>
                         </td>
                     </tr>
 
@@ -682,84 +594,50 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {ViewChild, Component, OnInit, AfterViewInit} from &quot;@angular/core&quot;;
-import {ActivatedRoute} from &quot;@angular/router&quot;;
-import {ChartData} from &quot;chart.js&quot;;
-import {MapComponent, Marker, BreadcrumbsService} from &quot;common&quot;;
-import {BehaviorSubject} from &quot;rxjs&quot;;
-
-import {
-  ConsumerLocationsResponse,
-  ConsumersService
-} from &quot;../../../services/consumers.service&quot;;
-import {
-  HistoryResponse,
-  WaterUsageHistoryService
-} from &quot;../../../services/water-usage-history.service&quot;;
-import {consumerIcon} from &quot;../../../map-icons&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, ElementRef, OnInit} from &#x27;@angular/core&#x27;;
+import {OidcSecurityService} from &quot;angular-auth-oidc-client&quot;;
+import {TranslateService} from &quot;@ngx-translate/core&quot;;
+import {AuthentikService} from &quot;../../auth/authentik/authentik.service&quot;;
 
 @Component({
-  selector: &#x27;lib-consumer-detail&#x27;,
-  templateUrl: &#x27;./consumer-detail.component.html&#x27;
+  selector: &#x27;app-user-popout&#x27;,
+  templateUrl: &#x27;./user-popout.component.html&#x27;
 })
-export class ConsumerDetailComponent implements OnInit, AfterViewInit {
+export class UserPopoutComponent implements OnInit {
 
-  name: string &#x3D; &quot;&quot;;
-  id: string &#x3D; &quot;&quot;;
-  historyData: HistoryResponse &#x3D; [];
-  marker?: Marker;
-  private coordinates: BehaviorSubject&lt;[number, number]&gt; &#x3D;
-    new BehaviorSubject([NaN, NaN]);
-  chartData?: ChartData&lt;&quot;bar&quot;&gt;;
-  recordedAt: string &#x3D; &quot;&quot;;
-
-  @ViewChild(&quot;map&quot;) mapComponent!: MapComponent;
+  name: string &#x3D; &quot;Name&quot;;
+  username: string &#x3D; &quot;@username&quot;;
+  avatar: string &#x3D; &quot;&quot;;
+  isAdmin: boolean &#x3D; false;
 
   constructor(
-    private route: ActivatedRoute,
-    private cService: ConsumersService,
-    private hService: WaterUsageHistoryService,
-    private breadcrumbs: BreadcrumbsService
-  ) { }
+    public elementRef: ElementRef,
+    public oidcSecurityService: OidcSecurityService,
+    public authentik: AuthentikService
+  ) {}
 
   ngOnInit(): void {
-    this.id &#x3D; this.route.snapshot.params[&quot;consumer&quot;];
-    this.cService.fetchConsumers({id: [this.id]})
-      .subscribe(data &#x3D;&gt; this.handleConsumerData(data ?? []));
-    this.hService.fetchWaterUsageHistory(this.id)
-      .subscribe(data &#x3D;&gt; {
-        this.chartData &#x3D; {
-          datasets: [{
-            data: data.map(({usage}) &#x3D;&gt; usage),
-            backgroundColor: &quot;blue&quot;
-          }],
-          labels: data.map(({year}) &#x3D;&gt; year)
-        };
-        this.recordedAt &#x3D; data[data.length - 1].recordedAt.toISOString().substring(0, 10);
+    this.oidcSecurityService.getUserData().subscribe(userData &#x3D;&gt; {
+      this.authentik.core.users.me().subscribe(userData &#x3D;&gt; {
+        this.username &#x3D; &quot;@&quot; + userData.user.username;
+        this.name &#x3D; userData.user.name;
+        this.avatar &#x3D; userData.user.avatar;
+        this.isAdmin &#x3D; userData.user.is_superuser;
       });
-  }
-
-  handleConsumerData(data: ConsumerLocationsResponse) {
-    for (let {id, name, geojson} of data) {
-      this.name &#x3D; name;
-      this.breadcrumbs.set(2, {
-        text: name,
-        link: &quot;#&quot;
-      });
-      let coordinates &#x3D; [geojson.coordinates[1], geojson.coordinates[0]] as [number, number];
-      this.marker &#x3D; {
-        coordinates,
-        tooltip: name,
-        icon: consumerIcon
-      }
-      this.coordinates.next(coordinates);
-    }
-  }
-
-  ngAfterViewInit(): void {
-    this.coordinates.subscribe(coordinates &#x3D;&gt; {
-      if (coordinates[0] &amp;&amp; coordinates[1]) this.mapComponent.map!.flyTo(coordinates);
     });
+  }
+
+  logout(): void {
+    this.oidcSecurityService.logoff().subscribe(result &#x3D;&gt; console.log(result));
+  }
+
+  toggle(): void {
+    this
+      .elementRef
+      .nativeElement
+      .querySelector(&quot;.dropdown&quot;)
+      .classList
+      .toggle(&quot;is-active&quot;);
   }
 
 }
@@ -767,58 +645,46 @@ export class ConsumerDetailComponent implements OnInit, AfterViewInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;breadcrumbs&gt;&lt;/breadcrumbs&gt;
-
-&lt;p class&#x3D;&quot;title&quot;&gt;{{name}}&lt;/p&gt;
-&lt;p class&#x3D;&quot;subtitle&quot;&gt;{{id}}&lt;/p&gt;
-
-&lt;div class&#x3D;&quot;card block&quot;&gt;
-  &lt;div class&#x3D;&quot;card-content p-0 is-clipped&quot;&gt;
-    &lt;map
-      #map
-      [layerSelectable]&#x3D;&quot;false&quot;
-      zoom&#x3D;&quot;12&quot;
-      height&#x3D;&quot;200px&quot;
-      [scrollWheelZoom]&#x3D;&quot;false&quot;
-      [markers]&#x3D;&quot;marker ? [marker] : []&quot;
-    &gt;&lt;/map&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class&#x3D;&quot;card block&quot;&gt;
-  &lt;div class&#x3D;&quot;card-content&quot;&gt;
-    &lt;div&gt;
-      &lt;canvas
-        style&#x3D;&quot;max-width: min(100%, 100vw)&quot;
-        baseChart
-        type&#x3D;&quot;bar&quot;
-        [data]&#x3D;&quot;chartData&quot;
-        [options]&#x3D;&quot;{
-          plugins: {
-            legend: {
-              display: false
-            }
-          },
-          scales: {
-            y: {
-              title: {
-                display: true,
-                text: &#x27;water-usage-forecasts.chart.consumption&#x27; | translate
-              }
-            },
-            x: {
-              title: {
-                display: true,
-                text: &#x27;water-usage-forecasts.chart.year&#x27; | translate
-              }
-            }
-          }
-        }&quot;
-      &gt;&lt;/canvas&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;dropdown is-right is-auto-hide&quot;&gt;
+  &lt;div class&#x3D;&quot;dropdown-trigger&quot; (click)&#x3D;&quot;toggle()&quot;&gt;
+    &lt;div class&#x3D;&quot;buttons&quot;&gt;
+      &lt;div
+        class&#x3D;&quot;button is-rounded&quot;
+        style&#x3D;&quot;
+      background-image: url({{avatar}});
+      background-size: cover;
+    &quot;
+      &gt;
+      &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-  &lt;div class&#x3D;&quot;card-footer is-justify-content-end&quot;&gt;
-    &lt;p class&#x3D;&quot;pr-1&quot;&gt;{{recordedAt}}&lt;/p&gt;
+  &lt;div class&#x3D;&quot;dropdown-menu&quot;&gt;
+    &lt;div class&#x3D;&quot;dropdown-content&quot;&gt;
+      &lt;div class&#x3D;&quot;dropdown-item has-text-centered&quot;&gt;
+        &lt;p class&#x3D;&quot;icon-text has-text-weight-bold is-flex-wrap-nowrap&quot;&gt;
+          &lt;span *ngIf&#x3D;&quot;isAdmin&quot; class&#x3D;&quot;icon&quot;&gt;&lt;/span&gt;
+          &lt;span style&#x3D;&quot;white-space: nowrap&quot;&gt;{{name}}&lt;/span&gt;
+          &lt;span
+            *ngIf&#x3D;&quot;isAdmin&quot;
+            attr.data-tooltip&#x3D;&quot;{{&#x27;core.frame.admin&#x27; | translate}}&quot;
+            class&#x3D;&quot;icon has-tooltip-arrow&quot;
+            style&#x3D;&quot;border-bottom: unset&quot;
+          &gt;
+            &lt;ion-icon name&#x3D;&quot;rocket&quot;&gt;&lt;/ion-icon&gt;
+          &lt;/span&gt;
+        &lt;/p&gt;
+        &lt;p&gt;{{username}}&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;hr class&#x3D;&quot;dropdown-divider&quot;&gt;
+      &lt;a class&#x3D;&quot;dropdown-item has-text-centered pr-5&quot; (click)&#x3D;&quot;logout()&quot;&gt;
+        &lt;span class&#x3D;&quot;icon-text&quot;&gt;
+          &lt;span class&#x3D;&quot;icon&quot;&gt;
+            &lt;ion-icon name&#x3D;&quot;log-out-outline&quot;&gt;&lt;/ion-icon&gt;
+          &lt;/span&gt;
+          &lt;span&gt;{{&quot;core.frame.logout&quot; | translate}}&lt;/span&gt;
+        &lt;/span&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
@@ -850,10 +716,10 @@ export class ConsumerDetailComponent implements OnInit, AfterViewInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><breadcrumbs></breadcrumbs><p class="title">{{name}}</p><p class="subtitle">{{id}}</p><div class="card block">  <div class="card-content p-0 is-clipped">    <map      #map      [layerSelectable]="false"      zoom="12"      height="200px"      [scrollWheelZoom]="false"      [markers]="marker ? [marker] : []"    ></map>  </div></div><div class="card block">  <div class="card-content">    <div>      <canvas        style="max-width: min(100%, 100vw)"        baseChart        type="bar"        [data]="chartData"        [options]="{          plugins: {            legend: {              display: false            }          },          scales: {            y: {              title: {                display: true,                text: \'water-usage-forecasts.chart.consumption\' | translate              }            },            x: {              title: {                display: true,                text: \'water-usage-forecasts.chart.year\' | translate              }            }          }        }"      ></canvas>    </div>  </div>  <div class="card-footer is-justify-content-end">    <p class="pr-1">{{recordedAt}}</p>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="dropdown is-right is-auto-hide">  <div class="dropdown-trigger" (click)="toggle()">    <div class="buttons">      <div        class="button is-rounded"        style="      background-image: url({{avatar}});      background-size: cover;    "      >      </div>    </div>  </div>  <div class="dropdown-menu">    <div class="dropdown-content">      <div class="dropdown-item has-text-centered">        <p class="icon-text has-text-weight-bold is-flex-wrap-nowrap">          <span *ngIf="isAdmin" class="icon"></span>          <span style="white-space: nowrap">{{name}}</span>          <span            *ngIf="isAdmin"            attr.data-tooltip="{{\'core.frame.admin\' | translate}}"            class="icon has-tooltip-arrow"            style="border-bottom: unset"          >            <ion-icon name="rocket"></ion-icon>          </span>        </p>        <p>{{username}}</p>      </div>      <hr class="dropdown-divider">      <a class="dropdown-item has-text-centered pr-5" (click)="logout()">        <span class="icon-text">          <span class="icon">            <ion-icon name="log-out-outline"></ion-icon>          </span>          <span>{{"core.frame.logout" | translate}}</span>        </span>      </a>    </div>  </div></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BreadcrumbsComponent', 'selector': 'breadcrumbs'},{'name': 'CallbackComponent', 'selector': 'app-callback'},{'name': 'ConsumerDetailComponent', 'selector': 'lib-consumer-detail'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'ExampleComponent', 'selector': ''},{'name': 'FrameComponent', 'selector': 'app-frame'},{'name': 'IfcComponent', 'selector': 'ifc'},{'name': 'IonIconComponent', 'selector': 'ion-icon'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'MapComponent', 'selector': 'map'},{'name': 'MapSelectViewComponent', 'selector': 'lib-map-select-view'},{'name': 'ProphetForecastResultDataComponent', 'selector': 'lib-prophet-forecast-result-data'},{'name': 'PumpModelComponent', 'selector': ''},{'name': 'ResultDataComponent', 'selector': '[lib-result-data]'},{'name': 'ResultDataViewComponent', 'selector': 'lib-result-data-view'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'UserPopoutComponent', 'selector': 'app-user-popout'},{'name': 'WaterRightDetailComponent', 'selector': 'lib-water-right-detail'},{'name': 'WaterUsageForecastsResultDataComponent', 'selector': 'lib-water-usage-forecasts-result-data'}];
     var DIRECTIVES = [{'name': 'BulmaIsToggleableDirective', 'selector': '.is-toggleable'},{'name': 'LangSelectorDirective', 'selector': '[selectLang]'}];
-    var ACTUAL_COMPONENT = {'name': 'ConsumerDetailComponent'};
+    var ACTUAL_COMPONENT = {'name': 'UserPopoutComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -899,7 +765,7 @@ export class ConsumerDetailComponent implements OnInit, AfterViewInit {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'ConsumerDetailComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'UserPopoutComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

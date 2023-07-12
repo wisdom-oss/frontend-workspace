@@ -48,7 +48,7 @@
   <li>Interfaces</li>
   <li
   >
-  ForecastResponse</li>
+  IfcDB</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -66,11 +66,24 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>wisdom_modules/water-usage-forecasts/src/lib/services/prophet-forecast.service.ts</code>
+            <code>wisdom_modules/common/src/lib/ifc/ifc.service.ts</code>
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>The schema the ifc db uses.</p>
 
+            </p>
+
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                    <code>DBSchema</code>
+            </p>
 
         <section>
             <h3 id="index">Index</h3>
@@ -85,21 +98,9 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                        <a href="#highMigrationPrognosis" 
+                                        <a href="#models" 
 >
-                                            highMigrationPrognosis
-                                        </a>
-                                </li>
-                                <li>
-                                        <a href="#lowMigrationPrognosis" 
->
-                                            lowMigrationPrognosis
-                                        </a>
-                                </li>
-                                <li>
-                                        <a href="#mediumMigrationPrognosis" 
->
-                                            mediumMigrationPrognosis
+                                            models
                                         </a>
                                 </li>
                             </ul>
@@ -117,9 +118,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="highMigrationPrognosis"></a>
-                                        <span class="name "><b>highMigrationPrognosis</b>
-                                            <a href="#highMigrationPrognosis">
+                                        <a name="models"></a>
+                                        <span class="name "><b>models</b>
+                                            <a href="#models">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -127,7 +128,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>highMigrationPrognosis:         <code><a href="../interfaces/Datapoint.html" target="_self" >Datapoint[]</a></code>
+                                        <code>models:     <code>literal type</code>
 </code>
                                     </td>
                                 </tr>
@@ -135,7 +136,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="../interfaces/Datapoint.html" target="_self" >Datapoint[]</a></code>
+                                            <i>Type : </i>    <code>literal type</code>
 
                                         </td>
                                     </tr>
@@ -144,72 +145,14 @@
 
 
 
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="lowMigrationPrognosis"></a>
-                                        <span class="name "><b>lowMigrationPrognosis</b>
-                                            <a href="#lowMigrationPrognosis">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>lowMigrationPrognosis:         <code><a href="../interfaces/Datapoint.html" target="_self" >Datapoint[]</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="../interfaces/Datapoint.html" target="_self" >Datapoint[]</a></code>
-
-                                        </td>
-                                    </tr>
-
-
-
-
-
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="mediumMigrationPrognosis"></a>
-                                        <span class="name "><b>mediumMigrationPrognosis</b>
-                                            <a href="#mediumMigrationPrognosis">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>mediumMigrationPrognosis:         <code><a href="../interfaces/Datapoint.html" target="_self" >Datapoint[]</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="../interfaces/Datapoint.html" target="_self" >Datapoint[]</a></code>
-
-                                        </td>
-                                    </tr>
-
-
-
-
-
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Cached IFC models.</p>
+<p>The key is the path where the model is found.</p>
+<p>The value is the raw bytes of the model stored as a Blob.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -218,53 +161,74 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import {HttpClient, HttpContext, HttpHeaders} from &quot;@angular/common/http&quot;;
-import {Observable} from &quot;rxjs&quot;;
-import {Router} from &quot;@angular/router&quot;;
-import {USE_API_URL, USE_LOADER} from &quot;common&quot;;
+import {DBSchema, openDB} from &quot;idb&quot;;
+import {HttpClient, HttpContext} from &quot;@angular/common/http&quot;;
+import {USE_LOADER} from &quot;../http-context/use-loader&quot;;
+import {firstValueFrom} from &quot;rxjs&quot;;
 
-const API_URL &#x3D; &quot;prophet-forecast/&quot;;
+/** Indexed DB name. */
+const DB_NAME &#x3D; &quot;ifc-db&quot;;
 
-/** Possible forecast calculation methods. */
-export enum ForecastType {
-  PROPHET &#x3D; &quot;prophet&quot;
+/** Indexed DB schema version. */
+const SCHEMA_V &#x3D; 1;
+
+/** The schema the ifc db uses. */
+interface IfcDB extends DBSchema {
+  /**
+   * Cached IFC models.
+   *
+   * The key is the path where the model is found.
+   *
+   * The value is the raw bytes of the model stored as a Blob.
+   */
+  models: {
+    key: string,
+    value: Blob
+  }
 }
 
-export interface Datapoint {
-  ds: string,
-  lower: number,
-  forecast: number,
-  upper: number
-}
-
-export interface ForecastResponse {
-  lowMigrationPrognosis: Datapoint[],
-  mediumMigrationPrognosis: Datapoint[],
-  highMigrationPrognosis: Datapoint[]
-}
-
+/**
+ * Service to lazily fetch IFC models.
+ * The fetch will try to load from the local indexed db first.
+ */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
-export class ProphetForecastService {
+export class IfcService {
 
-  constructor(
-    private http: HttpClient,
-    private router: Router
-  ) {}
+  /** Indexed DB client. */
+  private readonly idb;
 
-  fetchForecastData(key: string): Observable&lt;ForecastResponse&gt; {
-    let url &#x3D; this.router.parseUrl(API_URL);
-    url.queryParams[&quot;key&quot;] &#x3D; key;
-    return this.http.get(url.toString(), {
-      headers: new HttpHeaders({
-        &quot;Content-Type&quot;: &quot;application/json&quot;
-      }),
-      responseType: &quot;json&quot;,
-      context: new HttpContext()
-        .set(USE_API_URL, true)
-        .set(USE_LOADER, &quot;water-usage-forecasts.display.loading&quot;)
-    }) as Observable&lt;ForecastResponse&gt;;
+  /**
+   * Constructor.
+   * @param http Client to request geo data
+   */
+  constructor(private http: HttpClient) {
+    this.idb &#x3D; openDB&lt;IfcDB&gt;(DB_NAME, SCHEMA_V, {
+      upgrade(db, oldV) {
+        if (oldV) db.deleteObjectStore(&quot;models&quot;);
+        db.createObjectStore(&quot;models&quot;);
+      }
+    });
+  }
+
+  /**
+   * Asynchronously fetch IFC models.
+   *
+   * Will only fetch data if not already stored in the indexedDB.
+   * @param path The path where to download model from, will also be the cache key
+   * @param force If true, this will ignore the cache and request everything
+   */
+  async fetchModel(path: string, force: boolean &#x3D; false): Promise&lt;File&gt; {
+    const idb &#x3D; await this.idb;
+    let dbBlob &#x3D; force ? undefined : await idb.get(&quot;models&quot;, path);
+    if (dbBlob) return new File([dbBlob], path);
+    let res &#x3D; await firstValueFrom(this.http.get(path, {
+      responseType: &quot;blob&quot;,
+      context: new HttpContext().set(USE_LOADER, &quot;common.ifc.fetching&quot;)
+    }));
+    await idb.put(&quot;models&quot;, res, path);
+    return new File([res], path);
   }
 }
 </code></pre>
@@ -304,7 +268,7 @@ export class ProphetForecastService {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
-            var COMPODOC_CURRENT_PAGE_URL = 'ForecastResponse.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'IfcDB.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

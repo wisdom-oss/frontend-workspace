@@ -135,6 +135,10 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#oidcSecurityService" >oidcSecurityService</a>
+                            </li>
+                            <li>
                                 <a href="#title" >title</a>
                             </li>
                         </ul>
@@ -152,6 +156,9 @@
                             <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
                             </li>
+                            <li>
+                                <a href="#onClick" >onClick</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -159,16 +166,112 @@
 
 
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostListeners</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#click" >click</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
         </tbody>
     </table>
 </section>
 
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(oidcSecurityService: OidcSecurityService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">wisdom_modules/core/src/app/app.component.ts:15</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>oidcSecurityService</td>
+                                                  
+                                                        <td>
+                                                                    <code>OidcSecurityService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
 
 
 
+    <section>
+    <h3>HostListeners</h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="click"></a>
+                    <span class="name">
+                        <span ><b>click</b></span>
+                        <a href="#click"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <i>Arguments : </i><code>'$event' </code>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>click(event: MouseEvent)</code>
+                </td>
+            </tr>
 
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">wisdom_modules/core/src/app/app.component.ts:20</a></div>
+                </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</section>
     <section>
     
     <h3 id="methods">
@@ -194,8 +297,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="20"
-                            class="link-to-prism">wisdom_modules/core/src/app/app.component.ts:20</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">wisdom_modules/core/src/app/app.component.ts:33</a></div>
                 </td>
             </tr>
 
@@ -214,12 +317,115 @@
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onClick"></a>
+                    <span class="name">
+                        <span ><b>onClick</b></span>
+                        <a href="#onClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onClick(event: MouseEvent)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@HostListener(&#x27;click&#x27;, [&#x27;$event&#x27;])<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">wisdom_modules/core/src/app/app.component.ts:20</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                            <code>MouseEvent</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
     <section>
     
     <h3 id="inputs">
         Properties
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="oidcSecurityService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>oidcSecurityService</b></span>
+                        <a href="#oidcSecurityService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>OidcSecurityService</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">wisdom_modules/core/src/app/app.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -244,7 +450,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">wisdom_modules/core/src/app/app.component.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">wisdom_modules/core/src/app/app.component.ts:15</a></div>
                         </td>
                     </tr>
 
@@ -263,10 +469,11 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, OnInit} from &quot;@angular/core&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, HostListener, OnInit} from &quot;@angular/core&quot;;
 import {Chart} from &quot;chart.js&quot;;
 import AnnotationPlugin from &quot;chartjs-plugin-annotation&quot;;
 import {Icon} from &quot;leaflet&quot;;
+import {OidcSecurityService} from &quot;angular-auth-oidc-client&quot;;
 
 /** Component of the app, the main entry point for angular. */
 @Component({
@@ -274,8 +481,20 @@ import {Icon} from &quot;leaflet&quot;;
   templateUrl: &quot;./app.component.html&quot;
 })
 export class AppComponent implements OnInit {
+
   /** The title of the website. */
   title &#x3D; &quot;WISdoM-OSS&quot;;
+
+  constructor(public oidcSecurityService: OidcSecurityService) {}
+
+  @HostListener(&#x27;click&#x27;, [&#x27;$event&#x27;])
+  onClick(event: MouseEvent) {
+    let srcElement &#x3D; event.srcElement as HTMLElement;
+    hideAutoHideElement(
+      document.getElementsByTagName(&quot;body&quot;)[0],
+      srcElement
+    );
+  }
 
   /**
    * On init this sets the Default image path for Leaflet.
@@ -285,6 +504,15 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     Icon.Default.imagePath &#x3D; &quot;assets/leaflet/images/&quot;;
     Chart.register(AnnotationPlugin);
+  }
+}
+
+function hideAutoHideElement(element: HTMLElement, except: HTMLElement) {
+  if (!element.contains(except) &amp;&amp; element.classList.contains(&quot;is-auto-hide&quot;)) {
+    element.classList.remove(&quot;is-active&quot;);
+  }
+  for (let child of (element as any)?.children) {
+    hideAutoHideElement(child, except);
   }
 }
 </code></pre>
@@ -322,7 +550,7 @@ export class AppComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><router-outlet></router-outlet></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BimComponent', 'selector': 'bim'},{'name': 'BreadcrumbsComponent', 'selector': 'breadcrumbs'},{'name': 'ConsumerDetailComponent', 'selector': 'lib-consumer-detail'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'ExampleComponent', 'selector': ''},{'name': 'FrameComponent', 'selector': 'app-frame'},{'name': 'IonIconComponent', 'selector': 'ion-icon'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MapComponent', 'selector': 'map'},{'name': 'MapSelectViewComponent', 'selector': 'lib-map-select-view'},{'name': 'PumpModelComponent', 'selector': ''},{'name': 'ResultDataViewComponent', 'selector': 'lib-result-data-view'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'WaterRightDetailComponent', 'selector': 'lib-water-right-detail'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BreadcrumbsComponent', 'selector': 'breadcrumbs'},{'name': 'CallbackComponent', 'selector': 'app-callback'},{'name': 'ConsumerDetailComponent', 'selector': 'lib-consumer-detail'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'ExampleComponent', 'selector': ''},{'name': 'FrameComponent', 'selector': 'app-frame'},{'name': 'IfcComponent', 'selector': 'ifc'},{'name': 'IonIconComponent', 'selector': 'ion-icon'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'MapComponent', 'selector': 'map'},{'name': 'MapSelectViewComponent', 'selector': 'lib-map-select-view'},{'name': 'ProphetForecastResultDataComponent', 'selector': 'lib-prophet-forecast-result-data'},{'name': 'PumpModelComponent', 'selector': ''},{'name': 'ResultDataComponent', 'selector': '[lib-result-data]'},{'name': 'ResultDataViewComponent', 'selector': 'lib-result-data-view'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'UserPopoutComponent', 'selector': 'app-user-popout'},{'name': 'WaterRightDetailComponent', 'selector': 'lib-water-right-detail'},{'name': 'WaterUsageForecastsResultDataComponent', 'selector': 'lib-water-usage-forecasts-result-data'}];
     var DIRECTIVES = [{'name': 'BulmaIsToggleableDirective', 'selector': '.is-toggleable'},{'name': 'LangSelectorDirective', 'selector': '[selectLang]'}];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
 </script>

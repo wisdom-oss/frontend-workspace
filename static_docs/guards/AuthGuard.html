@@ -112,12 +112,12 @@ token to browser further.</p>
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(authStorage: <a href="../injectables/AuthStorageService.html" target="_self">AuthStorageService</a>, authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">wisdom_modules/core/src/app/auth/auth.guard.ts:23</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">wisdom_modules/core/src/app/auth/auth.guard.ts:20</a></div>
                             </td>
                         </tr>
 
@@ -137,38 +137,6 @@ token to browser further.</p>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                                <tr>
-                                                        <td>authStorage</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/AuthStorageService.html" target="_self" >AuthStorageService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <p>The storage containing the tokens</p>
-
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>authService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <p>The service used to interact with the auth server</p>
-
-                                                        </td>
-                                                </tr>
                                                 <tr>
                                                         <td>router</td>
                                                   
@@ -219,8 +187,8 @@ token to browser further.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="47"
-                            class="link-to-prism">wisdom_modules/core/src/app/auth/auth.guard.ts:47</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">wisdom_modules/core/src/app/auth/auth.guard.ts:40</a></div>
                 </td>
             </tr>
 
@@ -300,9 +268,6 @@ import {
 } from &quot;@angular/router&quot;;
 import {throwError, Observable} from &quot;rxjs&quot;;
 
-import {AuthStorageService} from &quot;./auth-storage.service&quot;;
-import {AuthService} from &quot;./auth.service&quot;;
-
 /**
  * Guard checking if the user is signed in, it needs to have a valid access
  * token to browser further.
@@ -316,13 +281,9 @@ export class AuthGuard implements CanActivate {
 
   /**
    * Constructor.
-   * @param authStorage The storage containing the tokens
-   * @param authService The service used to interact with the auth server
    * @param router The router to route to the login if necessary
    */
   constructor(
-    private authStorage: AuthStorageService,
-    private authService: AuthService,
     private router: Router
   ) {}
 
@@ -348,57 +309,59 @@ export class AuthGuard implements CanActivate {
     }
 
     // if no token is available the use can&#x27;t be logged in
-    let token &#x3D; this.authStorage.accessToken;
-    if (!token) return loginUrlTree;
+    // let token &#x3D; this.authStorage.accessToken;
+    // if (!token) return loginUrlTree;
 
     // wait for the server to reply with a token check
-    return new Observable(subscriber &#x3D;&gt; {
-      this.authService.validate(token!).subscribe({
-        next: response &#x3D;&gt; {
-          // token is valid, you&#x27;re ready to go
-          subscriber.next(true);
-          subscriber.complete();
-        },
+    // return new Observable(subscriber &#x3D;&gt; {
+    //   this.authService.validate(token!).subscribe({
+    //     next: response &#x3D;&gt; {
+    //       // token is valid, you&#x27;re ready to go
+    //       subscriber.next(true);
+    //       subscriber.complete();
+    //     },
+    //
+    //     error: errResponse &#x3D;&gt; {
+    //       /**
+    //        * Small function to avoid code depletes.
+    //        * Clears the auth storage and sends the user to the login page.
+    //        */
+    //       let returnToLogin &#x3D; () &#x3D;&gt; {
+    //         this.authStorage.clear();
+    //         subscriber.next(loginUrlTree);
+    //         subscriber.complete();
+    //       };
+    //
+    //       if (this.authStorage.refreshToken) {
+    //         // if a refresh token is present, try to refresh
+    //         this.authService.refresh(this.authStorage.refreshToken).subscribe({
+    //           next: refreshResponse &#x3D;&gt; {
+    //             // refresh token was valid, update with new data
+    //             this.authStorage.accessToken &#x3D; refreshResponse.access_token;
+    //             this.authStorage.refreshToken &#x3D; refreshResponse.refresh_token;
+    //             this.authStorage.scopes &#x3D; refreshResponse.scope;
+    //             this.authStorage.expiresIn &#x3D; refreshResponse.expires_in;
+    //             subscriber.next(true);
+    //             subscriber.complete();
+    //             return;
+    //           },
+    //
+    //           error: refreshErrResponse &#x3D;&gt; {
+    //             // token is no valid, send the user to the login page
+    //             if (refreshErrResponse.status &#x3D;&#x3D;&#x3D; 400) return returnToLogin();
+    //             // TODO: handle non-400 status codes gracefully
+    //             else return returnToLogin();
+    //           }
+    //         });
+    //         return;
+    //       }
+    //
+    //       return returnToLogin();
+    //     }
+    //   });
+    // });
 
-        error: errResponse &#x3D;&gt; {
-          /**
-           * Small function to avoid code depletes.
-           * Clears the auth storage and sends the user to the login page.
-           */
-          let returnToLogin &#x3D; () &#x3D;&gt; {
-            this.authStorage.clear();
-            subscriber.next(loginUrlTree);
-            subscriber.complete();
-          };
-
-          if (this.authStorage.refreshToken) {
-            // if a refresh token is present, try to refresh
-            this.authService.refresh(this.authStorage.refreshToken).subscribe({
-              next: refreshResponse &#x3D;&gt; {
-                // refresh token was valid, update with new data
-                this.authStorage.accessToken &#x3D; refreshResponse.access_token;
-                this.authStorage.refreshToken &#x3D; refreshResponse.refresh_token;
-                this.authStorage.scopes &#x3D; refreshResponse.scope;
-                this.authStorage.expiresIn &#x3D; refreshResponse.expires_in;
-                subscriber.next(true);
-                subscriber.complete();
-                return;
-              },
-
-              error: refreshErrResponse &#x3D;&gt; {
-                // token is no valid, send the user to the login page
-                if (refreshErrResponse.status &#x3D;&#x3D;&#x3D; 400) return returnToLogin();
-                // TODO: handle non-400 status codes gracefully
-                else return returnToLogin();
-              }
-            });
-            return;
-          }
-
-          return returnToLogin();
-        }
-      });
-    });
+    return true;
   }
 
 }

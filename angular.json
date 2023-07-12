@@ -35,7 +35,9 @@
             "outputPath": "dist/core",
             "index": "wisdom_modules/core/src/index.html",
             "main": "wisdom_modules/core/src/main.ts",
-            "polyfills": "wisdom_modules/core/src/polyfills.ts",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "wisdom_modules/core/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -118,7 +120,10 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "wisdom_modules/core/src/test.ts",
-            "polyfills": "wisdom_modules/core/src/polyfills.ts",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
             "tsConfig": "wisdom_modules/core/tsconfig.spec.json",
             "karmaConfig": "wisdom_modules/core/karma.conf.js",
             "inlineStyleLanguage": "scss",
