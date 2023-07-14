@@ -18,9 +18,6 @@
         "dist/pump-models/pump-models",
         "dist/pump-models"
       ],
-      "water-potability": [
-        "dist/water-potability"
-      ],
       "water-usage-forecasts": [
         "dist/water-usage-forecasts/water-usage-forecasts",
         "dist/water-usage-forecasts"

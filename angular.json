@@ -272,39 +272,6 @@
           }
         }
       }
-    },
-    "water-potability": {
-      "projectType": "library",
-      "root": "wisdom_modules/water-potability",
-      "sourceRoot": "wisdom_modules/water-potability/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "wisdom_modules/water-potability/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "wisdom_modules/water-potability/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "wisdom_modules/water-potability/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "tsConfig": "wisdom_modules/water-potability/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
-          }
-        }
-      }
     }
   }
 }
