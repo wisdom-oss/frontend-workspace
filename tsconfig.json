@@ -6,6 +6,9 @@
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "paths": {
+      "be-water-smart": [
+        "dist/be-water-smart"
+      ],
       "common": [
         "dist/common/common",
         "dist/common"
@@ -17,6 +20,10 @@
       "pump-models": [
         "dist/pump-models/pump-models",
         "dist/pump-models"
+      ],
+      "water-potability": [
+        "dist/water-potability",
+        "dist/water-potability"
       ],
       "water-usage-forecasts": [
         "dist/water-usage-forecasts/water-usage-forecasts",

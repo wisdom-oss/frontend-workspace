@@ -29,7 +29,9 @@ export const sidebar: SideBarEntries = [
     "Proof of Concept", "rocket", [
     ["Example", "sparkles", "example"],
     ["No Example", null, null],
-    ["pump-models.label.name", "cube", "pump-models"]
+    ["Be Water Smart", "sparkles", "be-water-smart"],
+    ["pump-models.label.name", "cube", "pump-models"],
+    ["water-potability.label.name", "cube", "water-potability"]
   ]
   ],
   [
