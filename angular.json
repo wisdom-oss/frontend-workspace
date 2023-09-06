@@ -35,9 +35,7 @@
             "outputPath": "dist/core",
             "index": "wisdom_modules/core/src/index.html",
             "main": "wisdom_modules/core/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "wisdom_modules/core/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -120,10 +118,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "wisdom_modules/core/src/test.ts",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "wisdom_modules/core/tsconfig.spec.json",
             "karmaConfig": "wisdom_modules/core/karma.conf.js",
             "inlineStyleLanguage": "scss",
@@ -141,9 +136,7 @@
                 "output": "/"
               }
             ],
-            "styles": [
-              "wisdom_modules/core/src/styles.scss"
-            ],
+            "styles": ["wisdom_modules/core/src/styles.scss"],
             "scripts": []
           }
         }
@@ -298,43 +291,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "tsConfig": "wisdom_modules/be-water-smart/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
-          }
-        }
-      }
-    },
-    "water-potability": {
-      "projectType": "library",
-      "root": "wisdom_modules/water-potability",
-      "sourceRoot": "wisdom_modules/water-potability/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "wisdom_modules/water-potability/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "wisdom_modules/water-potability/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "wisdom_modules/water-potability/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "tsConfig": "wisdom_modules/water-potability/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         }
       }

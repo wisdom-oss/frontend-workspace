@@ -13,7 +13,7 @@ module.exports = {
         logLevel: "debug",
         pathRewrite: {
           // Rewrite /api/bws to reflect the api endpoints given in the docker
-          "^/api/bws": "",
+          "^/api/bws/": "",
         },
       },
       "/api/*": {

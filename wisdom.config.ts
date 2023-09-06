@@ -1,7 +1,7 @@
 import {
   SideBarEntries
 } from "./wisdom_modules/core/src/app/frame/side-bar/side-bar-entries";
-import {AuthConfig} from "./wisdom_modules/core/src/app/auth/types/AuthConfig";
+import { AuthConfig } from "./wisdom_modules/core/src/app/auth/types/AuthConfig";
 
 import env from "./env";
 
@@ -27,17 +27,16 @@ export const langs = {
 export const sidebar: SideBarEntries = [
   [
     "Proof of Concept", "rocket", [
-    ["Example", "sparkles", "example"],
-    ["No Example", null, null],
-    ["Be Water Smart", "sparkles", "be-water-smart"],
-    ["pump-models.label.name", "cube", "pump-models"],
-    ["water-potability.label.name", "cube", "water-potability"]
-  ]
+      ["Example", "sparkles", "example"],
+      ["No Example", null, null],
+      ["Be Water Smart", "sparkles", "be-water-smart"],
+      ["pump-models.label.name", "cube", "pump-models"]
+    ]
   ],
   [
     "sidebar.water-usage", "bar-chart", [
-    ["water-usage-forecasts.label.name", "calendar", "water-usage-forecasts"]
-  ]
+      ["water-usage-forecasts.label.name", "calendar", "water-usage-forecasts"]
+    ]
   ]
 ];
 
