@@ -141,8 +141,7 @@ const inquirerImport = import("inquirer");
     console.log(chalk.greenBright("Primping") + " module...");
     await exec(`npx primp -r wisdom_modules/${dashName}`, {shell: true});
 
-    // TODO: remove this, instead ask the user to run `npm run build`
-    // await exec(`ng build ${dashName}`, {shell: true});
+    console.log(`\nRun ${chalk.cyan("npm run build")} to build your new module.`);
   }
   catch (e) {
     console.error(chalk.redBright("An error occurred:"));
