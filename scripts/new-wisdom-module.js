@@ -3,8 +3,27 @@ const fs = require("fs/promises");
 const {promisify} = require("util");
 const exec = promisify(require("child_process").exec);
 const {strings} = require("@angular-devkit/core");
+const chalkImport = import("chalk");
+const inquirerImport = import("inquirer");
 
 (async () => {
+  const {default: chalk} = await chalkImport;
+
+  try {
+    await exec("git diff --quiet && git diff --cached --quiet");
+  }
+  catch (e) {
+    if (!e.stdout.length && e.code) {
+      console.log(chalk.redBright([
+        "The workspace needs to be a clean working tree.",
+        "Commit your code first."
+      ].join("\n")))
+      process.exit(1);
+    }
+
+    console.log(chalk.redBright("Make sure you have git installed."));
+    process.exit(1);
+  }
 
   let name;
   let nameIsValid = false;
@@ -24,33 +43,38 @@ const {strings} = require("@angular-devkit/core");
     gitUrlIsValid = isValidGitSSHLink(gitUrl);
   }
 
-  console.log({name, gitUrl});
-  console.log(strings.dasherize(name));
-  console.log(strings.classify(name));
-
-  {
+  try {
+    console.log(chalk.greenBright("Generating") + " the library...");
     await exec(`ng generate library "${name}"`, {shell: true});
   }
-
-  {
-    let moduleFile = `wisdom_modules/${dashName}/src/lib/${dashName}.module.ts`;
-    let moduleContent = await fs.readFile(moduleFile, "utf8");
-    moduleContent = [
-      `import {TranslateModule} from "@ngx-translate/core";`,
-      `import {WisdomModule} from "common";`,
-      moduleContent.replace(
-        "imports: [",
-        "imports: [\n    WisdomModule,\n    TranslateModule"
-      )
-    ].join("\n");
-    await fs.writeFile(moduleFile, moduleContent);
+  catch (e) {
+    console.error(chalk.redBright("Could not generate library:"));
+    console.error(chalk.redBright(e.message));
+    process.exit(1);
   }
 
-  {
-    let publicApiFile = `wisdom_modules/${dashName}/src/public-api.ts`;
-    await fs.writeFile(
-      publicApiFile,
-      `
+  try {
+    {
+      console.log(chalk.greenBright("Updating") + " library module...");
+      let moduleFile = `wisdom_modules/${dashName}/src/lib/${dashName}.module.ts`;
+      let moduleContent = await fs.readFile(moduleFile, "utf8");
+      moduleContent = [
+        `import {TranslateModule} from "@ngx-translate/core";`,
+        `import {WisdomModule} from "common";`,
+        moduleContent.replace(
+          "imports: [",
+          "imports: [\n    WisdomModule,\n    TranslateModule"
+        )
+      ].join("\n");
+      await fs.writeFile(moduleFile, moduleContent);
+    }
+
+    {
+      console.log(chalk.greenBright("Updating") + " public-api.ts...");
+      let publicApiFile = `wisdom_modules/${dashName}/src/public-api.ts`;
+      await fs.writeFile(
+        publicApiFile,
+        `
         import {WisdomInterface} from "common";
         import {${className}Component} from "./lib/${dashName}.component";
 
@@ -66,30 +90,33 @@ const {strings} = require("@angular-devkit/core");
           },
         };
       `.replaceAll(/^ {8}/gm, "").trim() + "\n"
-    );
-  }
+      );
+    }
 
-  {
-    let wisdomModulesFile = `wisdom.modules.ts`;
-    let wisdomModulesContent = await fs.readFile(wisdomModulesFile, "utf8");
-    wisdomModulesContent = [
-      wisdomModulesContent.trim(),
-      `export * as ${camelName} from "${dashName}";`,
-      ""
-    ].join("\n");
-    await fs.writeFile(wisdomModulesFile, wisdomModulesContent);
-  }
+    {
+      console.log(chalk.greenBright("Updating") + " wisdom.modules.ts...");
+      let wisdomModulesFile = `wisdom.modules.ts`;
+      let wisdomModulesContent = await fs.readFile(wisdomModulesFile, "utf8");
+      wisdomModulesContent = [
+        wisdomModulesContent.trim(),
+        `export * as ${camelName} from "${dashName}";`,
+        ""
+      ].join("\n");
+      await fs.writeFile(wisdomModulesFile, wisdomModulesContent);
+    }
 
-  await fs.rm(`wisdom_modules/${dashName}/src/lib/${dashName}.component.spec.ts`);
-  await fs.rm(`wisdom_modules/${dashName}/src/lib/${dashName}.service.spec.ts`);
-  await fs.rm(`wisdom_modules/${dashName}/tsconfig.spec.json`);
+    console.log(chalk.greenBright("Deleting") + " unused files...");
+    await fs.rm(`wisdom_modules/${dashName}/src/lib/${dashName}.component.spec.ts`);
+    await fs.rm(`wisdom_modules/${dashName}/src/lib/${dashName}.service.spec.ts`);
+    await fs.rm(`wisdom_modules/${dashName}/tsconfig.spec.json`);
 
-  {
-    let wisdomConfigFile = `wisdom.config.ts`;
-    let wisdomConfigContent = await fs.readFile(wisdomConfigFile, "utf8");
-    wisdomConfigContent = wisdomConfigContent.replace(
-      "export const sidebar: SideBarEntries = [",
-      `
+    {
+      console.log(chalk.greenBright("Updating") + " wisdom.config.ts...");
+      let wisdomConfigFile = `wisdom.config.ts`;
+      let wisdomConfigContent = await fs.readFile(wisdomConfigFile, "utf8");
+      wisdomConfigContent = wisdomConfigContent.replace(
+        "export const sidebar: SideBarEntries = [",
+        `
       export const sidebar: SideBarEntries = [
         [
           "${name} Category", "sparkles", [
@@ -97,22 +124,33 @@ const {strings} = require("@angular-devkit/core");
           ]
         ],
     `.trim().replaceAll(/^ {6}/gm, "")
-    );
-    await fs.writeFile(wisdomConfigFile, wisdomConfigContent);
+      );
+      await fs.writeFile(wisdomConfigFile, wisdomConfigContent);
+    }
+
+    {
+      console.log(chalk.greenBright("Updating") + " .meta...");
+      let metaFile = `.meta`;
+      let metaContent = await fs.readFile(metaFile, "utf8");
+      metaContent = JSON.parse(metaContent);
+      metaContent.projects[`./wisdom_modules/${dashName}`] = gitUrl;
+      metaContent = JSON.stringify(metaContent, null, 2);
+      await fs.writeFile(metaFile, metaContent + "\n");
+    }
+
+    console.log(chalk.greenBright("Primping") + " module...");
+    await exec(`npx primp -r wisdom_modules/${dashName}`, {shell: true});
+
+    // TODO: remove this, instead ask the user to run `npm run build`
+    // await exec(`ng build ${dashName}`, {shell: true});
   }
-
-  {
-    let metaFile = `.meta`;
-    let metaContent = await fs.readFile(metaFile, "utf8");
-    metaContent = JSON.parse(metaContent);
-    metaContent.projects[`./wisdom_modules/${dashName}`] = gitUrl;
-    metaContent = JSON.stringify(metaContent, null, 2);
-    await fs.writeFile(metaFile, metaContent + "\n");
+  catch (e) {
+    console.error(chalk.redBright("An error occurred:"));
+    console.error(chalk.redBright(e.message));
+    console.log(chalk.yellow("Rolling back changes..."));
+    await exec("git reset --hard HEAD");
+    process.exit(1);
   }
-
-  await exec(`npx primp -r wisdom_modules/${dashName}`, {shell: true});
-
-  await exec(`ng build ${dashName}`, {shell: true});
 
 })();
 
@@ -127,11 +165,13 @@ function isValidGitSSHLink(link) {
 }
 
 async function prompt(message) {
-  const {default: inquirer} = await import("inquirer");
+  const {default: inquirer} = await inquirerImport;
+  const {default: chalk} = await chalkImport;
   let prompted = await inquirer.prompt({
     type: "input",
     name: "_",
-    message
+    message,
+    transformer: input => chalk.gray(input)
   });
 
   return prompted._;
