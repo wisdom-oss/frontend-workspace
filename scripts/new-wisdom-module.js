@@ -25,6 +25,9 @@ const inquirerImport = import("inquirer");
     process.exit(1);
   }
 
+  console.log(chalk.yellow("Provide a name for your module."));
+  console.log(chalk.yellow("It needs to be a valid identifier."));
+
   let name;
   let nameIsValid = false;
   while (!nameIsValid) {
@@ -35,6 +38,12 @@ const inquirerImport = import("inquirer");
   let dashName = strings.dasherize(name);
   let className = strings.classify(name);
   let camelName = strings.camelize(name);
+
+  console.log(chalk.yellow("Provide the git url for your new module."));
+  console.log(chalk.yellow("The url needs to be a valid git ssh link."));
+  console.log(chalk.yellow(
+    "A typical ssh link looks like: git@<hostname>:<username>/<repository>.git"
+  ));
 
   let gitUrl;
   let gitUrlIsValid = false;
@@ -147,7 +156,27 @@ const inquirerImport = import("inquirer");
     console.error(chalk.redBright("An error occurred:"));
     console.error(chalk.redBright(e.message));
     console.log(chalk.yellow("Rolling back changes..."));
-    await exec("git reset --hard HEAD");
+
+    try {
+      await fs.rmdir(`wisdom_modules/${dashName}`);
+    }
+    catch (e) {
+      console.error(chalk.redBright("Could not delete generated module."));
+      console.error(chalk.redBright(e.message));
+      console.log(chalk.yellow(
+        `Remove wisdom_modules/${dashName} for a clean rollback.`
+      ));
+    }
+
+    try {
+      await exec("git reset --hard HEAD");
+    }
+    catch (e) {
+      console.error(chalk.redBright("Could not reset git head."));
+      console.error(chalk.redBright(e.message));
+      console.log(chalk.yellow("Try to rollback via `git reset --hard HEAD`."));
+    }
+
     process.exit(1);
   }
 
