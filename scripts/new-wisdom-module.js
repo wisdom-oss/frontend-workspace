@@ -69,7 +69,7 @@ const inquirerImport = import("inquirer");
       console.error(chalk.redBright(e.message));
       console.log(chalk.yellow("Try to rollback via `git reset --hard HEAD`."));
     }
-    
+
     process.exit(1);
   }
 
