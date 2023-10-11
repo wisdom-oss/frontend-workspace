@@ -59,6 +59,17 @@ const inquirerImport = import("inquirer");
   catch (e) {
     console.error(chalk.redBright("Could not generate library:"));
     console.error(chalk.redBright(e.message));
+
+    console.log(chalk.green("Rolling back changes..."));
+    try {
+      await exec("git reset --hard HEAD");
+    }
+    catch (e) {
+      console.error(chalk.redBright("Could not reset git head."));
+      console.error(chalk.redBright(e.message));
+      console.log(chalk.yellow("Try to rollback via `git reset --hard HEAD`."));
+    }
+    
     process.exit(1);
   }
 
@@ -155,7 +166,7 @@ const inquirerImport = import("inquirer");
   catch (e) {
     console.error(chalk.redBright("An error occurred:"));
     console.error(chalk.redBright(e.message));
-    console.log(chalk.yellow("Rolling back changes..."));
+    console.log(chalk.green("Rolling back changes..."));
 
     try {
       await fs.rmdir(`wisdom_modules/${dashName}`);
