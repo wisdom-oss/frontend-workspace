@@ -5,6 +5,8 @@ import { AuthConfig } from "./wisdom_modules/core/src/app/auth/types/AuthConfig"
 
 import env from "./env";
 
+export const name = "WISdoM-OSS";
+
 /**
  * This constant is used to inject language content into the translator.
  *
