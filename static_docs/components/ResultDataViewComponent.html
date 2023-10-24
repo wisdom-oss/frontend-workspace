@@ -14,7 +14,7 @@
     </head>
     <body>
 
-        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
             <a href="../" class="navbar-brand">workspace documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
@@ -36,29 +36,33 @@
 
 
 <ol class="breadcrumb">
-  <li>Components</li>
-  <li
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
   >
   ResultDataViewComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
         </li>
-        <li >
-            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
         </li>
-        <li >
-            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
     <h3>File</h3>
 </p>
 <p class="comment">
@@ -79,14 +83,16 @@
         <h3>Implements</h3>
     </p>
     <p class="comment">
-                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                <code>OnInit</code>
+                <code>DoCheck</code>
     </p>
 
 
-<section>
+<section data-compodoc="block-metadata">
     <h3>Metadata</h3>
     <table class="table table-sm table-hover metadata">
         <tbody>
+
 
 
 
@@ -102,6 +108,8 @@
                 <td class="col-md-3">selector</td>
                 <td class="col-md-9"><code>lib-result-data-view</code></td>
             </tr>
+
+
 
 
 
@@ -122,7 +130,7 @@
     </table>
 </section>
 
-    <section>
+    <section data-compodoc="block-index">
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
@@ -166,6 +174,13 @@
                             <li>
                                 <a href="#selection" >selection</a>
                             </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#selectionDiffer" >selectionDiffer</a>
+                            </li>
+                            <li>
+                                <a href="#selectionEntries" >selectionEntries</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -181,6 +196,9 @@
                             <li>
                                     <span class="modifier">Private</span>
                                 <a href="#fetchData" >fetchData</a>
+                            </li>
+                            <li>
+                                <a href="#ngDoCheck" >ngDoCheck</a>
                             </li>
                             <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
@@ -222,18 +240,18 @@
     </table>
 </section>
 
-    <section>
+    <section data-compodoc="block-constructor">
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(waterRightService: <a href="../injectables/WaterRightsService.html" target="_self">WaterRightsService</a>, consumersService: <a href="../injectables/ConsumersService.html" target="_self">ConsumersService</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, mapService: <a href="../injectables/MapService.html" target="_self">MapService</a>, breadcrumbs: <a href="../injectables/BreadcrumbsService.html" target="_self">BreadcrumbsService</a>)</code>
+<code>constructor(waterRightService: <a href="../injectables/WaterRightsService.html" target="_self">WaterRightsService</a>, consumersService: <a href="../injectables/ConsumersService.html" target="_self">ConsumersService</a>, route: ActivatedRoute, router: Router, mapService: <a href="../injectables/MapService.html" target="_self">MapService</a>, breadcrumbs: <a href="../injectables/BreadcrumbsService.html" target="_self">BreadcrumbsService</a>, keyValueDiffers: KeyValueDiffers)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:25</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:31</a></div>
                             </td>
                         </tr>
 
@@ -289,7 +307,7 @@
                                                         <td>route</td>
                                                   
                                                         <td>
-                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                                    <code>ActivatedRoute</code>
                                                         </td>
                                                   
                                                     <td>
@@ -305,7 +323,7 @@
                                                         <td>router</td>
                                                   
                                                         <td>
-                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                                    <code>Router</code>
                                                         </td>
                                                   
                                                     <td>
@@ -349,6 +367,20 @@
 
                                                         </td>
                                                 </tr>
+                                                <tr>
+                                                        <td>keyValueDiffers</td>
+                                                  
+                                                        <td>
+                                                                    <code>KeyValueDiffers</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                        </td>
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -362,7 +394,7 @@
 
 
 
-    <section>
+    <section data-compodoc="block-methods">
     
     <h3 id="methods">
         Methods
@@ -389,8 +421,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="155"
-                            class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:155</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="183"
+                            class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:183</a></div>
                 </td>
             </tr>
 
@@ -467,6 +499,45 @@ data.</p>
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="ngDoCheck"></a>
+                    <span class="name">
+                        <span ><b>ngDoCheck</b></span>
+                        <a href="#ngDoCheck"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngDoCheck()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="151"
+                            class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:151</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Update <a href="selectionEntries">selectionEntries</a> if <a href="selection">selection</a> changed.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="ngOnInit"></a>
                     <span class="name">
                         <span ><b>ngOnInit</b></span>
@@ -483,8 +554,8 @@ data.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="125"
-                            class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:125</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="145"
+                            class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:145</a></div>
                 </td>
             </tr>
 
@@ -524,8 +595,8 @@ data.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="234"
-                            class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:234</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="263"
+                            class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:263</a></div>
                 </td>
             </tr>
 
@@ -604,8 +675,8 @@ If only one area was selected the name of the selection will be set.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="135"
-                            class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:135</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="163"
+                            class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:163</a></div>
                 </td>
             </tr>
 
@@ -677,7 +748,7 @@ If only one area was selected the name of the selection will be set.</p>
         </tbody>
     </table>
 </section>
-    <section>
+    <section data-compodoc="block-properties">
     
     <h3 id="inputs">
         Properties
@@ -702,7 +773,7 @@ If only one area was selected the name of the selection will be set.</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:76</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="96" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:96</a></div>
                         </td>
                     </tr>
 
@@ -733,7 +804,7 @@ If only one area was selected the name of the selection will be set.</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="84" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:84</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="104" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:104</a></div>
                         </td>
                     </tr>
 
@@ -758,7 +829,7 @@ If only one area was selected the name of the selection will be set.</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:63</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:70</a></div>
                         </td>
                     </tr>
 
@@ -795,7 +866,7 @@ If only one area was selected the name of the selection will be set.</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:82</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="102" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:102</a></div>
                         </td>
                     </tr>
 
@@ -832,7 +903,7 @@ If only one area was selected the name of the selection will be set.</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:73</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="93" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:93</a></div>
                         </td>
                     </tr>
 
@@ -863,7 +934,7 @@ If only one area was selected the name of the selection will be set.</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="79" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:79</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="99" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:99</a></div>
                         </td>
                     </tr>
 
@@ -894,7 +965,7 @@ If only one area was selected the name of the selection will be set.</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:49</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:56</a></div>
                         </td>
                     </tr>
 
@@ -925,7 +996,7 @@ If only one area was selected the name of the selection will be set.</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:58</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:65</a></div>
                         </td>
                     </tr>
 
@@ -960,7 +1031,7 @@ If only one area was selected the name of the selection will be set.</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:61</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:68</a></div>
                         </td>
                     </tr>
 
@@ -1002,7 +1073,7 @@ If only one area was selected the name of the selection will be set.</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:66</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:73</a></div>
                         </td>
                     </tr>
 
@@ -1015,9 +1086,76 @@ If only one area was selected the name of the selection will be set.</p>
 
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectionDiffer"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>selectionDiffer</b></span>
+                        <a href="#selectionDiffer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>KeyValueDiffer&lt;string | any&gt;</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:81</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Differ to detect if <a href="selection">selection</a> changes.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectionEntries"></a>
+                    <span class="name">
+                        <span ><b>selectionEntries</b></span>
+                        <a href="#selectionEntries"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>Object.entries(this.selection)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:90</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Object entries of <a href="selection">selection</a>.
+Will only be updated when <a href="selection">selection</a> has an update.</p>
+<p>This reduces unnecessary updates in the gui and allowing selecting
+something of the selection.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
 </section>
 
-    <section>
+    <section data-compodoc="block-accessors">
     <h3 id="accessors">
         Accessors
     </h3>
@@ -1037,7 +1175,7 @@ If only one area was selected the name of the selection will be set.</p>
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="107" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:107</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="127" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:127</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -1055,7 +1193,7 @@ If only one area was selected the name of the selection will be set.</p>
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:90</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="110" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:110</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -1120,7 +1258,7 @@ If only one area was selected the name of the selection will be set.</p>
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="120" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:120</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="140" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:140</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -1142,7 +1280,7 @@ If only one area was selected the name of the selection will be set.</p>
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="115" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:115</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="135" class="link-to-prism">wisdom_modules/water-usage-forecasts/src/lib/views/result-data-view/result-data-view.component.ts:135</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -1195,10 +1333,16 @@ If only one area was selected the name of the selection will be set.</p>
 </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, OnInit} from &quot;@angular/core&quot;;
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  Component,
+  DoCheck,
+  KeyValueDiffer,
+  KeyValueDiffers,
+  OnInit
+} from &quot;@angular/core&quot;;
 import {ActivatedRoute, Router} from &quot;@angular/router&quot;;
-import {BreadcrumbsService, MapComponent, MapService, Resolution} from &quot;common&quot;;
+import {MapComponent, Resolution, BreadcrumbsService, MapService} from &quot;common&quot;;
 import {combineLatestWith} from &quot;rxjs/operators&quot;;
 
 import {
@@ -1220,7 +1364,7 @@ export const RegressionMethod &#x3D; {...WaterUsageForecastType, ...ProphetForec
   selector: &#x27;lib-result-data-view&#x27;,
   templateUrl: &#x27;./result-data-view.component.html&#x27;
 })
-export class ResultDataViewComponent implements OnInit {
+export class ResultDataViewComponent implements OnInit, DoCheck {
 
   /**
    * Constructor.
@@ -1237,7 +1381,8 @@ export class ResultDataViewComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private mapService: MapService,
-    private breadcrumbs: BreadcrumbsService
+    private breadcrumbs: BreadcrumbsService,
+    private keyValueDiffers: KeyValueDiffers
   ) {}
 
   /**
@@ -1267,6 +1412,19 @@ export class ResultDataViewComponent implements OnInit {
     administration: [],
     municipal: []
   };
+
+  /** Differ to detect if {@link selection} changes. */
+  private selectionDiffer!: KeyValueDiffer&lt;string, any&gt;;
+
+  /**
+   * Object entries of {@link selection}.
+   * Will only be updated when {@link selection} has an update.
+   *
+   * This reduces unnecessary updates in the gui and allowing selecting
+   * something of the selection.
+   */
+  selectionEntries &#x3D; Object.entries(this.selection);
+
   /** Resolution for the map selection. */
   mapResolution: Resolution | null &#x3D; null;
 
@@ -1321,7 +1479,15 @@ export class ResultDataViewComponent implements OnInit {
 
   /** Call {@link this#fetchData}. */
   ngOnInit(): void {
+    this.selectionDiffer &#x3D; this.keyValueDiffers.find(this.selection).create();
     this.fetchData(this.key, this.method);
+  }
+
+  /** Update {@link selectionEntries} if {@link selection} changed. */
+  ngDoCheck(): void {
+    if (this.selectionDiffer.diff(this.selection)) {
+      this.selectionEntries &#x3D; Object.entries(this.selection);
+    }
   }
 
   /**
@@ -1386,8 +1552,9 @@ export class ResultDataViewComponent implements OnInit {
       for (let marker of data[0] ?? []) {
         markers.push({
           coordinates: [
-            marker.geojson.coordinates[1],
-            marker.geojson.coordinates[0]
+            // markers used here a calculated via location
+            marker.geojson!.coordinates[1],
+            marker.geojson!.coordinates[0]
           ] as [number, number],
           tooltip: &#x60;
             &lt;b&gt;Name&lt;/b&gt;: ${marker.name}&lt;br&gt;
@@ -1450,7 +1617,7 @@ export class ResultDataViewComponent implements OnInit {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-templateData">
+    <div class="tab-pane fade " id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;breadcrumbs&gt;&lt;/breadcrumbs&gt;
 
 &lt;p class&#x3D;&quot;title&quot;&gt;{{&quot;water-usage-forecasts.result-data.results&quot; | translate}}&lt;/p&gt;
@@ -1480,7 +1647,7 @@ export class ResultDataViewComponent implements OnInit {
       &lt;/div&gt;
       &lt;div class&#x3D;&quot;card-content&quot;&gt;
         &lt;div class&#x3D;&quot;content&quot;&gt;
-          &lt;ng-template ngFor let-sel [ngForOf]&#x3D;&quot;Object.entries(selection)&quot;&gt;
+          &lt;ng-template ngFor let-sel [ngForOf]&#x3D;&quot;selectionEntries&quot;&gt;
             &lt;div *ngIf&#x3D;&quot;sel[1].length&quot;&gt;
               &lt;ng-template ngFor let-shape [ngForOf]&#x3D;&quot;sel[1]&quot;&gt;
                 &lt;p&gt;
@@ -1606,7 +1773,7 @@ export class ResultDataViewComponent implements OnInit {
     </div>
 
 
-    <div class="tab-pane fade " id="c-tree">
+    <div class="tab-pane fade " id="tree">
         <div id="tree-container"></div>
         <div class="tree-legend">
             <div class="title">
@@ -1631,9 +1798,9 @@ export class ResultDataViewComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><breadcrumbs></breadcrumbs><p class="title">{{"water-usage-forecasts.result-data.results" | translate}}</p><div class="card block">  <div class="card-content p-0 is-clipped">    <map      height="500px"      [layers]="{        shapes: [\'\', mapResolution, key]      }"      [scrollWheelZoom]="false"      [layerSelectable]="false"      [markers]="markers"      (keyNames)="mapKeyNames = $event"    ></map>  </div></div><div class="columns block">  <div class="column">    <div class="card">      <div class="card-header">        <p class="card-header-title">          {{"water-usage-forecasts.result-data.selection" | translate}}        </p>      </div>      <div class="card-content">        <div class="content">          <ng-template ngFor let-sel [ngForOf]="Object.entries(selection)">            <div *ngIf="sel[1].length">              <ng-template ngFor let-shape [ngForOf]="sel[1]">                <p>                  <strong>                    {{"common.map.resolution." + sel[0] | translate}}                  </strong>                  <span>                    {{shape[1]}} ({{shape[0]}})                  </span>                </p>              </ng-template>            </div>          </ng-template>        </div>      </div>    </div>  </div>  <div class="column">    <div class="card">      <div class="card-header">        <p class="card-header-title">Parameter</p>      </div>      <div class="card-content">        <div class="block">          <p>Prognosemodell</p>          <div class="dropdown is-toggleable">            <div class="dropdown-trigger">              <button class="button">                <span>Regression</span>                <span class="icon">              <ion-icon name="caret-down"></ion-icon>            </span>              </button>            </div>            <div class="dropdown-menu">              <div class="dropdown-content">                <a class="dropdown-item">Regression</a>              </div>            </div>          </div>        </div>        <div class="block">          <p>Methode</p>          <div class="dropdown is-toggleable">            <div class="dropdown-trigger">              <button class="button">                <span>                  {{"water-usage-forecasts.parameter." + method | translate}}                </span>                <span class="icon">              <ion-icon name="caret-down"></ion-icon>            </span>              </button>            </div>            <div class="dropdown-menu">              <div class="dropdown-content">                <a                  class="dropdown-item"                  (click)="method = regressionMethod.LINEAR"                >                  {{"water-usage-forecasts.parameter.linear" | translate}}                </a>                <a                  class="dropdown-item"                  (click)="method = regressionMethod.LOGARITHMIC"                >                  {{"water-usage-forecasts.parameter.logarithmic" | translate}}                </a>                <a                  class="dropdown-item"                  (click)="method = regressionMethod.POLYNOMIAL"                >                  {{"water-usage-forecasts.parameter.polynomial" | translate}}                </a>                <a                class="dropdown-item"                (click)="method = regressionMethod.PROPHET">                  {{"prophet"}}                </a>              </div>            </div>          </div>        </div>        <!--        <div class="block">          <p>Zeitraum</p>        </div>        -->      </div>    </div>  </div></div><div  lib-result-data  class="block"  [key]="key"  [method]="method"  [mapKeyNames]="mapKeyNames"></div><div class="card block" *ngIf="areaComponents && areaComponents.length > 1">  <div class="card-header">    <p class="card-header-title" translate>      water-usage-forecasts.result-data.branches    </p>  </div>  <div class="card-content">    <div class="tags">      <a        [routerLink]="[\'./\']"        [queryParams]="{key: component[0]}"        class="tag is-primary is-medium"        *ngFor="let component of areaComponents"      >        {{component[1]}}      </a>    </div>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BreadcrumbsComponent', 'selector': 'breadcrumbs'},{'name': 'CallbackComponent', 'selector': 'app-callback'},{'name': 'ConsumerDetailComponent', 'selector': 'lib-consumer-detail'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'ExampleComponent', 'selector': ''},{'name': 'FrameComponent', 'selector': 'app-frame'},{'name': 'IfcComponent', 'selector': 'ifc'},{'name': 'IonIconComponent', 'selector': 'ion-icon'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'MapComponent', 'selector': 'map'},{'name': 'MapSelectViewComponent', 'selector': 'lib-map-select-view'},{'name': 'ProphetForecastResultDataComponent', 'selector': 'lib-prophet-forecast-result-data'},{'name': 'PumpModelComponent', 'selector': ''},{'name': 'ResultDataComponent', 'selector': '[lib-result-data]'},{'name': 'ResultDataViewComponent', 'selector': 'lib-result-data-view'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'UserPopoutComponent', 'selector': 'app-user-popout'},{'name': 'WaterRightDetailComponent', 'selector': 'lib-water-right-detail'},{'name': 'WaterUsageForecastsResultDataComponent', 'selector': 'lib-water-usage-forecasts-result-data'}];
-    var DIRECTIVES = [{'name': 'BulmaIsToggleableDirective', 'selector': '.is-toggleable'},{'name': 'LangSelectorDirective', 'selector': '[selectLang]'}];
+        var COMPONENT_TEMPLATE = '<div><breadcrumbs></breadcrumbs><p class="title">{{"water-usage-forecasts.result-data.results" | translate}}</p><div class="card block">  <div class="card-content p-0 is-clipped">    <map      height="500px"      [layers]="{        shapes: [\'\', mapResolution, key]      }"      [scrollWheelZoom]="false"      [layerSelectable]="false"      [markers]="markers"      (keyNames)="mapKeyNames = $event"    ></map>  </div></div><div class="columns block">  <div class="column">    <div class="card">      <div class="card-header">        <p class="card-header-title">          {{"water-usage-forecasts.result-data.selection" | translate}}        </p>      </div>      <div class="card-content">        <div class="content">          <ng-template ngFor let-sel [ngForOf]="selectionEntries">            <div *ngIf="sel[1].length">              <ng-template ngFor let-shape [ngForOf]="sel[1]">                <p>                  <strong>                    {{"common.map.resolution." + sel[0] | translate}}                  </strong>                  <span>                    {{shape[1]}} ({{shape[0]}})                  </span>                </p>              </ng-template>            </div>          </ng-template>        </div>      </div>    </div>  </div>  <div class="column">    <div class="card">      <div class="card-header">        <p class="card-header-title">Parameter</p>      </div>      <div class="card-content">        <div class="block">          <p>Prognosemodell</p>          <div class="dropdown is-toggleable">            <div class="dropdown-trigger">              <button class="button">                <span>Regression</span>                <span class="icon">              <ion-icon name="caret-down"></ion-icon>            </span>              </button>            </div>            <div class="dropdown-menu">              <div class="dropdown-content">                <a class="dropdown-item">Regression</a>              </div>            </div>          </div>        </div>        <div class="block">          <p>Methode</p>          <div class="dropdown is-toggleable">            <div class="dropdown-trigger">              <button class="button">                <span>                  {{"water-usage-forecasts.parameter." + method | translate}}                </span>                <span class="icon">              <ion-icon name="caret-down"></ion-icon>            </span>              </button>            </div>            <div class="dropdown-menu">              <div class="dropdown-content">                <a                  class="dropdown-item"                  (click)="method = regressionMethod.LINEAR"                >                  {{"water-usage-forecasts.parameter.linear" | translate}}                </a>                <a                  class="dropdown-item"                  (click)="method = regressionMethod.LOGARITHMIC"                >                  {{"water-usage-forecasts.parameter.logarithmic" | translate}}                </a>                <a                  class="dropdown-item"                  (click)="method = regressionMethod.POLYNOMIAL"                >                  {{"water-usage-forecasts.parameter.polynomial" | translate}}                </a>                <a                class="dropdown-item"                (click)="method = regressionMethod.PROPHET">                  {{"prophet"}}                </a>              </div>            </div>          </div>        </div>        <!--        <div class="block">          <p>Zeitraum</p>        </div>        -->      </div>    </div>  </div></div><div  lib-result-data  class="block"  [key]="key"  [method]="method"  [mapKeyNames]="mapKeyNames"></div><div class="card block" *ngIf="areaComponents && areaComponents.length > 1">  <div class="card-header">    <p class="card-header-title" translate>      water-usage-forecasts.result-data.branches    </p>  </div>  <div class="card-content">    <div class="tags">      <a        [routerLink]="[\'./\']"        [queryParams]="{key: component[0]}"        class="tag is-primary is-medium"        *ngFor="let component of areaComponents"      >        {{component[1]}}      </a>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BeWaterSmartComponent', 'selector': 'lib-be-water-smart'},{'name': 'BreadcrumbsComponent', 'selector': 'breadcrumbs'},{'name': 'CallbackComponent', 'selector': 'app-callback'},{'name': 'ConsumerDetailComponent', 'selector': 'lib-consumer-detail'},{'name': 'DragDropComponent', 'selector': 'drag-drop'},{'name': 'ErrorCurtainComponent', 'selector': 'app-error-curtain'},{'name': 'ErrorToastComponent', 'selector': 'app-error-toast'},{'name': 'ExampleComponent', 'selector': ''},{'name': 'FrameComponent', 'selector': 'app-frame'},{'name': 'IfcComponent', 'selector': 'ifc'},{'name': 'IonIconComponent', 'selector': 'ion-icon'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'MapComponent', 'selector': 'map'},{'name': 'MapSelectViewComponent', 'selector': 'lib-map-select-view'},{'name': 'ProphetForecastResultDataComponent', 'selector': 'lib-prophet-forecast-result-data'},{'name': 'PumpModelComponent', 'selector': ''},{'name': 'ResultDataComponent', 'selector': '[lib-result-data]'},{'name': 'ResultDataViewComponent', 'selector': 'lib-result-data-view'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'UserPopoutComponent', 'selector': 'app-user-popout'},{'name': 'WaterRightDetailComponent', 'selector': 'lib-water-right-detail'},{'name': 'WaterUsageForecastsResultDataComponent', 'selector': 'lib-water-usage-forecasts-result-data'}];
+    var DIRECTIVES = [{'name': 'BulmaCalendarDirective', 'selector': '[type&#x3D;&quot;date&quot;]'},{'name': 'BulmaIsToggleableDirective', 'selector': '.is-toggleable'},{'name': 'DragDropDirective', 'selector': '[dragDropDirective]'},{'name': 'LangSelectorDirective', 'selector': '[selectLang]'}];
     var ACTUAL_COMPONENT = {'name': 'ResultDataViewComponent'};
 </script>
 <script src="../js/tree.js"></script>

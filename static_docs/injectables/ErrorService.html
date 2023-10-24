@@ -14,7 +14,7 @@
     </head>
     <body>
 
-        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
             <a href="../" class="navbar-brand">workspace documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
@@ -40,21 +40,27 @@
 
 
 <ol class="breadcrumb">
-  <li>Injectables</li>
-  <li >ErrorService</li>
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >ErrorService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
         </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info">
+    <div class="tab-pane fade active in" id="info">
         <p class="comment">
             <h3>File</h3>
         </p>
@@ -67,13 +73,13 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Error service to collect errors from the <a href="../interceptors/ErrorInterceptor.html">ErrorInterceptor</a>.</p>
+                <p>Error service for collecting errors from the <a href="../interceptors/ErrorInterceptor.html">ErrorInterceptor</a>.</p>
 
             </p>
 
 
 
-            <section>
+            <section data-compodoc="block-index">
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
@@ -86,7 +92,10 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#errorPresent" >errorPresent</a>
+                                <a href="#curtainErrorPresent" >curtainErrorPresent</a>
+                            </li>
+                            <li>
+                                <a href="#toastError" >toastError</a>
                             </li>
                         </ul>
                     </td>
@@ -115,27 +124,26 @@
     </table>
 </section>
 
-            <section>
+            <section data-compodoc="block-constructor">
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(router: Router)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">wisdom_modules/core/src/app/frame/error/error.service.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">wisdom_modules/core/src/app/frame/error/error.service.ts:17</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
                             <div class="io-description"><p>Constructor.</p>
-<p>This also creates an event handler on the <a href="NavigationStart">NavigationStart</a> event in
-order to reset the error presence.
-(Set <a href="errorPresent">errorPresent</a> to <code>false</code>.)</p>
+<p>This also creates an event handler for the NavigationStart event in order to reset
+the presence of curtain errors (i.e., set curtainErrorPresent to false).</p>
 </div>
                             <div>
                                     <b>Parameters :</b>
@@ -153,7 +161,7 @@ order to reset the error presence.
                                                         <td>router</td>
                                                   
                                                         <td>
-                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                                    <code>Router</code>
                                                         </td>
                                                   
                                                     <td>
@@ -161,7 +169,7 @@ order to reset the error presence.
                                                     </td>
                                                     
                                                         <td>
-                                                                <p>Router to subscribe to events</p>
+                                                                <p>The Router instance to subscribe to events.</p>
 
                                                         </td>
                                                 </tr>
@@ -174,7 +182,7 @@ order to reset the error presence.
         </table>
 </section>
 
-            <section>
+            <section data-compodoc="block-methods">
     
     <h3 id="methods">
         Methods
@@ -192,25 +200,26 @@ order to reset the error presence.
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>throwError(error: <a href="../interfaces/Error.html" target="_self">Error</a>)</code>
+<code>throwError(error: <a href="../interfaces/Error.html" target="_self">Error</a>, type: ThisType<>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="35"
-                            class="link-to-prism">wisdom_modules/core/src/app/frame/error/error.service.ts:35</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">wisdom_modules/core/src/app/frame/error/error.service.ts:44</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Emit an error.
-This is used by the <a href="../interceptors/ErrorInterceptor.html">ErrorInterceptor</a> to pass errors to this
+                    <div class="io-description"><p>Emit an error.</p>
+<p>This method is used by the <a href="../interceptors/ErrorInterceptor.html">ErrorInterceptor</a> to pass errors to this
 service.</p>
-</div>
+<div><pre class="line-numbers"><code class="language-none">        It should match the ErrorHandler enum values exposed via
+        {&#64;link USE_ERROR_HANDLER#handler}.</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -237,7 +246,25 @@ service.</p>
 
 
                                     <td>
-                                        <p>Error to pass</p>
+                                        <p>The error to be emitted.</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>type</td>
+                                    <td>
+                                            <code>ThisType&lt;&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The type of error handling to be applied.
+It should match the ErrorHandler enum values exposed via
+<a href="USE_ERROR_HANDLER.handler">USE_ERROR_HANDLER.handler</a>.</p>
 
                                     </td>
                                 </tr>
@@ -247,7 +274,7 @@ service.</p>
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                     </div>
                     <div class="io-description">
@@ -258,7 +285,7 @@ service.</p>
         </tbody>
     </table>
 </section>
-            <section>
+            <section data-compodoc="block-properties">
     
     <h3 id="inputs">
         Properties
@@ -267,10 +294,10 @@ service.</p>
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="errorPresent"></a>
+                    <a name="curtainErrorPresent"></a>
                     <span class="name">
-                        <span ><b>errorPresent</b></span>
-                        <a href="#errorPresent"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>curtainErrorPresent</b></span>
+                        <a href="#curtainErrorPresent"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -281,13 +308,44 @@ service.</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">wisdom_modules/core/src/app/frame/error/error.service.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">wisdom_modules/core/src/app/frame/error/error.service.ts:14</a></div>
                         </td>
                     </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Event emitter whether an event is currently present.</p>
+                    <div class="io-description"><p>Event emitter for indicating the presence of a curtain error.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toastError"></a>
+                    <span class="name">
+                        <span ><b>toastError</b></span>
+                        <a href="#toastError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new EventEmitter&lt;Error&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">wisdom_modules/core/src/app/frame/error/error.service.ts:17</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Event emitter for displaying toast notifications for errors.</p>
 </div>
                 </td>
             </tr>
@@ -299,43 +357,58 @@ service.</p>
     </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
+    <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {EventEmitter, Injectable, Output} from &quot;@angular/core&quot;;
 import {ActivatedRoute, Router, NavigationStart} from &quot;@angular/router&quot;;
+import {USE_ERROR_HANDLER} from &quot;common&quot;;
 
 import {Error} from &quot;./error&quot;;
 
-/** Error service to collect errors from the {@link ErrorInterceptor}. */
+/** Error service for collecting errors from the {@link ErrorInterceptor}. */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
 export class ErrorService {
 
-  /** Event emitter whether an event is currently present. */
-  errorPresent &#x3D; new EventEmitter&lt;false | Error&gt;();
+  /** Event emitter for indicating the presence of a curtain error. */
+  curtainErrorPresent &#x3D; new EventEmitter&lt;false | Error&gt;();
+
+  /** Event emitter for displaying toast notifications for errors. */
+  toastError &#x3D; new EventEmitter&lt;Error&gt;();
 
   /**
    * Constructor.
    *
-   * This also creates an event handler on the {@link NavigationStart} event in
-   * order to reset the error presence.
-   * (Set {@link errorPresent} to &#x60;false&#x60;.)
-   * @param router Router to subscribe to events
+   * This also creates an event handler for the NavigationStart event in order to reset
+   * the presence of curtain errors (i.e., set curtainErrorPresent to false).
+   *
+   * @param router The Router instance to subscribe to events.
    */
   constructor(private router: Router) {
     this.router.events.subscribe(event &#x3D;&gt; {
-      if (event instanceof NavigationStart) this.errorPresent.emit(false);
+      if (event instanceof NavigationStart) this.curtainErrorPresent.emit(false);
     })
   }
 
   /**
    * Emit an error.
-   * This is used by the {@link ErrorInterceptor} to pass errors to this
+   *
+   * This method is used by the {@link ErrorInterceptor} to pass errors to this
    * service.
-   * @param error Error to pass
+   *
+   * @param error The error to be emitted.
+   * @param type The type of error handling to be applied.
+   *             It should match the ErrorHandler enum values exposed via
+   *             {@link USE_ERROR_HANDLER#handler}.
    */
-  throwError(error: Error) {
-    this.errorPresent.emit(error);
+  throwError(error: Error, type: ThisType&lt;typeof USE_ERROR_HANDLER.handler&gt;) {
+    switch (type) {
+      case USE_ERROR_HANDLER.handler.CURTAIN:
+        return this.curtainErrorPresent.emit(error);
+
+      case USE_ERROR_HANDLER.handler.TOAST:
+        return this.toastError.emit(error);
+    }
   }
 }
 </code></pre>

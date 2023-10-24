@@ -14,7 +14,7 @@
     </head>
     <body>
 
-        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
             <a href="../" class="navbar-brand">workspace documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
@@ -40,21 +40,27 @@
 
 
 <ol class="breadcrumb">
-  <li>Injectables</li>
-  <li >AuthentikService</li>
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >AuthentikService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
         </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info">
+    <div class="tab-pane fade active in" id="info">
         <p class="comment">
             <h3>File</h3>
         </p>
@@ -73,7 +79,7 @@
 
 
 
-            <section>
+            <section data-compodoc="block-index">
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
@@ -101,18 +107,18 @@
     </table>
 </section>
 
-            <section>
+            <section data-compodoc="block-constructor">
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(http: HttpClient, router: Router)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">wisdom_modules/core/src/app/auth/authentik/authentik.service.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">wisdom_modules/core/src/app/auth/authentik/authentik.service.ts:18</a></div>
                             </td>
                         </tr>
 
@@ -133,7 +139,7 @@
                                                         <td>http</td>
                                                   
                                                         <td>
-                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                                    <code>HttpClient</code>
                                                         </td>
                                                   
                                                     <td>
@@ -145,7 +151,7 @@
                                                         <td>router</td>
                                                   
                                                         <td>
-                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                                    <code>Router</code>
                                                         </td>
                                                   
                                                     <td>
@@ -163,7 +169,7 @@
 </section>
 
 
-            <section>
+            <section data-compodoc="block-properties">
     
     <h3 id="inputs">
         Properties
@@ -205,7 +211,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">wisdom_modules/core/src/app/auth/authentik/authentik.service.ts:24</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">wisdom_modules/core/src/app/auth/authentik/authentik.service.ts:25</a></div>
                         </td>
                     </tr>
 
@@ -217,14 +223,15 @@
     </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import {authConfig} from &quot;../../../../../../wisdom.config&quot;;
-import {HttpClient, HttpContext, HttpHeaders} from &quot;@angular/common/http&quot;;
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {HttpClient, HttpContext, HttpHeaders} from &quot;@angular/common/http&quot;;
+import {Injectable} from &quot;@angular/core&quot;;
 import {Router} from &quot;@angular/router&quot;;
-import {Observable} from &quot;rxjs&quot;;
-import {core} from &quot;./types&quot;;
 import {SEND_AUTH} from &quot;common&quot;;
+import {Observable} from &quot;rxjs&quot;;
+
+import {core} from &quot;./types&quot;;
+import {authConfig} from &quot;../../../../../../wisdom.config&quot;;
 
 const API_URL &#x3D; authConfig.authority.split(&quot;/application/o/&quot;)[0] + &quot;/api/v3/&quot;;
 

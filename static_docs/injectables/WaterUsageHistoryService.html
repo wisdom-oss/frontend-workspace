@@ -14,7 +14,7 @@
     </head>
     <body>
 
-        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
             <a href="../" class="navbar-brand">workspace documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
@@ -40,21 +40,27 @@
 
 
 <ol class="breadcrumb">
-  <li>Injectables</li>
-  <li >WaterUsageHistoryService</li>
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >WaterUsageHistoryService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
         </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info">
+    <div class="tab-pane fade active in" id="info">
         <p class="comment">
             <h3>File</h3>
         </p>
@@ -66,7 +72,7 @@
 
 
 
-            <section>
+            <section data-compodoc="block-index">
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
@@ -94,13 +100,13 @@
     </table>
 </section>
 
-            <section>
+            <section data-compodoc="block-constructor">
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(http: HttpClient, router: Router)</code>
                     </td>
                 </tr>
                         <tr>
@@ -126,7 +132,7 @@
                                                         <td>http</td>
                                                   
                                                         <td>
-                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                                    <code>HttpClient</code>
                                                         </td>
                                                   
                                                     <td>
@@ -138,7 +144,7 @@
                                                         <td>router</td>
                                                   
                                                         <td>
-                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                                    <code>Router</code>
                                                         </td>
                                                   
                                                     <td>
@@ -155,7 +161,7 @@
         </table>
 </section>
 
-            <section>
+            <section data-compodoc="block-methods">
     
     <h3 id="methods">
         Methods
@@ -234,14 +240,14 @@
     </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
+    <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {HttpClient, HttpContext, HttpHeaders} from &quot;@angular/common/http&quot;;
 import {Injectable} from &quot;@angular/core&quot;;
 import {Router} from &quot;@angular/router&quot;;
 import {USE_API_URL, USE_LOADER} from &quot;common&quot;;
 import {map, Observable} from &quot;rxjs&quot;;
 
-const API_URL &#x3D; &quot;water-usage-history/&quot;;
+const API_URL &#x3D; &quot;usages/&quot;;
 
 export type HistoryResponse &#x3D; {
   year: number,
@@ -260,9 +266,9 @@ export class WaterUsageHistoryService {
   ) { }
 
   fetchWaterUsageHistory(id: string): Observable&lt;HistoryResponse&gt; {
-    let url &#x3D; this.router.parseUrl(API_URL);
-    url.queryParams[&quot;consumer&quot;] &#x3D; id;
-    return this.http.get&lt;{year: number, usage: number, recorded_at: string}[]&gt;(url.toString(), {
+    let url &#x3D; this.router.parseUrl(API_URL + &quot;by-consumer/&quot; + id);
+    console.log(url.toString())
+    return this.http.get&lt;{date: number, amount: number, recordedAt: number}[]&gt;(url.toString(), {
       headers: new HttpHeaders({
         &quot;Content-Type&quot;: &quot;application/json&quot;
       }),
@@ -273,13 +279,13 @@ export class WaterUsageHistoryService {
     }).pipe(map(
       data &#x3D;&gt; data.map(
         ({
-           year,
-           usage,
-           recorded_at
+           date,
+           amount,
+           recordedAt
         }) &#x3D;&gt; ({
-          year,
-          usage,
-          recordedAt: new Date(recorded_at)
+          year: new Date(date*1000).getFullYear(),
+          usage: amount,
+          recordedAt: new Date(recordedAt*1000)
         })
       )
     ))

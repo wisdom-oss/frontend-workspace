@@ -14,7 +14,7 @@
     </head>
     <body>
 
-        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
             <a href="../" class="navbar-brand">workspace documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
@@ -41,21 +41,27 @@
 
 
 <ol class="breadcrumb">
-  <li>Interceptors</li>
-  <li >ErrorInterceptor</li>
+  <li class="breadcrumb-item">Interceptors</li>
+  <li class="breadcrumb-item" >ErrorInterceptor</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
         </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info">
+    <div class="tab-pane fade active in" id="info">
         <p class="comment">
             <h3>File</h3>
         </p>
@@ -76,7 +82,7 @@ handled somewhere else.</p>
             </p>
 
 
-            <section>
+            <section data-compodoc="block-index">
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
@@ -104,7 +110,7 @@ handled somewhere else.</p>
     </table>
 </section>
 
-            <section>
+            <section data-compodoc="block-constructor">
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
@@ -160,7 +166,7 @@ handled somewhere else.</p>
         </table>
 </section>
 
-            <section>
+            <section data-compodoc="block-methods">
     
     <h3 id="methods">
         Methods
@@ -178,7 +184,7 @@ handled somewhere else.</p>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>intercept(request: HttpRequest<>, next: <a href="https://angular.io/api/common/http/HttpHandler" target="_blank">HttpHandler</a>)</code>
+<code>intercept(request: HttpRequest<>, next: HttpHandler)</code>
                 </td>
             </tr>
 
@@ -228,7 +234,7 @@ handled somewhere else.</p>
                                 <tr>
                                     <td>next</td>
                                     <td>
-                                                <code><a href="https://angular.io/api/common/http/HttpHandler" target="_blank" >HttpHandler</a></code>
+                                            <code>HttpHandler</code>
                                     </td>
 
                                     <td>
@@ -262,7 +268,7 @@ handled somewhere else.</p>
     </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
+    <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
   HttpEvent,
   HttpHandler,
@@ -270,7 +276,7 @@ handled somewhere else.</p>
   HttpRequest
 } from &quot;@angular/common/http&quot;;
 import {Injectable} from &quot;@angular/core&quot;;
-import {USE_ERROR_CURTAIN} from &quot;common&quot;;
+import {USE_ERROR_HANDLER} from &quot;common&quot;;
 import {catchError, throwError, Observable} from &quot;rxjs&quot;;
 
 import {ErrorService} from &quot;./error.service&quot;;
@@ -300,13 +306,12 @@ export class ErrorInterceptor implements HttpInterceptor {
     request: HttpRequest&lt;unknown&gt;,
     next: HttpHandler
   ): Observable&lt;HttpEvent&lt;unknown&gt;&gt; {
-    let context &#x3D; request.context.get(USE_ERROR_CURTAIN);
-    if (!context) return next.handle(request);
+    let context &#x3D; request.context.get(USE_ERROR_HANDLER);
+    if (context &#x3D;&#x3D;&#x3D; USE_ERROR_HANDLER.handler.CUSTOM) return next.handle(request);
 
     return next.handle(request).pipe(
       catchError(requestError &#x3D;&gt; {
         if (!requestError.ok) {
-          console.log(requestError);
           this.service.throwError({
             httpCode: requestError.error.httpCode ?? requestError.status,
             httpError: requestError.error.httpError ?? requestError.statusText,
@@ -315,9 +320,9 @@ export class ErrorInterceptor implements HttpInterceptor {
             errorDescription: requestError.error.errorDescription ??
               requestError.error.message ??
               requestError.message
-          });
+          }, context);
         }
-        return throwError(() &#x3D;&gt; new Error(requestError));
+        return throwError(() &#x3D;&gt; requestError);
       })
     )
   }

@@ -14,7 +14,7 @@
     </head>
     <body>
 
-        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
             <a href="../" class="navbar-brand">workspace documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
@@ -40,21 +40,27 @@
 
 
 <ol class="breadcrumb">
-  <li>Injectables</li>
-  <li >ConsumersService</li>
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >ConsumersService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
         </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info">
+    <div class="tab-pane fade active in" id="info">
         <p class="comment">
             <h3>File</h3>
         </p>
@@ -73,7 +79,7 @@
 
 
 
-            <section>
+            <section data-compodoc="block-index">
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
@@ -101,13 +107,13 @@
     </table>
 </section>
 
-            <section>
+            <section data-compodoc="block-constructor">
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(http: HttpClient, router: Router)</code>
                     </td>
                 </tr>
                         <tr>
@@ -136,7 +142,7 @@
                                                         <td>http</td>
                                                   
                                                         <td>
-                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                                    <code>HttpClient</code>
                                                         </td>
                                                   
                                                     <td>
@@ -154,7 +160,7 @@
                                                         <td>router</td>
                                                   
                                                         <td>
-                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                                    <code>Router</code>
                                                         </td>
                                                   
                                                     <td>
@@ -177,7 +183,7 @@
         </table>
 </section>
 
-            <section>
+            <section data-compodoc="block-methods">
     
     <h3 id="methods">
         Methods
@@ -226,6 +232,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Default value</td>
                                     <td>Description</td>
                                 </tr>
                             </thead>
@@ -240,6 +247,9 @@
                                         No
                                     </td>
 
+                                    <td>
+                                        <code>{}</code>
+                                    </td>
 
                                     <td>
                                         <ul>
@@ -271,11 +281,11 @@ emits the API response or <code>null</code> if no consumers were found.</p>
     </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
+    <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {HttpClient, HttpContext, HttpHeaders} from &quot;@angular/common/http&quot;;
 import {Injectable} from &quot;@angular/core&quot;;
 import {Router} from &quot;@angular/router&quot;;
-import {USE_API_URL, USE_LOADER} from &quot;common&quot;;
+import {USE_API_URL, USE_LOADER, USE_ERROR_HANDLER} from &quot;common&quot;;
 import {Observable} from &quot;rxjs&quot;;
 
 /** The base URL for the consumers API endpoint. */
@@ -347,7 +357,7 @@ export class ConsumersService {
     usageAbove: number,
     id: string[],
     in: string[]
-  }&gt;): Observable&lt;ConsumerLocationsResponse | null&gt; {
+  }&gt; &#x3D; {}): Observable&lt;ConsumerLocationsResponse | null&gt; {
     let url &#x3D; this.router.parseUrl(API_URL);
     if (params.in) url.queryParams[&quot;in&quot;] &#x3D; params.in;
     if (params.id) url.queryParams[&quot;id&quot;] &#x3D; params.id;
@@ -360,6 +370,7 @@ export class ConsumersService {
       context: new HttpContext()
         .set(USE_API_URL, true)
         .set(USE_LOADER, true)
+        .set(USE_ERROR_HANDLER, USE_ERROR_HANDLER.handler.TOAST)
     }) as Observable&lt;ConsumerLocationsResponse&gt;;
   }
 }

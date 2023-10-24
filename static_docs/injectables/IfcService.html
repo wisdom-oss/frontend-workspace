@@ -14,7 +14,7 @@
     </head>
     <body>
 
-        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
             <a href="../" class="navbar-brand">workspace documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
@@ -40,21 +40,27 @@
 
 
 <ol class="breadcrumb">
-  <li>Injectables</li>
-  <li >IfcService</li>
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >IfcService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
         </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info">
+    <div class="tab-pane fade active in" id="info">
         <p class="comment">
             <h3>File</h3>
         </p>
@@ -74,7 +80,7 @@ The fetch will try to load from the local indexed db first.</p>
 
 
 
-            <section>
+            <section data-compodoc="block-index">
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
@@ -119,18 +125,18 @@ The fetch will try to load from the local indexed db first.</p>
     </table>
 </section>
 
-            <section>
+            <section data-compodoc="block-constructor">
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>)</code>
+<code>constructor(http: HttpClient)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">wisdom_modules/common/src/lib/ifc/ifc.service.ts:38</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">wisdom_modules/common/src/lib/ifc/ifc.service.ts:39</a></div>
                             </td>
                         </tr>
 
@@ -154,7 +160,7 @@ The fetch will try to load from the local indexed db first.</p>
                                                         <td>http</td>
                                                   
                                                         <td>
-                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                                    <code>HttpClient</code>
                                                         </td>
                                                   
                                                     <td>
@@ -175,7 +181,7 @@ The fetch will try to load from the local indexed db first.</p>
         </table>
 </section>
 
-            <section>
+            <section data-compodoc="block-methods">
     
     <h3 id="methods">
         Methods
@@ -202,8 +208,8 @@ The fetch will try to load from the local indexed db first.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="60"
-                            class="link-to-prism">wisdom_modules/common/src/lib/ifc/ifc.service.ts:60</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="61"
+                            class="link-to-prism">wisdom_modules/common/src/lib/ifc/ifc.service.ts:61</a></div>
                 </td>
             </tr>
 
@@ -282,7 +288,7 @@ The fetch will try to load from the local indexed db first.</p>
         </tbody>
     </table>
 </section>
-            <section>
+            <section data-compodoc="block-properties">
     
     <h3 id="inputs">
         Properties
@@ -302,7 +308,7 @@ The fetch will try to load from the local indexed db first.</p>
             </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">wisdom_modules/common/src/lib/ifc/ifc.service.ts:38</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">wisdom_modules/common/src/lib/ifc/ifc.service.ts:39</a></div>
                         </td>
                     </tr>
 
@@ -320,12 +326,13 @@ The fetch will try to load from the local indexed db first.</p>
     </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import {DBSchema, openDB} from &quot;idb&quot;;
-import {HttpClient, HttpContext} from &quot;@angular/common/http&quot;;
-import {USE_LOADER} from &quot;../http-context/use-loader&quot;;
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {HttpClient, HttpContext} from &quot;@angular/common/http&quot;;
+import {Injectable} from &quot;@angular/core&quot;;
+import {openDB, DBSchema} from &quot;idb&quot;;
 import {firstValueFrom} from &quot;rxjs&quot;;
+
+import {USE_LOADER} from &quot;../http-context/use-loader&quot;;
 
 /** Indexed DB name. */
 const DB_NAME &#x3D; &quot;ifc-db&quot;;
