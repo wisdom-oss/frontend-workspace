@@ -284,6 +284,39 @@
           }
         }
       }
+    },
+    "weather-data": {
+      "projectType": "library",
+      "root": "wisdom_modules/weather-data",
+      "sourceRoot": "wisdom_modules/weather-data/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "wisdom_modules/weather-data/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "wisdom_modules/weather-data/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "wisdom_modules/weather-data/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "wisdom_modules/weather-data/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
   }
 }

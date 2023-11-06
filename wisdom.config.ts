@@ -28,6 +28,11 @@ export const langs = {
  */
 export const sidebar: SideBarEntries = [
   [
+    "weather-data Category", "sparkles", [
+      ["weather-data Component", "library", "weather-data"]
+    ]
+  ],
+  [
     "Proof of Concept", "rocket", [
       ["Example", "sparkles", "example"],
       ["No Example", null, null],
