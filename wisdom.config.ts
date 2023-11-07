@@ -17,7 +17,7 @@ export const name = "WISdoM-OSS";
 export const sidebar: SideBarEntries = [
   [
     "sidebar.precipitation", "rainy", [
-      ["weather.label.name", "partly-sunny", "weather-data"],
+      ["weather-data.label.name", "partly-sunny", "weather-data"],
     ]
   ],
   [
