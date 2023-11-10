@@ -28,7 +28,7 @@ export const langs = {
  */
 export const sidebar: SideBarEntries = [
   [
-    "weather-data Category", "sparkles", [
+    "Wetter", "sparkles", [
       ["weather-data Component", "library", "weather-data"]
     ]
   ],
