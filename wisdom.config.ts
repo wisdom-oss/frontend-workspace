@@ -22,7 +22,7 @@ export const sidebar: SideBarEntries = [
   ],
   [
     "sidebar.groundwater", "earth", [
-      ["Wasserrechte", "file-tray-full", ""]
+      ["water-rights.label.name", "file-tray-full", ""]
     ]
   ],
   [
