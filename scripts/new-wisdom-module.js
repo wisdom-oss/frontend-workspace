@@ -109,6 +109,10 @@ const inquirerImport = import("inquirer");
             en_US: {},
           },
         };
+
+        export * from "./lib/${dashName}.service";
+        export * from "./lib/${dashName}.component";
+        export * from "./lib/${dashName}.module";
       `.replaceAll(/^ {8}/gm, "").trim() + "\n"
       );
     }
