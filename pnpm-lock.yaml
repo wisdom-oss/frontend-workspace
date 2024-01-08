@@ -68,6 +68,9 @@ dependencies:
   idb:
     specifier: ^7.1.1
     version: 7.1.1
+  ionicons:
+    specifier: ^7.2.2
+    version: 7.2.2
   leaflet:
     specifier: ~1.8.0
     version: 1.8.0
@@ -2540,6 +2543,12 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@stencil/core@4.9.0:
+    resolution: {integrity: sha512-aWSkhBmk3yPwRAkUwBbzRwmdhb8hKiQ/JMr9m5jthpBZLjtppYbzz6PN2MhSMDfRp6K93eQw5WogSEH4HHuB6w==}
+    engines: {node: '>=16.0.0', npm: '>=7.10.0'}
+    hasBin: true
+    dev: false
 
   /@tootallnate/once@2.0.0:
     resolution: {integrity: sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==}
@@ -5297,6 +5306,12 @@ packages:
     resolution: {integrity: sha512-tvFwvS4g7q6iDot/4FjtWFHwwpv6TVvEumbTdLQilk1F07ojakbXPQcvf3kMAlyNDpzKRzn+d33O3RuXODuxZQ==}
     deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
     dev: true
+
+  /ionicons@7.2.2:
+    resolution: {integrity: sha512-I3iYIfc9Q9FRifWyFSwTAvbEABWlWY32i0sAVDDPGYnaIZVugkLCZFbEcrphW6ixVPg8tt1oLwalo/JJwbEqnA==}
+    dependencies:
+      '@stencil/core': 4.9.0
+    dev: false
 
   /ip@2.0.0:
     resolution: {integrity: sha512-WKa+XuLG1A1R0UWhl2+1XQSi+fZWMsYKffMZTTYsiZaUD8k2yDAj5atimTUD2TZkyCkNEeYE5NhFZmupOGtjYQ==}
