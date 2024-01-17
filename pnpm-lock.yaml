@@ -35,12 +35,9 @@ dependencies:
   '@ngx-translate/core':
     specifier: ^15.0.0
     version: 15.0.0(@angular/common@17.0.9)(@angular/core@17.0.9)(rxjs@7.8.1)
-  '@xbim/viewer':
-    specifier: 2.1.0-pre202305310754
-    version: 2.1.0-pre202305310754
   angular-auth-oidc-client:
-    specifier: 15.0.5
-    version: 15.0.5(@angular/common@17.0.9)(@angular/core@17.0.9)(@angular/router@17.0.9)(rxjs@7.8.1)
+    specifier: 16.0.1
+    version: 16.0.1(@angular/common@17.0.9)(@angular/core@17.0.9)(@angular/router@17.0.9)(rxjs@7.8.1)
   bulma:
     specifier: ^0.9.4
     version: 0.9.4
@@ -48,26 +45,26 @@ dependencies:
     specifier: ^6.1.19
     version: 6.1.19(bulma@0.9.4)
   bulma-prefers-dark:
-    specifier: ^0.1.0-beta.1
+    specifier: 0.1.0-beta.1
     version: 0.1.0-beta.1
   bulma-switch:
     specifier: ^2.0.4
     version: 2.0.4
   chart.js:
-    specifier: ~4.4.0
+    specifier: ~4.4.1
     version: 4.4.1
   chartjs-plugin-annotation:
     specifier: ^3.0.1
     version: 3.0.1(chart.js@4.4.1)
   dayjs:
-    specifier: ^1.11.8
+    specifier: ^1.11.10
     version: 1.11.10
   geojson:
     specifier: ^0.5.0
     version: 0.5.0
   idb:
-    specifier: ^7.1.1
-    version: 7.1.1
+    specifier: ^8.0.0
+    version: 8.0.0
   ionicons:
     specifier: ^7.2.2
     version: 7.2.2
@@ -78,7 +75,7 @@ dependencies:
     specifier: ~1.5.3
     version: 1.5.3(leaflet@1.8.0)
   ng2-charts:
-    specifier: ^5.0.3
+    specifier: ^5.0.4
     version: 5.0.4(@angular/cdk@17.0.5)(@angular/common@17.0.9)(@angular/core@17.0.9)(@angular/platform-browser@17.0.9)(chart.js@4.4.1)(rxjs@7.8.1)
   path-browserify:
     specifier: ^1.0.1
@@ -90,7 +87,7 @@ dependencies:
     specifier: ~0.135.0
     version: 0.135.0
   tslib:
-    specifier: ^2.5.3
+    specifier: ^2.6.2
     version: 2.6.2
   web-ifc:
     specifier: 0.0.39
@@ -122,22 +119,22 @@ devDependencies:
     specifier: ~17.0.9
     version: 17.0.9(@angular/compiler@17.0.9)(typescript@5.2.2)
   '@compodoc/compodoc':
-    specifier: ^1.1.21
+    specifier: ^1.1.23
     version: 1.1.23(typescript@5.2.2)
   '@types/geojson':
-    specifier: ^7946.0.10
+    specifier: ^7946.0.13
     version: 7946.0.13
   '@types/leaflet':
     specifier: ~1.8.0
     version: 1.8.0
   '@types/leaflet.markercluster':
-    specifier: ~1.5.1
+    specifier: ~1.5.4
     version: 1.5.4
   '@types/node':
-    specifier: ^20.3.1
+    specifier: ^20.11.5
     version: 20.11.5
   '@types/path-browserify':
-    specifier: ^1.0.0
+    specifier: ^1.0.2
     version: 1.0.2
   '@types/three':
     specifier: ~0.152.1
@@ -149,7 +146,7 @@ devDependencies:
     specifier: ^16.3.1
     version: 16.3.1
   inquirer:
-    specifier: ^9.2.11
+    specifier: ^9.2.12
     version: 9.2.12
   ng-packagr:
     specifier: ^17.1.0
@@ -4316,12 +4313,6 @@ packages:
       '@xtuc/long': 4.2.2
     dev: true
 
-  /@xbim/viewer@2.1.0-pre202305310754:
-    resolution: {integrity: sha512-/bHb7MkDhL2J++9bSGy4r4V6RHFghbxv4QDYLPrrR7TfZxd2XZ3pHB6EnlvPa0GtjOXDGkWpM/UEe2LxDjOmXQ==}
-    dependencies:
-      gl-matrix: 3.4.3
-    dev: false
-
   /@xtuc/ieee754@1.2.0:
     resolution: {integrity: sha512-DX8nKgqcGwsc0eJSqYt5lwP4DH5FlHnmuWWBRy7X0NcaGR0ZtuyeESgMwTYVEtxmsNGY+qit4QYT/MIYTOTPeA==}
     dev: true
@@ -4488,12 +4479,12 @@ packages:
     dev: true
     optional: true
 
-  /angular-auth-oidc-client@15.0.5(@angular/common@17.0.9)(@angular/core@17.0.9)(@angular/router@17.0.9)(rxjs@7.8.1):
-    resolution: {integrity: sha512-7PXsKnV4USoysHN6Y4r/oNot6hXF0tlMo2wHAZXazAaj1W44KESA9pZ79+ZfdStGBx24768ipX2VWFzOo5AnTw==}
+  /angular-auth-oidc-client@16.0.1(@angular/common@17.0.9)(@angular/core@17.0.9)(@angular/router@17.0.9)(rxjs@7.8.1):
+    resolution: {integrity: sha512-jWNNw4LgKcfskMX5ZDt33/qKp2NmlI6PL+s8ptlIixpzCdNLQv7FwMhYlyq22MMjk87WSsOCWmMlGBoMTeNOfw==}
     peerDependencies:
-      '@angular/common': '>=12.0.0'
-      '@angular/core': '>=12.0.0'
-      '@angular/router': '>=12.0.0'
+      '@angular/common': '>=15.0.0'
+      '@angular/core': '>=15.0.0'
+      '@angular/router': '>=15.0.0'
       rxjs: ^6.5.3 || ^7.4.0
     dependencies:
       '@angular/common': 17.0.9(@angular/core@17.0.9)(rxjs@7.8.1)
@@ -6557,10 +6548,6 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /gl-matrix@3.4.3:
-    resolution: {integrity: sha512-wcCp8vu8FT22BnvKVPjXa/ICBWRq/zjFfdofZy1WSpQZpphblv12/bOQLBC1rMM7SGOFS9ltVmKOHil5+Ml7gA==}
-    dev: false
-
   /glob-parent@5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
     engines: {node: '>= 6'}
@@ -6877,8 +6864,8 @@ packages:
       postcss: 8.4.31
     dev: true
 
-  /idb@7.1.1:
-    resolution: {integrity: sha512-gchesWBzyvGHRO9W8tzUWFDycow5gwjvFKfyV9FF32Y7F50yZMp7mP+T2mJIWFx49zicqyC4uefHM17o6xKIVQ==}
+  /idb@8.0.0:
+    resolution: {integrity: sha512-l//qvlAKGmQO31Qn7xdzagVPPaHTxXx199MhrAFuVBTPqydcPYBWjkrbv4Y0ktB+GmWOiwHl237UUOrLmQxLvw==}
     dev: false
 
   /ieee754@1.2.1:
