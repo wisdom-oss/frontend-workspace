@@ -1,11 +1,11 @@
 {
   "projects": {
-    "./wisdom_modules/core": "git@gitlab.uni-oldenburg.de:wisdom-oss/frontend/core.git",
-    "./wisdom_modules/common": "git@gitlab.uni-oldenburg.de:wisdom-oss/frontend/common.git",
-    "./wisdom_modules/example": "git@gitlab.uni-oldenburg.de:wisdom-oss/frontend/example.git",
-    "./wisdom_modules/pump-models": "git@gitlab.uni-oldenburg.de:wisdom-oss/frontend/pump-models.git",
-    "./wisdom_modules/water-usage-forecasts": "git@gitlab.uni-oldenburg.de:wisdom-oss/frontend/water-usage-forecasts.git",
-    "./wisdom_modules/be-water-smart": "git@gitlab.uni-oldenburg.de:wisdom-oss/frontend/be-water-smart.git",
-    "./wisdom_modules/weather-data": "git@gitlab.uni-oldenburg.de:wisdom-oss/frontend/weather-data.git"
+    "./wisdom_modules/core": "https://github.com/wisdom-oss/frontend-core.git",
+    "./wisdom_modules/common": "https://github.com/wisdom-oss/frontend-common.git",
+    "./wisdom_modules/example": "https://github.com/wisdom-oss/frontend-example.git",
+    "./wisdom_modules/pump-models": "https://github.com/wisdom-oss/frontend-pump-models.git",
+    "./wisdom_modules/water-usage-forecasts": "https://github.com/wisdom-oss/frontend-water-usage-forecasts.git",
+    "./wisdom_modules/be-water-smart": "https://github.com/wisdom-oss/frontend-be-water-smart.git",
+    "./wisdom_modules/weather-data": "https://github.com/wisdom-oss/frontend-weather-data.git"
   }
 }
