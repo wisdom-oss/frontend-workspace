@@ -50,6 +50,11 @@
                 "glob": "IFCWorker.js",
                 "input": "node_modules/web-ifc-three/",
                 "output": "/"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/ionicons/dist/ionicons/",
+                "output": "/ionicons/"
               }
             ],
             "styles": [

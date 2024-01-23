@@ -1,23 +1,26 @@
 const child_process = require("child_process");
 const fs = require("fs/promises");
-const {promisify} = require("util");
+const { promisify } = require("util");
 const exec = promisify(require("child_process").exec);
-const {strings} = require("@angular-devkit/core");
+const { strings } = require("@angular-devkit/core");
 const chalkImport = import("chalk");
 const inquirerImport = import("inquirer");
 
 (async () => {
-  const {default: chalk} = await chalkImport;
+  const { default: chalk } = await chalkImport;
 
   try {
     await exec("git diff --quiet && git diff --cached --quiet");
-  }
-  catch (e) {
+  } catch (e) {
     if (!e.stdout.length && e.code) {
-      console.log(chalk.redBright([
-        "The workspace needs to be a clean working tree.",
-        "Commit your code first."
-      ].join("\n")))
+      console.log(
+        chalk.redBright(
+          [
+            "The workspace needs to be a clean working tree.",
+            "Commit your code first.",
+          ].join("\n")
+        )
+      );
       process.exit(1);
     }
 
@@ -41,9 +44,11 @@ const inquirerImport = import("inquirer");
 
   console.log(chalk.yellow("Provide the git url for your new module."));
   console.log(chalk.yellow("The url needs to be a valid git ssh link."));
-  console.log(chalk.yellow(
-    "A typical ssh link looks like: git@<hostname>:<username>/<repository>.git"
-  ));
+  console.log(
+    chalk.yellow(
+      "A typical ssh link looks like: git@<hostname>:<username>/<repository>.git"
+    )
+  );
 
   let gitUrl;
   let gitUrlIsValid = false;
@@ -54,17 +59,15 @@ const inquirerImport = import("inquirer");
 
   try {
     console.log(chalk.greenBright("Generating") + " the library...");
-    await exec(`ng generate library "${name}"`, {shell: true});
-  }
-  catch (e) {
+    await exec(`ng generate library "${name}"`, { shell: true });
+  } catch (e) {
     console.error(chalk.redBright("Could not generate library:"));
     console.error(chalk.redBright(e.message));
 
     console.log(chalk.green("Rolling back changes..."));
     try {
       await exec("git reset --hard HEAD");
-    }
-    catch (e) {
+    } catch (e) {
       console.error(chalk.redBright("Could not reset git head."));
       console.error(chalk.redBright(e.message));
       console.log(chalk.yellow("Try to rollback via `git reset --hard HEAD`."));
@@ -84,7 +87,7 @@ const inquirerImport = import("inquirer");
         moduleContent.replace(
           "imports: [",
           "imports: [\n    WisdomModule,\n    TranslateModule"
-        )
+        ),
       ].join("\n");
       await fs.writeFile(moduleFile, moduleContent);
     }
@@ -112,8 +115,9 @@ const inquirerImport = import("inquirer");
 
         export * from "./lib/${dashName}.service";
         export * from "./lib/${dashName}.component";
-        export * from "./lib/${dashName}.module";
-      `.replaceAll(/^ {8}/gm, "").trim() + "\n"
+        export * from "./lib/${dashName}.module";     `
+          .replaceAll(/^ {8}/gm, "")
+          .trim() + "\n"
       );
     }
 
@@ -124,14 +128,18 @@ const inquirerImport = import("inquirer");
       wisdomModulesContent = [
         wisdomModulesContent.trim(),
         `export * as ${camelName} from "${dashName}";`,
-        ""
+        "",
       ].join("\n");
       await fs.writeFile(wisdomModulesFile, wisdomModulesContent);
     }
 
     console.log(chalk.greenBright("Deleting") + " unused files...");
-    await fs.rm(`wisdom_modules/${dashName}/src/lib/${dashName}.component.spec.ts`);
-    await fs.rm(`wisdom_modules/${dashName}/src/lib/${dashName}.service.spec.ts`);
+    await fs.rm(
+      `wisdom_modules/${dashName}/src/lib/${dashName}.component.spec.ts`
+    );
+    await fs.rm(
+      `wisdom_modules/${dashName}/src/lib/${dashName}.service.spec.ts`
+    );
     await fs.rm(`wisdom_modules/${dashName}/tsconfig.spec.json`);
 
     {
@@ -147,7 +155,9 @@ const inquirerImport = import("inquirer");
             ["${name} Component", "library", "${dashName}"]
           ]
         ],
-    `.trim().replaceAll(/^ {6}/gm, "")
+    `
+          .trim()
+          .replaceAll(/^ {6}/gm, "")
       );
       await fs.writeFile(wisdomConfigFile, wisdomConfigContent);
     }
@@ -163,30 +173,29 @@ const inquirerImport = import("inquirer");
     }
 
     console.log(chalk.greenBright("Primping") + " module...");
-    await exec(`npx primp -r wisdom_modules/${dashName}`, {shell: true});
+    await exec(`npx primp -r wisdom_modules/${dashName}`, { shell: true });
 
-    console.log(`\nRun ${chalk.cyan("npm run build")} to build your new module.`);
-  }
-  catch (e) {
+    console.log(
+      `\nRun ${chalk.cyan("npm run build")} to build your new module.`
+    );
+  } catch (e) {
     console.error(chalk.redBright("An error occurred:"));
     console.error(chalk.redBright(e.message));
     console.log(chalk.green("Rolling back changes..."));
 
     try {
       await fs.rmdir(`wisdom_modules/${dashName}`);
-    }
-    catch (e) {
+    } catch (e) {
       console.error(chalk.redBright("Could not delete generated module."));
       console.error(chalk.redBright(e.message));
-      console.log(chalk.yellow(
-        `Remove wisdom_modules/${dashName} for a clean rollback.`
-      ));
+      console.log(
+        chalk.yellow(`Remove wisdom_modules/${dashName} for a clean rollback.`)
+      );
     }
 
     try {
       await exec("git reset --hard HEAD");
-    }
-    catch (e) {
+    } catch (e) {
       console.error(chalk.redBright("Could not reset git head."));
       console.error(chalk.redBright(e.message));
       console.log(chalk.yellow("Try to rollback via `git reset --hard HEAD`."));
@@ -194,11 +203,11 @@ const inquirerImport = import("inquirer");
 
     process.exit(1);
   }
-
 })();
 
 function isValidName(name) {
-  const nameRegex = /^(?:@[a-zA-Z0-9-*~][a-zA-Z0-9-*._~]*\/)?[a-zA-Z0-9-~][a-zA-Z0-9-._~]*$/;
+  const nameRegex =
+    /^(?:@[a-zA-Z0-9-*~][a-zA-Z0-9-*._~]*\/)?[a-zA-Z0-9-~][a-zA-Z0-9-._~]*$/;
   return nameRegex.test(name);
 }
 
@@ -208,13 +217,13 @@ function isValidGitSSHLink(link) {
 }
 
 async function prompt(message) {
-  const {default: inquirer} = await inquirerImport;
-  const {default: chalk} = await chalkImport;
+  const { default: inquirer } = await inquirerImport;
+  const { default: chalk } = await chalkImport;
   let prompted = await inquirer.prompt({
     type: "input",
     name: "_",
     message,
-    transformer: input => chalk.gray(input)
+    transformer: (input) => chalk.gray(input),
   });
 
   return prompted._;
