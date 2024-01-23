@@ -46,6 +46,7 @@ jobs:
           build-args: |
             OIDC_AUTHORITY=fake-auth
             OIDC_CLIENT_ID=will-not-work
+            MOD_BRANCH=${{ github.ref }}
           push: false
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
