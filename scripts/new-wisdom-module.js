@@ -115,8 +115,7 @@ const inquirerImport = import("inquirer");
 
         export * from "./lib/${dashName}.service";
         export * from "./lib/${dashName}.component";
-        export * from "./lib/${dashName}.module";
-      `
+        export * from "./lib/${dashName}.module";     `
           .replaceAll(/^ {8}/gm, "")
           .trim() + "\n"
       );

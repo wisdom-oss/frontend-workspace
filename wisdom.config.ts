@@ -8,8 +8,6 @@ import env from "./env";
 export const name = "WISdoM-OSS";
 
 /**
- * new sidebar with the water cycle headings.
- *First iteration, WIP
  * This constant describes how the sidebar should directly look like.
  *
  * For further explanation see {@link SideBarEntries}.
@@ -20,12 +18,11 @@ export const sidebar: SideBarEntries = [
       ["weather-data.label.name", "partly-sunny", "weather-data"],
     ]
   ],
-  // TODO: add this later on
-  // [
-  //   "sidebar.groundwater", "earth", [
-  //     ["water-rights.label.name", "file-tray-full", ""]
-  //   ]
-  // ],
+  [
+    "sidebar.groundwater", "earth", [
+      ["water-rights.label.name", "file-tray-full", ""]
+    ]
+  ],
   [
     "sidebar.waterworks", "water", [
       ["pump-models.label.name", "business", "pump-models"],
