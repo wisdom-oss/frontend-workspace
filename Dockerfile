@@ -15,3 +15,4 @@ RUN meta git update && \
 FROM caddy:2.4.6-alpine
 COPY Caddyfile /etc/caddy/Caddyfile
 COPY --from=build /tmp/build/dist/core /srv
+LABEL org.opencontainers.image.source=https://github.com/wisdom-oss/frontend-workspace

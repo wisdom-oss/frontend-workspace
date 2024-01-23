@@ -1,7 +1,7 @@
 name: Create/Release Docker Image
 on:
   push:
-    branches: [ "main", "stable", "dev" ]
+    branches: [ "main", "dev" ]
     # Publish semver tags as releases.
     tags: [ 'v*.*.*' ]
   pull_request:
@@ -44,10 +44,10 @@ jobs:
         with:
           context: .
           build-args: |
-            OIDC_AUTHORITY=fake-auth
-            OIDC_CLIENT_ID=will-not-work
+            OIDC_AUTHORITY=${{ secrets.OIDC_AUTHORITY }}
+            OIDC_CLIENT_ID=${{ secrets.OIDC_CLIENT_ID }}
             MOD_BRANCH=${{ github.ref }}
-          push: false
+          push: ${{ github.event_name != 'pull_request'}}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
