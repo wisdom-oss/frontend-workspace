@@ -8,8 +8,6 @@ import env from "./env";
 export const name = "WISdoM-OSS";
 
 /**
- * new sidebar with the water cycle headings. 
- *First iteration, WIP
  * This constant describes how the sidebar should directly look like.
  *
  * For further explanation see {@link SideBarEntries}.

@@ -1,10 +1,9 @@
-FROM node:20.8 AS build
+FROM node:21.6 AS build
 ARG OIDC_AUTHORITY
 ARG OIDC_CLIENT_ID
 ARG MOD_BRANCH
 COPY . /tmp/build
 WORKDIR /tmp/build
-COPY github.meta /tmp/build/.meta
 RUN ls
 RUN npm install -g pnpm meta @angular/cli
 RUN pnpm install
