@@ -19,11 +19,6 @@ export const sidebar: SideBarEntries = [
     ]
   ],
   [
-    "sidebar.groundwater", "earth", [
-      ["water-rights.label.name", "file-tray-full", ""]
-    ]
-  ],
-  [
     "sidebar.waterworks", "water", [
       ["pump-models.label.name", "business", "pump-models"],
       ["water-usage-forecasts.label.name", "bar-chart", "water-usage-forecasts"],
