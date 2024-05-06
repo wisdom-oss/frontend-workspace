@@ -1,5 +1,6 @@
 name: Create/Release Docker Image
 on:
+  workflow_dispatch:
   push:
     branches: [ "main", "dev" ]
     # Publish semver tags as releases.
