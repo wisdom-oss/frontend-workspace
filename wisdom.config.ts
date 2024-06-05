@@ -14,6 +14,11 @@ export const name = "WISdoM-OSS";
  */
 export const sidebar: SideBarEntries = [
   [
+    "growl Category", "sparkles", [
+      ["growl Component", "library", "growl"]
+    ]
+  ],
+  [
     "sidebar.precipitation", "rainy", [
       ["weather-data.label.name", "partly-sunny", "weather-data"],
     ]

@@ -6,6 +6,7 @@
     "./wisdom_modules/pump-models": "https://github.com/wisdom-oss/frontend-pump-models.git",
     "./wisdom_modules/water-usage-forecasts": "https://github.com/wisdom-oss/frontend-water-usage-forecasts.git",
     "./wisdom_modules/be-water-smart": "https://github.com/wisdom-oss/frontend-be-water-smart.git",
-    "./wisdom_modules/weather-data": "https://github.com/wisdom-oss/frontend-weather-data.git"
+    "./wisdom_modules/weather-data": "https://github.com/wisdom-oss/frontend-weather-data.git",
+    "./wisdom_modules/growl": "git@github.com:wisdom-oss/frontend-growl.git"
   }
 }

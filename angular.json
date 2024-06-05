@@ -322,6 +322,39 @@
           }
         }
       }
+    },
+    "growl": {
+      "projectType": "library",
+      "root": "wisdom_modules/growl",
+      "sourceRoot": "wisdom_modules/growl/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "wisdom_modules/growl/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "wisdom_modules/growl/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "wisdom_modules/growl/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "wisdom_modules/growl/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
   }
 }
