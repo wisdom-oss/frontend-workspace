@@ -59,7 +59,7 @@ const inquirerImport = import("inquirer");
 
   try {
     console.log(chalk.greenBright("Generating") + " the library...");
-    await exec(`ng generate library "${name}"`, { shell: true });
+    await exec(`ng generate library --standalone=false "${name}"`, { shell: true });
   } catch (e) {
     console.error(chalk.redBright("Could not generate library:"));
     console.error(chalk.redBright(e.message));
