@@ -8,7 +8,13 @@
     "paths": {
       "be-water-smart": ["dist/be-water-smart"],
       "common": ["dist/common/common", "dist/common"],
-      "example": ["dist/example/example", "dist/example"],
+      "example": [
+        "dist/example/example",
+        "dist/example"
+      ],
+      "growl": [
+        "./dist/growl"
+      ],
       "pump-models": ["dist/pump-models/pump-models", "dist/pump-models"],
       "water-usage-forecasts": [
         "dist/water-usage-forecasts/water-usage-forecasts",
@@ -28,6 +34,7 @@
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
     "importHelpers": true,
     "target": "es2017",
     "module": "es2020",

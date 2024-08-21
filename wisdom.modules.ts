@@ -10,3 +10,4 @@ export * as waterUsageForecasts from "water-usage-forecasts";
 export * as pumpModels from "pump-models";
 export * as beWaterSmart from 'be-water-smart';
 export * as weatherData from "weather-data";
+export * as growl from "growl";
