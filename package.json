@@ -66,5 +66,8 @@
     "ng-packagr": "^17.1.0",
     "pretty-ts-imports": "^1.1.0",
     "typescript": "5.2.2"
+  },
+  "volta": {
+    "node": "21.6.2"
   }
 }
