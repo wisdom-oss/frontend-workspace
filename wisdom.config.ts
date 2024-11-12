@@ -14,25 +14,24 @@ export const name = "WISdoM-OSS";
  */
 export const sidebar: SideBarEntries = [
   [
-    "NLWKN", "map", [
-      ["GroWL", "server", "growl"]
-    ]
-  ],
-  [
     "sidebar.precipitation", "rainy", [
       ["weather-data.label.name", "partly-sunny", "weather-data"],
     ]
   ],
   [
+    "sidebar.groundwater", "map", [
+      ["GroWL", "server", "growl"]
+    ]
+  ],
+  [
     "sidebar.waterworks", "water", [
       ["pump-models.label.name", "business", "pump-models"],
-      ["water-usage-forecasts.label.name", "bar-chart", "water-usage-forecasts"],
-      ["Predictive Maintenance", "stats-chart", ""]
     ]
   ],
   [
     "sidebar.water-usage", "trending-up", [
-      ["B-Water-Smart", "radio", "be-water-smart"]
+      ["water-usage-forecasts.label.name", "bar-chart", "water-usage-forecasts"],
+      ["B-Water-Smart", "radio", "be-water-smart"],
     ]
   ],
   [
@@ -49,7 +48,7 @@ export const sidebar: SideBarEntries = [
  */
 export const langs = {
   de_DE: {
-    "water-usage": "Wasserverbauch",
+    "water-usage": "Wasserverbrauch",
     "precipitation": "Niederschlag",
     "groundwater": "Grundwasser",
     "waterworks": "Wasserwerke"
